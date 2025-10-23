@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dexhfjkyfs76y"]
+
+[ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
+
+[sub_resource type="Gradient" id="Gradient_7dm0k"]
+offsets = PackedFloat32Array(0, 0.982609, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.947826, 0.947826, 0.947826, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ig7tw"]
+gradient = SubResource("Gradient_7dm0k")
+fill_from = Vector2(0.509202, 0.00920245)
+fill_to = Vector2(0.582822, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1bvp3")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(578, 323.5)
+scale = Vector2(17.9688, 10.2031)
+texture = SubResource("GradientTexture2D_ig7tw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialogue_Manager" type="Node" parent="CanvasLayer"]
+script = ExtResource("1_ig7tw")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Dialogue_Manager"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -263.0
+offset_right = -5.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Dialogue_Manager/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(-100, 350)
+
+[node name="Stand" type="Marker2D" parent="."]
+position = Vector2(450, 350)
