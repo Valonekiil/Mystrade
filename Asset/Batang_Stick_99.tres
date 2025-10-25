@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=7 format=3 uid="uid://c51cyq0567fk2"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_fm7p6"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_ddjeg"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_wjhp4"]
+[ext_resource type="Texture2D" uid="uid://ch80w0t5ra34" path="res://Asset/Batang.png" id="3_ddjeg"]
+
+[sub_resource type="Resource" id="Resource_qrh3l"]
+script = ExtResource("2_ddjeg")
+lines = ["Haloo aku dengar kamu adalah orang yang menghargai barang - barang penting yang berharga dan penuh dengan kisah", "Barang ku mungkin terlihat remeh karena ini terlihat seperti tongkat kayu biasa, tetapi ini dulunya adalah tongkat kayu terkuat dalam semesta ini", "Sampai para dewa murka dan tidak mau menerima eksistensi benda ini lalu mereka akhirnya membuat pengorbanan dan menyegel beberapa kekuatannya", "menurutku barang in sekarang berharga 500 gold, tetapi jika kau bisa membuka segelnya maka nilainya akan naik secara eksponensial. bagaimana menurutmu?"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_eboce"]
+script = ExtResource("1_fm7p6")
+convo = SubResource("Resource_qrh3l")
+onetime = true
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("2_wjhp4")
+name = "99+ Batang Kayu "
+scaling = 10
+sprite = ExtResource("3_ddjeg")
+worth = 2000
+desc = "Ini adalah batang kayu terkuat dalam semesta yang telah di segel oleh para heavenly being karena terlalu berbahaya jika sampai ke tangan yang salah"
+dialogue = Array[ExtResource("1_fm7p6")]([SubResource("Resource_eboce")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"
