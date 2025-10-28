@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "S:\\Prak Jarkom\\Week 10\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\prak jarkom\\week 10\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\prak jarkom\\week 10\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\prak jarkom\\week 10\\backend\\backend\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\prak jarkom\\week 10\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\prak jarkom\\week 10\\backend\\backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 299,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Backend\\Properties\\launchSettings.json",
+              "ToolTip": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Backend\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-26T06:41:43.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayersController.cs",
+              "DocumentMoniker": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Controllers\\PlayersController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\PlayersController.cs",
+              "ToolTip": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Controllers\\PlayersController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\PlayersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T06:22:40.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T06:21:15.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\AppDbContext.cs",
+              "ToolTip": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Backend\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T06:14:20.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Models\\Player.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Player.cs",
+              "ToolTip": "S:\\Prak Jarkom\\Week 10\\Backend\\Backend\\Models\\Player.cs",
+              "RelativeToolTip": "Backend\\Models\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T06:12:50.877Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
