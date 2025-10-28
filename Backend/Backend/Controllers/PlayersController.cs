@@ -29,6 +29,17 @@ namespace Backend.Controllers
             return Ok(players);
         }
 
+        // GET: api/players/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Player>> GetPlayer(int id)
+        {
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound();
+
+            return player;
+        }
+
         // POST: api/players
         [HttpPost]
         public async Task<ActionResult<Player>> AddPlayer(Player player)
@@ -42,21 +53,46 @@ namespace Backend.Controllers
             return CreatedAtAction(nameof(GetPlayers), new { id = player.Id }, player);
         }
 
-        // PUT: api/players/5
+        // PUT: api/players/5  
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePlayer(int id, Player updated)
+        public async Task<IActionResult> UpdatePlayer(int id, Player player)
+        {
+            if (id != player.Id)
+                return BadRequest();
+
+            _context.Entry(player).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PlayerExists(id))
+                    return NotFound();
+                else
+                    throw;
+            }
+
+            return Ok(player);
+        }
+
+        // PATCH: api/players/5/items
+        [HttpPatch("{id}/items")]
+        public async Task<ActionResult<Player>> UpdatePlayerItems(int id, [FromBody] int items)
         {
             var player = await _context.Players.FindAsync(id);
             if (player == null)
                 return NotFound();
 
-            // Update kolom yang ada di tabel
-            player.username = updated.username;
-            player.password = updated.password;
-            player.item = updated.item;
-
+            player.item = items;
             await _context.SaveChangesAsync();
-            return NoContent();
+
+            return Ok(player);
+        }
+        private bool PlayerExists(int id)
+        {
+            return _context.Players.Any(e => e.Id == id);
         }
     }
 }

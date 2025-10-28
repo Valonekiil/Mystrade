@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://gph1my0tfk3d"]
+[gd_scene load_steps=19 format=3 uid="uid://gph1my0tfk3d"]
 
 [ext_resource type="Script" uid="uid://d3aambh568mck" path="res://Script/autoload/state_manager.gd" id="1_2g078"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_x8kip"]
@@ -72,6 +72,15 @@ desc = "Ini buah keramat yang membuat kita terusir dari surga dan harus hidup se
 dialogue = Array[ExtResource("4_6nywu")]([SubResource("Resource_t5xpa")])
 metadata/_custom_type_script = "uid://3rtp0wmg68su"
 
+[sub_resource type="Resource" id="Resource_jeyeh"]
+script = ExtResource("2_x8kip")
+name = "asda"
+scaling = 0
+worth = 0
+desc = "asdasdsdaascsa"
+dialogue = Array[ExtResource("4_6nywu")]([])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"
+
 [node name="state_manager" type="Node"]
 script = ExtResource("1_2g078")
-items = Array[ExtResource("2_x8kip")]([ExtResource("3_t6hoa"), SubResource("Resource_um6rr"), SubResource("Resource_pdkr1"), SubResource("Resource_xovtb")])
+items = Array[ExtResource("2_x8kip")]([ExtResource("3_t6hoa"), SubResource("Resource_um6rr"), SubResource("Resource_pdkr1"), SubResource("Resource_xovtb"), SubResource("Resource_jeyeh")])

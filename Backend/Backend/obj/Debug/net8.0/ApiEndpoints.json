@@ -47,6 +47,32 @@
   },
   {
     "ContainingType": "Backend.Controllers.PlayersController",
+    "Method": "GetPlayer",
+    "RelativePath": "Players/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Backend.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend.Controllers.PlayersController",
     "Method": "UpdatePlayer",
     "RelativePath": "Players/{id}",
     "HttpMethod": "PUT",
@@ -59,12 +85,43 @@
         "IsRequired": true
       },
       {
-        "Name": "updated",
+        "Name": "player",
         "Type": "Backend.Models.Player",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.PlayersController",
+    "Method": "UpdatePlayerItems",
+    "RelativePath": "Players/{id}/items",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "items",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Backend.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Backend.Controllers.WeatherForecastController",
