@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://gph1my0tfk3d"]
+[gd_scene load_steps=26 format=3 uid="uid://gph1my0tfk3d"]
 
 [ext_resource type="Script" uid="uid://d3aambh568mck" path="res://Script/autoload/state_manager.gd" id="1_2g078"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_x8kip"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://wiwho3l68x7v" path="res://Asset/Batu.png" id="6_jprqc"]
 [ext_resource type="Texture2D" uid="uid://cudg5v8sjvbcv" path="res://Asset/Batang_Hijau.png" id="7_6nywu"]
 [ext_resource type="Texture2D" uid="uid://dg30ouw4v3ddg" path="res://Asset/Buah.png" id="8_6nywu"]
+[ext_resource type="Script" uid="uid://cf8k8pqr3eh1v" path="res://Script/customer_resource.gd" id="9_3xrix"]
+[ext_resource type="Texture2D" uid="uid://b2tptvhap14dc" path="res://Asset/Tak berjudul91_20251029182341.png" id="10_um6rr"]
+[ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="11_sbjcs"]
+[ext_resource type="Texture2D" uid="uid://bl2y2oecbvgtl" path="res://Asset/Tak berjudul93_20251029182320.png" id="12_pdkr1"]
 
 [sub_resource type="Resource" id="Resource_1yeup"]
 script = ExtResource("5_v7srd")
@@ -81,6 +85,28 @@ desc = "asdasdsdaascsa"
 dialogue = Array[ExtResource("4_6nywu")]([])
 metadata/_custom_type_script = "uid://3rtp0wmg68su"
 
+[sub_resource type="Resource" id="Resource_xl3u2"]
+script = ExtResource("9_3xrix")
+id = 1
+name = "Cutie"
+sprite = ExtResource("10_um6rr")
+metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
+
+[sub_resource type="Resource" id="Resource_rrkp4"]
+script = ExtResource("9_3xrix")
+id = 2
+name = "Hunter"
+sprite = ExtResource("11_sbjcs")
+metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
+
+[sub_resource type="Resource" id="Resource_ojy58"]
+script = ExtResource("9_3xrix")
+id = 3
+name = "Saudagar Renta"
+sprite = ExtResource("12_pdkr1")
+metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
+
 [node name="state_manager" type="Node"]
 script = ExtResource("1_2g078")
 items = Array[ExtResource("2_x8kip")]([ExtResource("3_t6hoa"), SubResource("Resource_um6rr"), SubResource("Resource_pdkr1"), SubResource("Resource_xovtb"), SubResource("Resource_jeyeh")])
+customers = Array[ExtResource("9_3xrix")]([SubResource("Resource_xl3u2"), SubResource("Resource_rrkp4"), SubResource("Resource_ojy58")])

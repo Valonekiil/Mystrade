@@ -14,7 +14,9 @@ func _on_timer_timeout() -> void:
 
 func spawn_costumer():
 	var customer = Customer.new()
-	customer.texture = load("res://icon.svg")
+	var cus_res:Cus_Res = StateManager.customers.pick_random()
+	customer.res = cus_res
+	customer.texture = cus_res.sprite
 	customer.spawn = Spawn
 	customer.stand = Stand
 	customer.global_position = Spawn.global_position

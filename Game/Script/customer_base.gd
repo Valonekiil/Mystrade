@@ -1,6 +1,7 @@
 extends Sprite2D
 class_name Customer 
 
+var res:Cus_Res
 var item:Item_Base
 var spawn:Marker2D
 var stand:Marker2D

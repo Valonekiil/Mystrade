@@ -13,6 +13,14 @@ func _ready():
 	HTTPManager.get_player_completed.connect(_on_get_player_completed)
 	HTTPManager.update_player_completed.connect(_on_update_completed)
 
+func _start_button_pressed():
+	var username = username_input.text.strip_edges()
+	var password = password_input.text
+	
+	if username.is_empty() or password.is_empty():
+		show_message("Username dan password wajib diisi!", Color.RED)
+		return
+
 func _on_register_button_pressed():
 	var username = username_input.text.strip_edges()
 	var password = password_input.text
@@ -20,10 +28,6 @@ func _on_register_button_pressed():
 	# Validation
 	if username.is_empty() or password.is_empty():
 		show_message("Username dan password wajib diisi!", Color.RED)
-		return
-	
-	if password.length() < 6:
-		show_message("Password minimal 6 karakter!", Color.RED)
 		return
 	
 	show_message("Mendaftarkan...", Color.YELLOW)
