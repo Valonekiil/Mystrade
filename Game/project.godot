@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 StateManager="*res://Scene/state_manager.tscn"
 HTTPManager="*res://Scene/http_manager.tscn"
+GameDataManager="*res://Scene/game_manager.tscn"
 
 [display]
 

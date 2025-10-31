@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=7 format=3 uid="uid://1vfgtdo87r2g"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_i2j64"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_nrcew"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="3_p8rua"]
+[ext_resource type="Texture2D" uid="uid://cudg5v8sjvbcv" path="res://Asset/Batang_Hijau.png" id="4_gfm8a"]
+
+[sub_resource type="Resource" id="Resource_jprqc"]
+script = ExtResource("2_nrcew")
+lines = ["Halo aku membawa sebuah barang yang sangat langka dan mahal, sebuah barang yang digandrungi oleh para telinga runcing.", "Aku ingin menjual ranting ini, karena aku tidak bisa menampung kekuatan alam miliknya yang terlalu kuat untuk ku serap.", "Belilah dengan harga 800"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_sbjcs"]
+script = ExtResource("1_i2j64")
+convo = SubResource("Resource_jprqc")
+onetime = true
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("3_p8rua")
+name = "Ranting pohon dunia"
+scaling = 5
+sprite = ExtResource("4_gfm8a")
+worth = 500
+desc = "Sebuah ranting yang jatuh dari pohon dunia, yang penuh dengan energi alam"
+dialogue = Array[ExtResource("1_i2j64")]([SubResource("Resource_sbjcs")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

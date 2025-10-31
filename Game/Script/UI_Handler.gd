@@ -1,0 +1,73 @@
+extends CanvasLayer
+
+@onready var Ask_Btn =$VBoxContainer/Button4
+@onready var Acc_Btn =$VBoxContainer/Button
+@onready var Egx_Btn =$VBoxContainer/Button2
+@onready var Dsc_Btn =$VBoxContainer/Button3
+@onready var Dialog = $Dialogue_Manager
+@onready var Notif =$Popup
+@onready var Notif_Name =$Popup/Pop_up/Name
+@onready var Notif_Msg =$Popup/Pop_up/Label
+@onready var Notif_Sprite =$Popup/Pop_up/Sprite
+@onready var Notif_Worth =$Popup/Pop_up/HBoxContainer/Worth
+@onready var Kamus = $Item_Index
+var main
+
+func _ready() -> void:
+	main = get_tree().current_scene
+	Kamus.visible = false
+	Ask_Btn.disabled = true
+	Acc_Btn.disabled = true
+	Egx_Btn.disabled = true
+	Dsc_Btn.disabled = true
+	Dialog.finished.connect(_finish_ask)
+
+func _customer_appear():
+	Ask_Btn.disabled = false
+	Ask_Btn.grab_focus()
+
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if Input.is_key_pressed(KEY_TAB):
+		Kamus.visible = !Kamus.visible
+
+func _on_ask() -> void:
+	Dialog.conversations = main.cur_cus.item.dialogue
+	print(Dialog.conversations)
+	Dialog.talking()
+	Ask_Btn.disabled = true
+	print($Dialogue_Manager/Panel.visible)
+
+func _finish_ask()-> void:
+	Acc_Btn.disabled = false
+	Egx_Btn.disabled = false
+	Dsc_Btn.disabled = false
+	Acc_Btn.grab_focus()
+
+func _on_cus_leave():
+	Acc_Btn.disabled = true
+	Egx_Btn.disabled = true
+	Dsc_Btn.disabled = true
+
+func _on_bought()-> void:
+	var item = main.cur_cus.item
+	if item.unlocked:
+		pop_up_push(item,"Selamat kamu membeli")
+	else:
+		StateManager.unlock_item(item.name)
+		pop_up_push(item,"Selamat kamu menemukan")
+	main.cur_cus.get_the_hell_out()
+	_on_cus_leave()
+
+func _on_decline()-> void:
+	pass
+
+func _on_bargain()-> void:
+	pass
+
+func pop_up_push(item:Item_Base, msg:String):
+	Notif_Msg.text = msg
+	Notif_Name.text = item.name
+	Notif_Sprite.texture = item.sprite
+	Notif_Worth.text = str(item.worth)
+	Notif.popup()

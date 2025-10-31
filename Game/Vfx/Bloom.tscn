@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://c0l2it72lwll1"]
+
+[ext_resource type="Shader" uid="uid://ov525sxo8hir" path="res://Vfx/shader/s_bloom.tres" id="1_lobvb"]
+[ext_resource type="Texture2D" uid="uid://bsggokajnhtnw" path="res://Vfx/Texture/T_VFX_Flare_251.jpg" id="2_4dp31"]
+[ext_resource type="Texture2D" uid="uid://clnrdsmtk87t5" path="res://Vfx/Texture/T_VFX_Glo31.png" id="3_padsw"]
+
+[sub_resource type="Gradient" id="Gradient_2uuh8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gbuje"]
+gradient = SubResource("Gradient_2uuh8")
+fill_from = Vector2(0.21978022, 0.989011)
+fill_to = Vector2(0.18131869, 0.043956045)
+
+[sub_resource type="Gradient" id="Gradient_2fcun"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_om5ja"]
+gradient = SubResource("Gradient_2fcun")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_wblsr"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.9999998, 0.8400935, 0.14009753, 1, 1, 0.8672027, 0.46956253, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jri7q"]
+gradient = SubResource("Gradient_wblsr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3ax5"]
+shader = ExtResource("1_lobvb")
+shader_parameter/Texture_main = ExtResource("2_4dp31")
+shader_parameter/Texture_add = SubResource("GradientTexture2D_om5ja")
+shader_parameter/Texture_multiply = ExtResource("3_padsw")
+shader_parameter/Texture_Subtract = SubResource("GradientTexture2D_gbuje")
+shader_parameter/Texture_color_1D = SubResource("GradientTexture1D_jri7q")
+
+[sub_resource type="Curve" id="Curve_fgwld"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.0075757504, 0.011235952), 0.0, 0.0, 0, 0, Vector2(1, 5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ttktq"]
+curve = SubResource("Curve_fgwld")
+
+[sub_resource type="Curve" id="Curve_8gwpa"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oql2d"]
+curve = SubResource("Curve_8gwpa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8rdtv"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 0, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(50, 30, 1)
+emission_ring_height = 5.0
+emission_ring_radius = 5.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(1, 1, 0)
+radial_velocity_min = 0.99997765
+radial_velocity_max = 9.999977
+radial_velocity_curve = SubResource("CurveTexture_ttktq")
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 20.0
+scale_curve = SubResource("CurveTexture_oql2d")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bloom" type="GPUParticles2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_g3ax5")
+scale = Vector2(13.400001, 10.039999)
+emitting = false
+amount = 16
+lifetime = 0.43
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8rdtv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bloom"]

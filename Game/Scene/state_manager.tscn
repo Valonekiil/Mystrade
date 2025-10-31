@@ -1,89 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://gph1my0tfk3d"]
+[gd_scene load_steps=11 format=3 uid="uid://gph1my0tfk3d"]
 
 [ext_resource type="Script" uid="uid://d3aambh568mck" path="res://Script/autoload/state_manager.gd" id="1_2g078"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_x8kip"]
-[ext_resource type="Resource" uid="uid://c51cyq0567fk2" path="res://Asset/Batang_Stick_99.tres" id="3_t6hoa"]
-[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="4_6nywu"]
-[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="5_v7srd"]
-[ext_resource type="Texture2D" uid="uid://wiwho3l68x7v" path="res://Asset/Batu.png" id="6_jprqc"]
-[ext_resource type="Texture2D" uid="uid://cudg5v8sjvbcv" path="res://Asset/Batang_Hijau.png" id="7_6nywu"]
-[ext_resource type="Texture2D" uid="uid://dg30ouw4v3ddg" path="res://Asset/Buah.png" id="8_6nywu"]
+[ext_resource type="Resource" uid="uid://pv8m0wh33cwu" path="res://Asset/Batu.tres" id="4_6nywu"]
 [ext_resource type="Script" uid="uid://cf8k8pqr3eh1v" path="res://Script/customer_resource.gd" id="9_3xrix"]
 [ext_resource type="Texture2D" uid="uid://b2tptvhap14dc" path="res://Asset/Tak berjudul91_20251029182341.png" id="10_um6rr"]
 [ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="11_sbjcs"]
 [ext_resource type="Texture2D" uid="uid://bl2y2oecbvgtl" path="res://Asset/Tak berjudul93_20251029182320.png" id="12_pdkr1"]
-
-[sub_resource type="Resource" id="Resource_1yeup"]
-script = ExtResource("5_v7srd")
-lines = ["Halo, sepertinya aku menemukan batu yang keren, apakah kamu mau membelinya?", "Harganya 50 gold, tetapi mungkin uangmu kurang sedikit aku bisa menerimya."]
-metadata/_custom_type_script = "uid://dvc827phsimkt"
-
-[sub_resource type="Resource" id="Resource_3xrix"]
-script = ExtResource("4_6nywu")
-convo = SubResource("Resource_1yeup")
-onetime = true
-metadata/_custom_type_script = "uid://brssmk53kkvjl"
-
-[sub_resource type="Resource" id="Resource_um6rr"]
-script = ExtResource("2_x8kip")
-name = "Batu"
-scaling = 0
-sprite = ExtResource("6_jprqc")
-worth = 100
-desc = "Hanya sebuah batu biasa yang banyak di jumpai di pinggir jalan dan sungai"
-dialogue = Array[ExtResource("4_6nywu")]([SubResource("Resource_3xrix")])
-metadata/_custom_type_script = "uid://3rtp0wmg68su"
-
-[sub_resource type="Resource" id="Resource_jprqc"]
-script = ExtResource("5_v7srd")
-lines = ["Halo aku membawa sebuah barang yang sangat langka dan mahal, sebuah barang yang digandrungi oleh para telinga runcing.", "Aku ingin menjual ranting ini, karena aku tidak bisa menampung kekuatan alam miliknya yang terlalu kuat untuk ku serap.", "Belilah dengan harga 800"]
-metadata/_custom_type_script = "uid://dvc827phsimkt"
-
-[sub_resource type="Resource" id="Resource_sbjcs"]
-script = ExtResource("4_6nywu")
-convo = SubResource("Resource_jprqc")
-onetime = true
-metadata/_custom_type_script = "uid://brssmk53kkvjl"
-
-[sub_resource type="Resource" id="Resource_pdkr1"]
-script = ExtResource("2_x8kip")
-name = "Ranting pohon dunia"
-scaling = 5
-sprite = ExtResource("7_6nywu")
-worth = 500
-desc = "Sebuah ranting yang jatuh dari pohon dunia, yang penuh dengan energi alam"
-dialogue = Array[ExtResource("4_6nywu")]([SubResource("Resource_sbjcs")])
-metadata/_custom_type_script = "uid://3rtp0wmg68su"
-
-[sub_resource type="Resource" id="Resource_v7srd"]
-script = ExtResource("5_v7srd")
-lines = ["Heiiii aku punya barang keramat, tolong belilah barang ini, aku tidak sudi membawanya"]
-metadata/_custom_type_script = "uid://dvc827phsimkt"
-
-[sub_resource type="Resource" id="Resource_t5xpa"]
-script = ExtResource("4_6nywu")
-convo = SubResource("Resource_v7srd")
-onetime = true
-metadata/_custom_type_script = "uid://brssmk53kkvjl"
-
-[sub_resource type="Resource" id="Resource_xovtb"]
-script = ExtResource("2_x8kip")
-name = "Buah Kuldi"
-scaling = 0
-sprite = ExtResource("8_6nywu")
-worth = 100
-desc = "Ini buah keramat yang membuat kita terusir dari surga dan harus hidup sengsara di bumi"
-dialogue = Array[ExtResource("4_6nywu")]([SubResource("Resource_t5xpa")])
-metadata/_custom_type_script = "uid://3rtp0wmg68su"
-
-[sub_resource type="Resource" id="Resource_jeyeh"]
-script = ExtResource("2_x8kip")
-name = "asda"
-scaling = 0
-worth = 0
-desc = "asdasdsdaascsa"
-dialogue = Array[ExtResource("4_6nywu")]([])
-metadata/_custom_type_script = "uid://3rtp0wmg68su"
 
 [sub_resource type="Resource" id="Resource_xl3u2"]
 script = ExtResource("9_3xrix")
@@ -108,5 +31,5 @@ metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [node name="state_manager" type="Node"]
 script = ExtResource("1_2g078")
-items = Array[ExtResource("2_x8kip")]([ExtResource("3_t6hoa"), SubResource("Resource_um6rr"), SubResource("Resource_pdkr1"), SubResource("Resource_xovtb"), SubResource("Resource_jeyeh")])
+items = Array[ExtResource("2_x8kip")]([ExtResource("4_6nywu")])
 customers = Array[ExtResource("9_3xrix")]([SubResource("Resource_xl3u2"), SubResource("Resource_rrkp4"), SubResource("Resource_ojy58")])

@@ -45,7 +45,7 @@ func load_local_player_data():
 # Update data di game (local)
 func add_items(count: int):
 	if current_player:
-		current_player.items += count
+		current_player.items = count
 		player_data_updated.emit()
 		save_local_player_data()
 
@@ -62,7 +62,6 @@ func add_experience(exp: int):
 func get_exp_for_level(level: int) -> int:
 	return level * 100  # Contoh formula
 
-# Sync ke server
 func sync_to_server():
 	if current_player.player_id != -1:  # Pastikan sudah login
 		HTTPManager.update_player(

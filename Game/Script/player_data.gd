@@ -16,7 +16,6 @@ func update_from_api(api_data: Dictionary):
 	username = api_data.get("username", username)
 	password = api_data.get("password", password)
 	items = api_data.get("item", items)
-	gold = api_data.get("gold", gold)
 
 # Fungsi untuk convert ke dictionary (buat API)
 func to_api_dict() -> Dictionary:
@@ -25,5 +24,4 @@ func to_api_dict() -> Dictionary:
 		"username": username,
 		"password": password,
 		"item": items,
-		"gold": gold
 	}

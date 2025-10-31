@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=3 uid="uid://itw1dqpcw6ek"]
+
+[ext_resource type="Shader" uid="uid://dd1ttjb201l1n" path="res://shader/s_smoke.tres" id="1_6y65c"]
+[ext_resource type="Texture2D" uid="uid://n8cixp46f8d6" path="res://Texture/T_VFX_CloudNoise_Tiled.png" id="2_6y65c"]
+[ext_resource type="Texture2D" uid="uid://bh72meitdpw2a" path="res://Texture/T_Gradient_Smoke.jpg" id="3_433r6"]
+[ext_resource type="Texture2D" uid="uid://ubfmxjoqeihf" path="res://Texture/T_1_pixel.jpg" id="4_jftvu"]
+
+[sub_resource type="Gradient" id="Gradient_o1l66"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xpsvb"]
+gradient = SubResource("Gradient_o1l66")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_udsah"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52ac2"]
+gradient = SubResource("Gradient_udsah")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.02991453, 0.22222222)
+
+[sub_resource type="Gradient" id="Gradient_xeq2u"]
+offsets = PackedFloat32Array(0, 0.34745762, 0.5714286, 1)
+colors = PackedColorArray(0.23392546, 0.23392546, 0.23392543, 0, 0.97360384, 0.97360384, 0.97360384, 0.105000004, 0.63822544, 0.63822544, 0.63822544, 0.31500003, 0.90794206, 0.9079416, 0.90794164, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f6k2r"]
+gradient = SubResource("Gradient_xeq2u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojntr"]
+shader = ExtResource("1_6y65c")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/speed = Vector2(0, 0.5)
+shader_parameter/Texture_main = ExtResource("2_6y65c")
+shader_parameter/Texture_add = SubResource("GradientTexture2D_52ac2")
+shader_parameter/Texture_multiply = ExtResource("3_433r6")
+shader_parameter/Texture_Subtract = SubResource("GradientTexture2D_xpsvb")
+shader_parameter/Texture_color_1D = SubResource("GradientTexture1D_f6k2r")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="static_smoke" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ojntr")
+position = Vector2(150.89374, 235.88332)
+rotation = -0.015510201
+scale = Vector2(293.2101, 474.31604)
+texture = ExtResource("4_jftvu")

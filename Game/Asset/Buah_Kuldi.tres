@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=7 format=3 uid="uid://c2ad3odph5pa2"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_nswaw"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_j3tki"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="3_nnkgl"]
+[ext_resource type="Texture2D" uid="uid://dg30ouw4v3ddg" path="res://Asset/Buah.png" id="4_fvjyw"]
+
+[sub_resource type="Resource" id="Resource_v7srd"]
+script = ExtResource("2_j3tki")
+lines = ["Heiiii aku punya barang keramat, tolong belilah barang ini, aku tidak sudi membawanya"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_t5xpa"]
+script = ExtResource("1_nswaw")
+convo = SubResource("Resource_v7srd")
+onetime = true
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("3_nnkgl")
+name = "Buah Kuldi"
+scaling = 0
+sprite = ExtResource("4_fvjyw")
+worth = 100
+desc = "Ini buah keramat yang membuat kita terusir dari surga dan harus hidup sengsara di bumi"
+dialogue = Array[ExtResource("1_nswaw")]([SubResource("Resource_t5xpa")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

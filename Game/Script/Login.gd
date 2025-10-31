@@ -20,6 +20,12 @@ func _start_button_pressed():
 	if username.is_empty() or password.is_empty():
 		show_message("Username dan password wajib diisi!", Color.RED)
 		return
+	GameDataManager.login_and_sync(username, password)
+	show_message("Logging in...", Color.YELLOW)
+
+func _on_play_offline_pressed():
+	# Main dengan data lokal saja
+	get_tree().change_scene_to_file("res://GameScene.tscn")
 
 func _on_register_button_pressed():
 	var username = username_input.text.strip_edges()

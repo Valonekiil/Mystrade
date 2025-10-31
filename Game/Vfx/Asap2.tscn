@@ -1,0 +1,44 @@
+[gd_scene load_steps=12 format=3 uid="uid://ca5bt0gebrig5"]
+
+[ext_resource type="Shader" uid="uid://c7xtgac4c03sq" path="res://Vfx/shader/s_smoke2.tres" id="1_na68q"]
+[ext_resource type="Texture2D" uid="uid://n8cixp46f8d6" path="res://Vfx/Texture/T_VFX_CloudNoise_Tiled.png" id="2_uy3oa"]
+[ext_resource type="Texture2D" uid="uid://dgb08gx18e10x" path="res://Vfx/Texture/T_Gradient_Smoke2.jpg" id="3_hi00j"]
+[ext_resource type="Texture2D" uid="uid://ubfmxjoqeihf" path="res://Vfx/Texture/T_1_pixel.jpg" id="4_uy5kb"]
+
+[sub_resource type="Gradient" id="Gradient_yp5yo"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uw8yu"]
+gradient = SubResource("Gradient_yp5yo")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_38ffq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q1tlc"]
+gradient = SubResource("Gradient_38ffq")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_8r3d0"]
+offsets = PackedFloat32Array(0, 0.28712872, 0.9874608)
+colors = PackedColorArray(0, 0, 0, 0, 0.6337567, 0.6337569, 0.6337566, 0.18800001, 0.34117648, 0.34117648, 0.34117648, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sbq1u"]
+gradient = SubResource("Gradient_8r3d0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rojhe"]
+shader = ExtResource("1_na68q")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/speed = Vector2(0, 0.3)
+shader_parameter/Texture_main = ExtResource("2_uy3oa")
+shader_parameter/Texture_add = SubResource("GradientTexture2D_q1tlc")
+shader_parameter/Texture_multiply = ExtResource("3_hi00j")
+shader_parameter/Texture_Subtract = SubResource("GradientTexture2D_uw8yu")
+shader_parameter/Texture_color_1D = SubResource("GradientTexture1D_sbq1u")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="static_smoke2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rojhe")
+position = Vector2(43.25, 50.25)
+scale = Vector2(87.5, 101.5)
+texture = ExtResource("4_uy5kb")

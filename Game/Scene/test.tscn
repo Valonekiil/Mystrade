@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://boeaadh1voiek"]
 
-[ext_resource type="Texture2D" uid="uid://ch80w0t5ra34" path="res://Asset/Batang.png" id="1_o6ksy"]
+[ext_resource type="Texture2D" uid="uid://dg30ouw4v3ddg" path="res://Asset/Buah.png" id="1_o6ksy"]
 [ext_resource type="Script" uid="uid://dagi2b2r6hvbu" path="res://Script/test_img_manip.gd" id="2_vrsyt"]
 
 [node name="TextureRect" type="TextureRect"]
-modulate = Color(0.992157, 0.756863, 0, 1)
+modulate = Color(1, 0, 0, 1)
 offset_right = 100.0
 offset_bottom = 100.0
 texture = ExtResource("1_o6ksy")

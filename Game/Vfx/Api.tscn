@@ -1,0 +1,43 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbjg73wyv67v4"]
+
+[ext_resource type="Shader" uid="uid://cdp4gpt12r5vi" path="res://shader/s_fire_shader.tres" id="1_1vhqp"]
+[ext_resource type="Texture2D" uid="uid://cyrfjllks6ikb" path="res://Texture/T_VFX_Noise_465.png" id="2_h1n7f"]
+[ext_resource type="Texture2D" uid="uid://g4dir7kunf7l" path="res://Texture/T_Gradient_circle22.jpg" id="3_wwmb6"]
+[ext_resource type="Texture2D" uid="uid://ubfmxjoqeihf" path="res://Texture/T_1_pixel.jpg" id="4_ha6nx"]
+
+[sub_resource type="Gradient" id="Gradient_5e4e7"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u6ht4"]
+gradient = SubResource("Gradient_5e4e7")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_m678r"]
+offsets = PackedFloat32Array(0, 0.44067797, 0.5254237, 1)
+colors = PackedColorArray(0.4325613, 0.20756042, 0.0018583764, 0, 0.87102836, 0.221111, 7.970452e-05, 1, 0.9895904, 0.26695693, 9.662877e-05, 1, 1.1554719, 0.4593122, 0.2660262, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cx0b4"]
+gradient = SubResource("Gradient_m678r")
+
+[sub_resource type="Gradient" id="Gradient_el07m"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bt2ef"]
+gradient = SubResource("Gradient_el07m")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxb2k"]
+shader = ExtResource("1_1vhqp")
+shader_parameter/scale = Vector2(1, 2)
+shader_parameter/speed = Vector2(0, 0.5)
+shader_parameter/texture_main = ExtResource("2_h1n7f")
+shader_parameter/texture_add = SubResource("GradientTexture2D_u6ht4")
+shader_parameter/texture_multiply = ExtResource("3_wwmb6")
+shader_parameter/texture_substract = SubResource("GradientTexture2D_bt2ef")
+shader_parameter/texture_color_1D = SubResource("GradientTexture1D_cx0b4")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="static_fire" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jxb2k")
+position = Vector2(22.220932, 37.065594)
+scale = Vector2(45.558136, 71.86881)
+texture = ExtResource("4_ha6nx")
