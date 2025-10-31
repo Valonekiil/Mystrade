@@ -7,32 +7,36 @@
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031080414_FixItemCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Backend\\Migrations\\20251031080414_FixItemCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\migrations\\20251031085743_itemtocoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\migrations\\20251031085743_itemtocoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031072216_AddTimePlayedAndItemCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Backend\\Migrations\\20251031072216_AddTimePlayedAndItemCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031065052_AddTimePlayedAndLastPlayed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Backend\\Migrations\\20251031065052_AddTimePlayedAndLastPlayed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\migrations\\20251031080414_fixitemcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\migrations\\20251031080414_fixitemcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\migrations\\20251031072216_addtimeplayedanditemcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\migrations\\20251031072216_addtimeplayedanditemcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|s:\\giyhub\\mystrade\\backend\\backend\\migrations\\20251031065052_addtimeplayedandlastplayed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\migrations\\20251031065052_addtimeplayedandlastplayed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,12 +49,21 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20251031085743_ItemToCoins.cs",
+              "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031085743_ItemToCoins.cs",
+              "RelativeDocumentMoniker": "Backend\\Migrations\\20251031085743_ItemToCoins.cs",
+              "ToolTip": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031085743_ItemToCoins.cs",
+              "RelativeToolTip": "Backend\\Migrations\\20251031085743_ItemToCoins.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T08:57:44.001Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "20251031080414_FixItemCollection.cs",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031080414_FixItemCollection.cs",
               "RelativeDocumentMoniker": "Backend\\Migrations\\20251031080414_FixItemCollection.cs",
@@ -58,12 +71,11 @@
               "RelativeToolTip": "Backend\\Migrations\\20251031080414_FixItemCollection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:04:14.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T08:04:14.969Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "20251031072216_AddTimePlayedAndItemCollection.cs",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031072216_AddTimePlayedAndItemCollection.cs",
               "RelativeDocumentMoniker": "Backend\\Migrations\\20251031072216_AddTimePlayedAndItemCollection.cs",
@@ -71,12 +83,11 @@
               "RelativeToolTip": "Backend\\Migrations\\20251031072216_AddTimePlayedAndItemCollection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T07:22:16.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T07:22:16.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "20251031065052_AddTimePlayedAndLastPlayed.cs",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Migrations\\20251031065052_AddTimePlayedAndLastPlayed.cs",
               "RelativeDocumentMoniker": "Backend\\Migrations\\20251031065052_AddTimePlayedAndLastPlayed.cs",
@@ -84,12 +95,11 @@
               "RelativeToolTip": "Backend\\Migrations\\20251031065052_AddTimePlayedAndLastPlayed.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T06:50:52.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T06:50:52.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "launchSettings.json",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Backend\\Properties\\launchSettings.json",
@@ -97,8 +107,7 @@
               "RelativeToolTip": "Backend\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-26T06:41:43.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:41:43.94Z"
             },
             {
               "$type": "Document",
@@ -108,14 +117,14 @@
               "RelativeDocumentMoniker": "Backend\\Controllers\\PlayersController.cs",
               "ToolTip": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Controllers\\PlayersController.cs",
               "RelativeToolTip": "Backend\\Controllers\\PlayersController.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAUwPAAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T06:22:40.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
@@ -123,12 +132,11 @@
               "RelativeToolTip": "Backend\\Program.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAIwCcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T06:21:15.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:21:15.295Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Backend\\Data\\AppDbContext.cs",
@@ -136,21 +144,23 @@
               "RelativeToolTip": "Backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T06:14:20.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:14:20.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Backend\\Models\\Player.cs",
               "ToolTip": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Models\\Player.cs",
               "RelativeToolTip": "Backend\\Models\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T06:12:50.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:12:50.877Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }

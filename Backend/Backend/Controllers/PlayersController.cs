@@ -24,7 +24,7 @@ namespace Backend.Controllers
         public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
         {
             var players = await _context.Players
-                .OrderByDescending(p => p.item)
+                .OrderByDescending(p => p.coins)
                 .ToListAsync();
 
             return Ok(players);
@@ -43,10 +43,10 @@ namespace Backend.Controllers
             return Ok(player);
         }
 
-        // REGISTER Player baru
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<Player>> AddPlayer([FromBody] RegisterRequest request)
         {
             if (request == null)
@@ -55,11 +55,20 @@ namespace Backend.Controllers
             if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
                 return BadRequest("Username dan password wajib diisi.");
 
+            //eror handling username
+            var existingPlayer = await _context.Players
+                .FirstOrDefaultAsync(p => p.username == request.Username);
+
+            if (existingPlayer != null)
+            {
+                return Conflict(new { message = "Username sudah terdaftar!" });
+            }
+
             var player = new Player
             {
                 username = request.Username,
                 password = request.Password,
-                item = 0,
+                coins = 0, 
                 TimePlayed = 0,
                 LastPlayed = DateTime.UtcNow,
                 ItemCollection = new List<int>()
@@ -71,7 +80,7 @@ namespace Backend.Controllers
             return CreatedAtAction(nameof(GetPlayer), new { id = player.Id }, player);
         }
 
-        // UPDATE data player
+        // apdet data player
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -91,11 +100,11 @@ namespace Backend.Controllers
             return Ok(player);
         }
 
-        // PATCH item count (gunakan JSON)
-        [HttpPatch("{id}/items")]
+        // PATCH coins 
+        [HttpPatch("{id}/coins")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Player>> UpdatePlayerItems(int id, [FromBody] UpdateItemRequest request)
+        public async Task<ActionResult<Player>> UpdatePlayerCoins(int id, [FromBody] UpdateCoinRequest request)
         {
             if (request == null)
                 return BadRequest("Body tidak boleh kosong.");
@@ -104,7 +113,7 @@ namespace Backend.Controllers
             if (player == null)
                 return NotFound();
 
-            player.item = request.Items;
+            player.coins = request.Coins;
             await _context.SaveChangesAsync();
 
             return Ok(player);
@@ -175,7 +184,7 @@ namespace Backend.Controllers
             });
         }
 
-        // LOGIN
+        // login
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -196,23 +205,25 @@ namespace Backend.Controllers
             return Ok(player);
         }
 
-        // LEADERBOARD
+        // leaderboard: Berdasarkan jumlah total item di koleksi
         [HttpGet("leaderboard")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<object>>> GetLeaderboard()
         {
             var players = await _context.Players
-                .OrderByDescending(p => p.item)
-                .ThenBy(p => p.TimePlayed)
                 .ToListAsync();
 
-            var leaderboard = players.Select((p, index) => new
-            {
-                Rank = index + 1,
-                p.username,
-                p.item,
-                TimePlayed = TimeSpan.FromSeconds(p.TimePlayed).ToString(@"hh\:mm\:ss")
-            });
+            var leaderboard = players
+                .OrderByDescending(p => p.ItemCollection.Count) // urut berdasarkan jumlah item
+                .ThenByDescending(p => p.coins)
+                .Select((p, index) => new
+                {
+                    Rank = index + 1,
+                    p.username,
+                    TotalItems = p.ItemCollection.Count,
+                    Coins = p.coins,
+                    TimePlayed = TimeSpan.FromSeconds(p.TimePlayed).ToString(@"hh\:mm\:ss")
+                });
 
             return Ok(leaderboard);
         }
@@ -237,7 +248,6 @@ namespace Backend.Controllers
             });
         }
 
-
         // Model request tambahan
         public class RegisterRequest
         {
@@ -257,9 +267,9 @@ namespace Backend.Controllers
             public string Password { get; set; } = string.Empty;
         }
 
-        public class UpdateItemRequest
+        public class UpdateCoinRequest
         {
-            public int Items { get; set; }
+            public int Coins { get; set; }
         }
 
         public class AddItemRequest

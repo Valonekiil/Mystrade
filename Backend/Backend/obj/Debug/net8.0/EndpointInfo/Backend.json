@@ -105,6 +105,26 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
       }
@@ -270,7 +290,7 @@
         }
       }
     },
-    "/Players/{id}/items": {
+    "/Players/{id}/coins": {
       "patch": {
         "tags": [
           "Players"
@@ -290,17 +310,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateItemRequest"
+                "$ref": "#/components/schemas/UpdateCoinRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateItemRequest"
+                "$ref": "#/components/schemas/UpdateCoinRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateItemRequest"
+                "$ref": "#/components/schemas/UpdateCoinRequest"
               }
             }
           }
@@ -638,7 +658,7 @@
             "type": "string",
             "nullable": true
           },
-          "item": {
+          "coins": {
             "type": "integer",
             "format": "int32"
           },
@@ -708,10 +728,10 @@
         },
         "additionalProperties": false
       },
-      "UpdateItemRequest": {
+      "UpdateCoinRequest": {
         "type": "object",
         "properties": {
-          "items": {
+          "coins": {
             "type": "integer",
             "format": "int32"
           }
