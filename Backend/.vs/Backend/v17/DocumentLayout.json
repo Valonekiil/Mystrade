@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\",
+  "WorkspaceRootPath": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\val\\documents\\project\\mystrade\\backend\\backend\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\valone\\documents\\project_godot\\mystrade\\backend\\backend\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\val\\documents\\project\\mystrade\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\valone\\documents\\project_godot\\mystrade\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\val\\documents\\project\\mystrade\\backend\\backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\valone\\documents\\project_godot\\mystrade\\backend\\backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\val\\documents\\project\\mystrade\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\valone\\documents\\project_godot\\mystrade\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\val\\documents\\project\\mystrade\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|c:\\users\\valone\\documents\\project_godot\\mystrade\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5FDAD8C-4844-4DB9-98D2-F9F2EAF9F219}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -40,24 +40,23 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Backend\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Properties\\launchSettings.json",
               "RelativeToolTip": "Backend\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-26T06:41:43.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:41:43.94Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "PlayersController.cs",
-              "DocumentMoniker": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Controllers\\PlayersController.cs",
+              "DocumentMoniker": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Controllers\\PlayersController.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\PlayersController.cs",
-              "ToolTip": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Controllers\\PlayersController.cs",
+              "ToolTip": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Controllers\\PlayersController.cs",
               "RelativeToolTip": "Backend\\Controllers\\PlayersController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAD4v1sAAAAJAAAAAAAAAA==",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAowHEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T06:22:40.505Z",
               "EditorCaption": ""
@@ -66,40 +65,37 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
-              "ToolTip": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Program.cs",
               "RelativeToolTip": "Backend\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T06:21:15.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:21:15.295Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Data\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Backend\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T06:14:20.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:14:20.994Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Models\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Backend\\Models\\Player.cs",
-              "ToolTip": "C:\\Users\\Val\\Documents\\Project\\Mystrade\\Backend\\Backend\\Models\\Player.cs",
+              "ToolTip": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Models\\Player.cs",
               "RelativeToolTip": "Backend\\Models\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T06:12:50.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T06:12:50.877Z"
             }
           ]
         }

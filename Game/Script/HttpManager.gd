@@ -73,7 +73,6 @@ func _on_get_player_completed(result: int, response_code: int, headers: PackedSt
 	else:
 		get_player_completed.emit(null, "GET request failed")
 
-# GET semua players
 func get_all_players() -> void:
 	var url = BASE_URL + "/players"
 	
@@ -155,3 +154,36 @@ func _on_update_items_completed(result: int, response_code: int, headers: Packed
 		print("Items updated: ", response)
 	else:
 		update_items_completed.emit(null, "Failed to update items")
+
+func login_player(username: String, password: String) -> void:
+	var url = BASE_URL + "/players/login"
+	
+	var json_data = JSON.stringify({
+		"username": username,
+		"password": password
+	})
+	
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_login_completed.bind(http_request))
+	
+	var headers = ["Content-Type: application/json"]
+	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_data)
+	
+	if error != OK:
+		push_error("Login request failed")
+
+func _on_login_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray, http_request: HTTPRequest):
+	http_request.queue_free()
+	
+	if result == HTTPRequest.RESULT_SUCCESS:
+		if response_code == 200:
+			var response = JSON.parse_string(body.get_string_from_utf8())
+			login_success.emit(response)
+			print("Login berhasil! Player data: ", response)
+		elif response_code == 401:
+			login_failed.emit("Username atau password salah")
+		else:
+			login_failed.emit("Login gagal: " + str(response_code))
+	else:
+		login_failed.emit("HTTP request failed")

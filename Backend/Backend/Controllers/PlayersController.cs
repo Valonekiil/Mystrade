@@ -90,6 +90,28 @@ namespace Backend.Controllers
 
             return Ok(player);
         }
+        // POST: api/players/login
+        [HttpPost("login")]
+        public async Task<ActionResult<Player>> Login([FromBody] LoginRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
+                return BadRequest("Username dan password wajib diisi.");
+
+            var player = await _context.Players
+                .FirstOrDefaultAsync(p => p.username == request.Username && p.password == request.Password);
+
+            if (player == null)
+                return Unauthorized("Username atau password salah.");
+
+            return Ok(player);
+        }
+
+        // DTO untuk login
+        public class LoginRequest
+        {
+            public string Username { get; set; } = string.Empty;
+            public string Password { get; set; } = string.Empty;
+        }
         private bool PlayerExists(int id)
         {
             return _context.Players.Any(e => e.Id == id);

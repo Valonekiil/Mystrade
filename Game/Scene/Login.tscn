@@ -166,3 +166,4 @@ text = "Start"
 [connection signal="pressed" from="Button" to="." method="_on_register_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_update_button_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_get_player_button_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_start_button_pressed"]
