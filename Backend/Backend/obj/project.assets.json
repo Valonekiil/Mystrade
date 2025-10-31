@@ -3656,19 +3656,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Valone\\.nuget\\packages\\": {}
+    "C:\\Users\\hiyos\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Backend.csproj",
+      "projectUniqueName": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\Backend.csproj",
-      "packagesPath": "C:\\Users\\Valone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Valone\\Documents\\Project_Godot\\mystrade\\Backend\\Backend\\obj\\",
+      "projectPath": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\Backend.csproj",
+      "packagesPath": "C:\\Users\\hiyos\\.nuget\\packages\\",
+      "outputPath": "S:\\Giyhub\\Mystrade\\Backend\\Backend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Valone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hiyos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3693,7 +3698,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -3747,7 +3753,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

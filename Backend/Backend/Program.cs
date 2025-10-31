@@ -1,4 +1,4 @@
-using Backend.Data;
+﻿using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,8 +30,17 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+
+    try
+    {
+        db.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Gagal melakukan migrasi otomatis: " + ex.Message);
+    }
 }
+
 
 // Aktifkan Swagger di development
 if (app.Environment.IsDevelopment())

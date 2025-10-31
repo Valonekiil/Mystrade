@@ -18,8 +18,9 @@ namespace Backend.Controllers
             _context = context;
         }
 
-        // GET: api/players
+        // GET semua player
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
         {
             var players = await _context.Players
@@ -29,71 +30,160 @@ namespace Backend.Controllers
             return Ok(players);
         }
 
-        // GET: api/players/5
+        // GET player berdasarkan ID
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Player>> GetPlayer(int id)
         {
             var player = await _context.Players.FindAsync(id);
             if (player == null)
                 return NotFound();
 
-            return player;
+            return Ok(player);
         }
 
-        // POST: api/players
+        // REGISTER Player baru
         [HttpPost]
-        public async Task<ActionResult<Player>> AddPlayer(Player player)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<Player>> AddPlayer([FromBody] RegisterRequest request)
         {
-            if (string.IsNullOrWhiteSpace(player.username) || string.IsNullOrWhiteSpace(player.password))
+            if (request == null)
+                return BadRequest("Body tidak boleh kosong.");
+
+            if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
                 return BadRequest("Username dan password wajib diisi.");
+
+            var player = new Player
+            {
+                username = request.Username,
+                password = request.Password,
+                item = 0,
+                TimePlayed = 0,
+                LastPlayed = DateTime.UtcNow,
+                ItemCollection = new List<int>()
+            };
 
             _context.Players.Add(player);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetPlayers), new { id = player.Id }, player);
+            return CreatedAtAction(nameof(GetPlayer), new { id = player.Id }, player);
         }
 
-        // PUT: api/players/5  
+        // UPDATE data player
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePlayer(int id, Player player)
-        {
-            if (id != player.Id)
-                return BadRequest();
-
-            _context.Entry(player).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PlayerExists(id))
-                    return NotFound();
-                else
-                    throw;
-            }
-
-            return Ok(player);
-        }
-
-        // PATCH: api/players/5/items
-        [HttpPatch("{id}/items")]
-        public async Task<ActionResult<Player>> UpdatePlayerItems(int id, [FromBody] int items)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdatePlayer(int id, [FromBody] UpdateRequest request)
         {
             var player = await _context.Players.FindAsync(id);
             if (player == null)
                 return NotFound();
 
-            player.item = items;
+            if (request != null)
+            {
+                player.username = request.Username ?? player.username;
+                player.password = request.Password ?? player.password;
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok(player);
+        }
+
+        // PATCH item count (gunakan JSON)
+        [HttpPatch("{id}/items")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<Player>> UpdatePlayerItems(int id, [FromBody] UpdateItemRequest request)
+        {
+            if (request == null)
+                return BadRequest("Body tidak boleh kosong.");
+
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound();
+
+            player.item = request.Items;
             await _context.SaveChangesAsync();
 
             return Ok(player);
         }
-        // POST: api/players/login
+
+        // Tambah item ke koleksi player
+        [HttpPatch("{id}/items/add")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> AddItem(int id, [FromBody] AddItemRequest request)
+        {
+            if (request == null)
+                return BadRequest("Body tidak boleh kosong.");
+
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound();
+
+            if (!player.ItemCollection.Contains(request.NewItem))
+                player.ItemCollection.Add(request.NewItem);
+
+            await _context.SaveChangesAsync();
+
+            return Ok(player.ItemCollection);
+        }
+
+        // Start game
+        [HttpPost("{id}/start-game")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> StartGame(int id)
+        {
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound();
+
+            player.LastPlayed = DateTime.UtcNow;
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                Message = $"Player {player.username} started playing.",
+                player.LastPlayed
+            });
+        }
+
+        // End game
+        [HttpPost("{id}/end-game")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> EndGame(int id)
+        {
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound();
+
+            if (player.LastPlayed == null)
+                return BadRequest("Game was not started properly.");
+
+            var duration = (DateTime.UtcNow - player.LastPlayed.Value).TotalSeconds;
+            player.TimePlayed += (int)duration;
+            player.LastPlayed = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                Message = $"Game ended. Session duration: {duration} seconds",
+                TotalTimePlayed = player.FormattedTime
+            });
+        }
+
+        // LOGIN
         [HttpPost("login")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<Player>> Login([FromBody] LoginRequest request)
         {
+            if (request == null)
+                return BadRequest("Body tidak boleh kosong.");
+
             if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
                 return BadRequest("Username dan password wajib diisi.");
 
@@ -106,15 +196,75 @@ namespace Backend.Controllers
             return Ok(player);
         }
 
-        // DTO untuk login
+        // LEADERBOARD
+        [HttpGet("leaderboard")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<object>>> GetLeaderboard()
+        {
+            var players = await _context.Players
+                .OrderByDescending(p => p.item)
+                .ThenBy(p => p.TimePlayed)
+                .ToListAsync();
+
+            var leaderboard = players.Select((p, index) => new
+            {
+                Rank = index + 1,
+                p.username,
+                p.item,
+                TimePlayed = TimeSpan.FromSeconds(p.TimePlayed).ToString(@"hh\:mm\:ss")
+            });
+
+            return Ok(leaderboard);
+        }
+
+        // DELETE: Players/{id}
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeletePlayer(int id)
+        {
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound(new { Message = $"Player dengan ID {id} tidak ditemukan." });
+
+            _context.Players.Remove(player);
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                Message = $"Player {player.username} berhasil dihapus.",
+                DeletedId = id
+            });
+        }
+
+
+        // Model request tambahan
+        public class RegisterRequest
+        {
+            public string Username { get; set; } = string.Empty;
+            public string Password { get; set; } = string.Empty;
+        }
+
+        public class UpdateRequest
+        {
+            public string? Username { get; set; }
+            public string? Password { get; set; }
+        }
+
         public class LoginRequest
         {
             public string Username { get; set; } = string.Empty;
             public string Password { get; set; } = string.Empty;
         }
-        private bool PlayerExists(int id)
+
+        public class UpdateItemRequest
         {
-            return _context.Players.Any(e => e.Id == id);
+            public int Items { get; set; }
+        }
+
+        public class AddItemRequest
+        {
+            public int NewItem { get; set; }
         }
     }
 }
