@@ -188,7 +188,7 @@ namespace Backend.Controllers
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<Player>> Login([FromBody] LoginRequest request)
+        public async Task<ActionResult<object>> Login([FromBody] LoginRequest request)  // ← GANTI KE object
         {
             if (request == null)
                 return BadRequest("Body tidak boleh kosong.");
@@ -202,7 +202,17 @@ namespace Backend.Controllers
             if (player == null)
                 return Unauthorized("Username atau password salah.");
 
-            return Ok(player);
+            // ⬇️ CONVERT KE ANONYMOUS OBJECT EXPLICIT ⬇️
+            return Ok(new
+            {
+                id = player.Id,
+                username = player.username,
+                password = player.password,
+                coins = player.coins,
+                timePlayed = player.TimePlayed,
+                lastPlayed = player.LastPlayed,
+                itemCollection = player.ItemCollection
+            });
         }
 
         // leaderboard: Berdasarkan jumlah total item di koleksi

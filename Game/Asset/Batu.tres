@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 [resource]
 script = ExtResource("3_b0ix0")
 name = "Batu"
-scaling = 0
+scaling = null
 sprite = ExtResource("4_0jwgq")
 worth = 100
 desc = "Hanya sebuah batu biasa yang banyak di jumpai di pinggir jalan dan sungai"
