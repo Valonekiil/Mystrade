@@ -54,7 +54,8 @@ func _on_bought()-> void:
 	if item.unlocked:
 		pop_up_push(item,"Selamat kamu membeli")
 	else:
-		StateManager.unlock_item(item.name)
+		GameDataManager.unlock_item(item.name)
+		GameDataManager.unlock_player_item(item)
 		pop_up_push(item,"Selamat kamu menemukan")
 	main.cur_cus.get_the_hell_out()
 	_on_cus_leave()

@@ -503,24 +503,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Player"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Player"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Player"
-                }
-              }
-            }
+            "description": "OK"
           },
           "401": {
             "description": "Unauthorized",
@@ -669,6 +652,10 @@
           "lastPlayed": {
             "type": "string",
             "format": "date-time",
+            "nullable": true
+          },
+          "itemCollectionData": {
+            "type": "string",
             "nullable": true
           },
           "itemCollection": {

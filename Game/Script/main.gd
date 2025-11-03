@@ -8,6 +8,9 @@ extends Node2D
 var cur_cus:Customer
 
 func _ready() -> void:
+	if GameDataManager.current_player:
+		print("Halo pemain " + GameDataManager.current_player.username)
+		update_ui()
 	GameDataManager.player_data_updated.connect(update_ui)
 	spawn_costumer()
 	
@@ -40,7 +43,7 @@ func customer_cleared():
 
 func update_ui():
 	var data:PlayerData = GameDataManager.current_player
-	Gold_Lbl.text = "Gold: " + str(data.items)
+	Gold_Lbl.text = "Gold: " + str(data.coins)
 
 func buy_item():
 	pass

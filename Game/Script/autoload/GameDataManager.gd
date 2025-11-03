@@ -123,7 +123,6 @@ func _on_login_failed(error_message):
 func start_playing():
 	if current_player:
 		is_playing = true
-		current_player.last_played = Time.get_datetime_string_from_system()
 		play_timer.start()
 		auto_save_timer.start()
 		save_local_player_data()
@@ -134,7 +133,6 @@ func stop_playing():
 		is_playing = false
 		play_timer.stop()
 		auto_save_timer.stop()
-		current_player.last_played = Time.get_datetime_string_from_system()
 		save_local_player_data()
 		HTTPManager.end_game_session(current_player.player_id)
 
@@ -208,7 +206,6 @@ func sync_to_server():
 			"password": current_player.password,
 			"coins": current_player.coins,
 			"timePlayed": current_player.time_played,
-			"lastPlayed": current_player.last_played,
 			"itemCollection": current_player.item_collection
 		}
 		HTTPManager.update_player(current_player.player_id, update_data)

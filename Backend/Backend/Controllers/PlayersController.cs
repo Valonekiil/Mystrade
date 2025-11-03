@@ -119,7 +119,6 @@ namespace Backend.Controllers
             return Ok(player);
         }
 
-        // Tambah item ke koleksi player
         [HttpPatch("{id}/items/add")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -132,13 +131,17 @@ namespace Backend.Controllers
             if (player == null)
                 return NotFound();
 
-            if (!player.ItemCollection.Contains(request.NewItem))
-                player.ItemCollection.Add(request.NewItem);
-
-            await _context.SaveChangesAsync();
+            var items = player.ItemCollection;          // baca (deserialize) aman
+            if (!items.Contains(request.NewItem))
+            {
+                items.Add(request.NewItem);
+                player.ItemCollection = items;          // assign kembali biar setter serializes
+                await _context.SaveChangesAsync();
+            }
 
             return Ok(player.ItemCollection);
         }
+
 
         // Start game
         [HttpPost("{id}/start-game")]
@@ -210,7 +213,6 @@ namespace Backend.Controllers
                 password = player.password,
                 coins = player.coins,
                 timePlayed = player.TimePlayed,
-                lastPlayed = player.LastPlayed,
                 itemCollection = player.ItemCollection
             });
         }

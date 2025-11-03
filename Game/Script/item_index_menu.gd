@@ -8,14 +8,14 @@ extends ColorRect
 @onready var Item_Worth = $Panel/HBoxContainer/Label
 
 func _ready() -> void:
-	StateManager.show_item.connect(show_item)
+	GameDataManager.show_item.connect(show_item)
 	visibility_changed.connect(_on_visibility_changed)
 
 func show_unlocked_item():
 	for v in Slot_Con.get_children():
 		v.queue_free()
 	
-	var items = StateManager.get_unlocked_items()
+	var items = GameDataManager.get_unlocked_items()
 	for item in items:
 		var display:Item_Slot = Slot.instantiate()
 		display.item = item

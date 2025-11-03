@@ -6,8 +6,7 @@ class_name PlayerData
 @export var password: String
 @export var coins: int = 0
 @export var time_played: int = 0  # dalam detik
-@export var last_played: String = ""
-@export var item_collection: Array[int] = []  # ID dari Item_Base yang unlocked
+@export var item_collection: Array # ID dari Item_Base yang unlocked
 
 func update_from_api(api_data: Dictionary):
 	# PAKE .get() DENGAN DEFAULT VALUE
@@ -16,7 +15,6 @@ func update_from_api(api_data: Dictionary):
 	password = api_data.get("password", password)  # ← INI JUGA
 	coins = api_data.get("coins", coins)
 	time_played = api_data.get("timePlayed", time_played)
-	last_played = api_data.get("lastPlayed", last_played)
 	item_collection = api_data.get("itemCollection", item_collection)
 
 func to_api_dict() -> Dictionary:
@@ -26,7 +24,6 @@ func to_api_dict() -> Dictionary:
 		"password": password,
 		"coins": coins,
 		"timePlayed": time_played,
-		"lastPlayed": last_played,
 		"itemCollection": item_collection
 	}
 

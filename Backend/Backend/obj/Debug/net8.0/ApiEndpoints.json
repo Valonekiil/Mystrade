@@ -321,12 +321,8 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Backend.Models.Player",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       },
       {

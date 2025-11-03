@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_focus_entered() -> void:
 	darker.visible = false
-	StateManager.show_item.emit(item)
+	GameDataManager.show_item.emit(item)
 	print("sekarang focus ke " + item.name )
 
 func _on_focus_exited() -> void:

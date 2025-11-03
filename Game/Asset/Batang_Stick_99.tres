@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Item_Base" load_steps=7 format=3 uid="uid://c51cyq0567fk2"]
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://c51cyq0567fk2"]
 
 [ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_fm7p6"]
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_ddjeg"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_wjhp4"]
 [ext_resource type="Texture2D" uid="uid://ch80w0t5ra34" path="res://Asset/Batang.png" id="3_ddjeg"]
+[ext_resource type="Texture2D" uid="uid://cq65yjs1os38u" path="res://Asset/Batang_Misterius.png" id="3_qrh3l"]
 
 [sub_resource type="Resource" id="Resource_qrh3l"]
 script = ExtResource("2_ddjeg")
@@ -18,9 +19,11 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
 [resource]
 script = ExtResource("2_wjhp4")
+id = 0
 name = "99+ Batang Kayu "
 scaling = 10
 sprite = ExtResource("3_ddjeg")
+mysprite = ExtResource("3_qrh3l")
 worth = 2000
 desc = "Ini adalah batang kayu terkuat dalam semesta yang telah di segel oleh para heavenly being karena terlalu berbahaya jika sampai ke tangan yang salah"
 dialogue = Array[ExtResource("1_fm7p6")]([SubResource("Resource_eboce")])

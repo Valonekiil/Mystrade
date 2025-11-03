@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Item_Base" load_steps=7 format=3 uid="uid://pv8m0wh33cwu"]
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://pv8m0wh33cwu"]
 
 [ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_ybgsk"]
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_khxoa"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="3_b0ix0"]
+[ext_resource type="Texture2D" uid="uid://b3i6fert1ge6d" path="res://Asset/Batu_Misterius.png" id="3_khxoa"]
 [ext_resource type="Texture2D" uid="uid://wiwho3l68x7v" path="res://Asset/Batu.png" id="4_0jwgq"]
 
 [sub_resource type="Resource" id="Resource_1yeup"]
@@ -18,9 +19,11 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
 [resource]
 script = ExtResource("3_b0ix0")
+id = 0
 name = "Batu"
 scaling = null
 sprite = ExtResource("4_0jwgq")
+mysprite = ExtResource("3_khxoa")
 worth = 100
 desc = "Hanya sebuah batu biasa yang banyak di jumpai di pinggir jalan dan sungai"
 dialogue = Array[ExtResource("1_ybgsk")]([SubResource("Resource_3xrix")])
