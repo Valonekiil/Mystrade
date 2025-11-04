@@ -10,6 +10,7 @@ extends ColorRect
 func _ready() -> void:
 	GameDataManager.show_item.connect(show_item)
 	visibility_changed.connect(_on_visibility_changed)
+	show_unlocked_item()
 
 func show_unlocked_item():
 	for v in Slot_Con.get_children():

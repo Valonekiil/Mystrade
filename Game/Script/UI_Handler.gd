@@ -11,6 +11,8 @@ extends CanvasLayer
 @onready var Notif_Sprite =$Popup/Pop_up/Sprite
 @onready var Notif_Worth =$Popup/Pop_up/HBoxContainer/Worth
 @onready var Kamus = $Item_Index
+@onready var qte = $QTE
+var Price:int
 var main
 
 func _ready() -> void:
@@ -21,6 +23,7 @@ func _ready() -> void:
 	Egx_Btn.disabled = true
 	Dsc_Btn.disabled = true
 	Dialog.finished.connect(_finish_ask)
+	qte.discount.connect(after_bargain)
 
 func _customer_appear():
 	Ask_Btn.disabled = false
@@ -39,6 +42,8 @@ func _on_ask() -> void:
 	print($Dialogue_Manager/Panel.visible)
 
 func _finish_ask()-> void:
+	Price = main.cur_cus.item.worth
+	main.cur_cus.set_price(Price)
 	Acc_Btn.disabled = false
 	Egx_Btn.disabled = false
 	Dsc_Btn.disabled = false
@@ -50,6 +55,10 @@ func _on_cus_leave():
 	Dsc_Btn.disabled = true
 
 func _on_bought()-> void:
+	if GameDataManager.current_player.coins <= Price:
+		_on_decline()
+		return
+	GameDataManager.spend_coins(Price)
 	var item = main.cur_cus.item
 	if item.unlocked:
 		pop_up_push(item,"Selamat!\n kamu membeli")
@@ -57,16 +66,30 @@ func _on_bought()-> void:
 		GameDataManager.unlock_item(item.name)
 		GameDataManager.unlock_player_item(item)
 		pop_up_push(item,"Selamat\n kamu menemukan")
+	GameDataManager.add_coins(item.worth)
 	main.cur_cus.get_the_hell_out()
 	_on_cus_leave()
 
 func _on_decline()-> void:
-	
+	print("customer pergi dengan kecewa")
 	main.cur_cus.get_the_hell_out()
 	_on_cus_leave()
 
 func _on_bargain()-> void:
-	pass
+	Acc_Btn.disabled = true
+	Egx_Btn.disabled = true
+	Dsc_Btn.disabled = true
+	qte.Start_Qte()
+
+func after_bargain(v:int):
+	print("Harga lama: ", Price)
+	var original_price = Price
+	var discount_amount = original_price * (float(v) / 100.0)
+	Price = original_price - discount_amount
+	print("Discount: ", v, "% - Harga baru: ", Price)
+	Acc_Btn.disabled = false
+	Egx_Btn.disabled = false
+	main.cur_cus.set_price(Price)
 
 func pop_up_push(item:Item_Base, msg:String):
 	Notif_Msg.text = msg

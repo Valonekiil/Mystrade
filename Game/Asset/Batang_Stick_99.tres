@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
 [resource]
 script = ExtResource("2_wjhp4")
-id = 0
+id = 1
 name = "99+ Batang Kayu "
 scaling = 10
 sprite = ExtResource("3_ddjeg")

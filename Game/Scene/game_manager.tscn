@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dohvcperos6dq"]
+[gd_scene load_steps=14 format=3 uid="uid://dohvcperos6dq"]
 
 [ext_resource type="Script" uid="uid://c61gbhjje7ujv" path="res://Script/autoload/GameDataManager.gd" id="1_5n28g"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_0612n"]
 [ext_resource type="Resource" uid="uid://c51cyq0567fk2" path="res://Asset/Batang_Stick_99.tres" id="3_l0m7i"]
 [ext_resource type="Resource" uid="uid://pv8m0wh33cwu" path="res://Asset/Batu.tres" id="4_kd2dw"]
 [ext_resource type="Script" uid="uid://cf8k8pqr3eh1v" path="res://Script/customer_resource.gd" id="5_fp4eu"]
+[ext_resource type="Resource" uid="uid://c2ad3odph5pa2" path="res://Asset/Buah_Kuldi.tres" id="5_l0m7i"]
+[ext_resource type="Resource" uid="uid://1vfgtdo87r2g" path="res://Asset/Ranting_Pohon_Dunia.tres" id="6_kd2dw"]
 [ext_resource type="Texture2D" uid="uid://b2tptvhap14dc" path="res://Asset/Tak berjudul91_20251029182341.png" id="6_llyhm"]
 [ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="7_1g63r"]
 [ext_resource type="Texture2D" uid="uid://bl2y2oecbvgtl" path="res://Asset/Tak berjudul93_20251029182320.png" id="8_vp4th"]
@@ -32,5 +34,5 @@ metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [node name="GameDataManager" type="Node"]
 script = ExtResource("1_5n28g")
-all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw")])
+all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw"), ExtResource("5_l0m7i"), ExtResource("6_kd2dw")])
 all_customers = Array[ExtResource("5_fp4eu")]([SubResource("Resource_m51ev"), SubResource("Resource_25b5f"), SubResource("Resource_77xop")])

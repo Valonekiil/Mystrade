@@ -8,6 +8,7 @@ var item:Item_Base
 var spawn:Marker2D
 var stand:Marker2D
 var bubub:TextureRect
+var price_node:Label
 
 func _ready() -> void:
 	var twin:Tween = create_tween()
@@ -37,10 +38,20 @@ func on_stand_point():
 	bubble.add_child(CC)
 	CC.add_child(item_node)
 	bubub = bubble
+	var price:Label = Label.new()
+	var font = price.get_theme_font("font")
+	var font_size = 40
+	price.add_theme_font_size_override("font_size", font_size)
+	price.position = Vector2(178.75, 5.0)
+	price.size = Vector2(158.0, 55.0) 
+	price.rotation_degrees = 40.0
+	bubble.add_child(price)
+	price_node = price
 	get_tree().current_scene.cur_cus = self
+	
 
-func show_item():
-	var item = TextureRect.new()
+func set_price(v:int):
+	price_node.text = str(v)
 	
 
 func get_the_hell_out():

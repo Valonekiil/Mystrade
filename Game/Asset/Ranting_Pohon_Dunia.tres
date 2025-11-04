@@ -18,6 +18,7 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
 [resource]
 script = ExtResource("3_p8rua")
+id = 5
 name = "Ranting pohon dunia"
 scaling = 5
 sprite = ExtResource("4_gfm8a")

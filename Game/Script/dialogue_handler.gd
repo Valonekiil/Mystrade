@@ -31,16 +31,16 @@ func load_dialogue(index:Dialog_Convo ):
 		ftime = false
 		get_tree().paused = true
 		#GlobalSignal.impaused = true
-	var raw_text = dialogue_conv[dialogue_index]
-	var final_text = replace_placeholders(raw_text, current_item)
-	Dialogue.text = final_text
 	DialogueBox.visible = true
 	Dialogue.visible = true
 	if dialogue_index < dialogue_conv.size():
 		is_talking = true
 		print("dialog ke " + str(dialogue_index))
+		var raw_text = dialogue_conv[dialogue_index]
+		var final_text = replace_placeholders(raw_text, current_item)
+		Dialogue.text = final_text
 		dialogue_finished = false
-		Dialogue.text = dialogue_conv[dialogue_index]
+		#Dialogue.text = dialogue_conv[dialogue_index]
 		Dialogue.visible_ratio = 0
 		var duration = Dialogue.text.length() * 0.05
 		var tween = create_tween()

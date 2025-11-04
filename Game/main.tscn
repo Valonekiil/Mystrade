@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dexhfjkyfs76y"]
+[gd_scene load_steps=11 format=3 uid="uid://dexhfjkyfs76y"]
 
 [ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d007fr00smds7" path="res://icon.svg" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://0dgphx1gv253" path="res://Asset/Batang_Bloody.png" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Bargain_Box.gd" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://c36kxmin266fh" path="res://Asset/Tak berjudul114_20251104125104.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://6heh0wvjhqae" path="res://Asset/Tak berjudul114_20251104125111.png" id="10_efxa6"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
@@ -376,7 +378,7 @@ theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Ask"
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="QTE" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -390,32 +392,32 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("8_5vw27")
 
-[node name="BG" type="Sprite2D" parent="CanvasLayer/Control"]
-scale = Vector2(0.226563, 1.39063)
-texture = ExtResource("5_272bh")
+[node name="BG" type="Sprite2D" parent="CanvasLayer/QTE"]
+texture = ExtResource("9_4c57u")
 
-[node name="CRSR" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="CRSR" type="Sprite2D" parent="CanvasLayer/QTE"]
 position = Vector2(0, 1.21593e-05)
-scale = Vector2(0.484375, 0.0781251)
-texture = ExtResource("5_272bh")
+texture = ExtResource("10_efxa6")
+vframes = 6
+frame = 5
 
-[node name="StartPoint" type="Marker2D" parent="CanvasLayer/Control"]
-position = Vector2(0, -90)
+[node name="StartPoint" type="Marker2D" parent="CanvasLayer/QTE"]
+position = Vector2(0, -109)
 
-[node name="AverageStart" type="Marker2D" parent="CanvasLayer/Control"]
-position = Vector2(0, -50)
+[node name="AverageStart" type="Marker2D" parent="CanvasLayer/QTE"]
+position = Vector2(0, -72.5)
 
-[node name="SuccesStart" type="Marker2D" parent="CanvasLayer/Control"]
-position = Vector2(0, -10)
+[node name="SuccesStart" type="Marker2D" parent="CanvasLayer/QTE"]
+position = Vector2(0, -22.5)
 
-[node name="SuccesEnd" type="Marker2D" parent="CanvasLayer/Control"]
-position = Vector2(0, 10)
+[node name="SuccesEnd" type="Marker2D" parent="CanvasLayer/QTE"]
+position = Vector2(0, 22.5)
 
-[node name="AverageEnd" type="Marker2D" parent="CanvasLayer/Control"]
-position = Vector2(0, 50)
+[node name="AverageEnd" type="Marker2D" parent="CanvasLayer/QTE"]
+position = Vector2(0, 72.5)
 
-[node name="EndPoint" type="Marker2D" parent="CanvasLayer/Control"]
-position = Vector2(0, 90)
+[node name="EndPoint" type="Marker2D" parent="CanvasLayer/QTE"]
+position = Vector2(0, 109)
 
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(-100, 350)
@@ -429,5 +431,7 @@ one_shot = true
 
 [connection signal="draw" from="CanvasLayer/Item_Index" to="CanvasLayer/Item_Index" method="_on_draw"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="_on_bought"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer" method="_on_decline"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button3" to="CanvasLayer" method="_on_bargain"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button4" to="CanvasLayer" method="_on_ask"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
