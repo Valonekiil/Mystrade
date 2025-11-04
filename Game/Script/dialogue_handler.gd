@@ -21,8 +21,9 @@ var convo:Dialog_Convo
 var conversations: Array[Convo_Res]
 var cur_conv:int = 0 
 var twin:Tween
+var current_item:Item_Base
 
-func load_dialogue(index:Dialog_Convo):
+func load_dialogue(index:Dialog_Convo ):
 	if ftime:
 		print("first time = " + index.resource_name)
 		convo = index
@@ -30,6 +31,9 @@ func load_dialogue(index:Dialog_Convo):
 		ftime = false
 		get_tree().paused = true
 		#GlobalSignal.impaused = true
+	var raw_text = dialogue_conv[dialogue_index]
+	var final_text = replace_placeholders(raw_text, current_item)
+	Dialogue.text = final_text
 	DialogueBox.visible = true
 	Dialogue.visible = true
 	if dialogue_index < dialogue_conv.size():
@@ -60,6 +64,18 @@ func load_dialogue(index:Dialog_Convo):
 		#GlobalSignal.impaused = false
 	dialogue_index += 1
 
+func replace_placeholders(text: String, item: Item_Base) -> String:
+	if item == null:
+		return text
+	
+	var result = text
+	result = result.replace("%v", str(item.get_scaled_price()))  # Harga setelah scaling
+	result = result.replace("%n", item.name)                    # Nama item
+	result = result.replace("%s", str(item.scaling))           # Scaling value
+	result = result.replace("%w", str(item.worth))             # Harga dasar
+	result = result.replace("%d", item.desc)                   # Deskripsi
+	return result
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_SPACE) and is_talking:
 		if is_talking and dialogue_finished:
@@ -69,7 +85,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			twin.kill()
 			Dialogue.visible_ratio = 1
 		elif get_tree().current_scene.cur_cus != null and !is_talking:
-			conversations = get_tree().current_scene.cur_cus.item.dialogue
+			current_item = get_tree().current_scene.cur_cus.item
+			conversations = current_item.dialogue
 			talking()
 
 func on_tween_finished():

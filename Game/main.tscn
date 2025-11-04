@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dexhfjkyfs76y"]
+[gd_scene load_steps=9 format=3 uid="uid://dexhfjkyfs76y"]
 
 [ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://u4nudam2bbsq" path="res://Script/item_index_menu.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://d007fr00smds7" path="res://icon.svg" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://0dgphx1gv253" path="res://Asset/Batang_Bloody.png" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Bargain_Box.gd" id="8_5vw27"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
@@ -374,6 +375,47 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Ask"
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("8_5vw27")
+
+[node name="BG" type="Sprite2D" parent="CanvasLayer/Control"]
+scale = Vector2(0.226563, 1.39063)
+texture = ExtResource("5_272bh")
+
+[node name="CRSR" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(0, 1.21593e-05)
+scale = Vector2(0.484375, 0.0781251)
+texture = ExtResource("5_272bh")
+
+[node name="StartPoint" type="Marker2D" parent="CanvasLayer/Control"]
+position = Vector2(0, -90)
+
+[node name="AverageStart" type="Marker2D" parent="CanvasLayer/Control"]
+position = Vector2(0, -50)
+
+[node name="SuccesStart" type="Marker2D" parent="CanvasLayer/Control"]
+position = Vector2(0, -10)
+
+[node name="SuccesEnd" type="Marker2D" parent="CanvasLayer/Control"]
+position = Vector2(0, 10)
+
+[node name="AverageEnd" type="Marker2D" parent="CanvasLayer/Control"]
+position = Vector2(0, 50)
+
+[node name="EndPoint" type="Marker2D" parent="CanvasLayer/Control"]
+position = Vector2(0, 90)
 
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(-100, 350)

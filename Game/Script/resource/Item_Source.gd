@@ -10,3 +10,6 @@ class_name Item_Base
 @export_multiline var desc:String
 @export var dialogue:Array[Convo_Res]
 var unlocked:bool
+
+func get_scaled_price() -> int:
+	return worth + (100 * scaling)

@@ -239,11 +239,7 @@ func _on_end_game_completed(result: int, response_code: int, headers: PackedStri
 # Add item to collection (PATCH /players/{id}/items/add)
 func add_item_to_collection(player_id: int, item_id: int) -> void:
 	var url = BASE_URL + "/players/" + str(player_id) + "/items/add"
-	
-	var json_data = JSON.stringify({
-		"newItem": item_id
-	})
-	
+	var json_data = JSON.stringify({"newItem": item_id})
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(_on_add_item_completed.bind(http_request))

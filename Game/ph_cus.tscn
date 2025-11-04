@@ -21,6 +21,12 @@ offset_right = 471.25
 offset_bottom = 47.5
 texture = ExtResource("2_s04f6")
 
+[node name="TextureRect" type="TextureRect" parent="Ellipse11"]
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("3_do2wq")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(922.5, -341.25)
 scale = Vector2(2, 2)

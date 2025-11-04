@@ -7,6 +7,7 @@ var res:Cus_Res
 var item:Item_Base
 var spawn:Marker2D
 var stand:Marker2D
+var bubub:TextureRect
 
 func _ready() -> void:
 	var twin:Tween = create_tween()
@@ -21,17 +22,21 @@ func on_stand_point():
 	#tween.tween_property(self, "self_modulate", Color.WHITE, 1)
 	#tween.set_loops()
 	on_stand.emit()
-	var outline = Sprite2D.new()
-	outline.texture = load("res://icon.svg")
-	outline.modulate = Color(0, 0, 0)  # Cyan outline
-	outline.show_behind_parent = true
-	outline.scale = self.scale * 1.1
-	self.add_child(outline)
+	var bubble = TextureRect.new()
+	bubble.texture = load("res://Asset/Ellipse 10.png") 
+	bubble.position = Vector2(171.25,-202.5)
+	self.add_child(bubble)
 	var item_node = TextureRect.new()
 	if item.unlocked:
 		item_node.texture = item.sprite
 	else:
 		item_node.texture = item.mysprite
+	var CC = CenterContainer.new()
+	CC.anchor_right = 1
+	CC.anchor_bottom = 1
+	bubble.add_child(CC)
+	CC.add_child(item_node)
+	bubub = bubble
 	get_tree().current_scene.cur_cus = self
 
 func show_item():
@@ -39,6 +44,7 @@ func show_item():
 	
 
 func get_the_hell_out():
+	bubub.visible = false
 	var twin:Tween = create_tween()
 	twin.tween_property(self,"global_position", spawn.global_position, 1)
 	twin.set_ease(Tween.EASE_OUT)

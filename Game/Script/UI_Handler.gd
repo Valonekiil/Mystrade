@@ -52,16 +52,18 @@ func _on_cus_leave():
 func _on_bought()-> void:
 	var item = main.cur_cus.item
 	if item.unlocked:
-		pop_up_push(item,"Selamat kamu membeli")
+		pop_up_push(item,"Selamat!\n kamu membeli")
 	else:
 		GameDataManager.unlock_item(item.name)
 		GameDataManager.unlock_player_item(item)
-		pop_up_push(item,"Selamat kamu menemukan")
+		pop_up_push(item,"Selamat\n kamu menemukan")
 	main.cur_cus.get_the_hell_out()
 	_on_cus_leave()
 
 func _on_decline()-> void:
-	pass
+	
+	main.cur_cus.get_the_hell_out()
+	_on_cus_leave()
 
 func _on_bargain()-> void:
 	pass
@@ -72,3 +74,7 @@ func pop_up_push(item:Item_Base, msg:String):
 	Notif_Sprite.texture = item.sprite
 	Notif_Worth.text = str(item.worth)
 	Notif.popup()
+	await get_tree().create_timer(5).timeout
+	if Notif.visible == true:
+		Notif.hide()
+		print("sembunyi paksa")
