@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://daj0dom5gr0gw"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_8etyc"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_r16am"]
+[ext_resource type="Texture2D" uid="uid://dhbgj8l223qwt" path="res://Asset/Arrow_Mysterious.png" id="3_3t5uk"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_brra3"]
+[ext_resource type="Texture2D" uid="uid://cjv1cg3wxdkke" path="res://Asset/Arrow.png" id="5_7rtql"]
+
+[sub_resource type="Resource" id="Resource_u67xi"]
+script = ExtResource("2_r16am")
+lines = ["Brooo!", "Aku punya panah sisa nih, panahnya udah gak cocok sama busur lama ku", "Beliin dong harganya 150 aja"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_3881i"]
+script = ExtResource("1_8etyc")
+convo = SubResource("Resource_u67xi")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("4_brra3")
+id = 2
+name = "Arrow"
+scaling = 0
+sprite = ExtResource("5_7rtql")
+mysprite = ExtResource("3_3t5uk")
+worth = 150
+desc = "Panah basic"
+dialogue = Array[ExtResource("1_8etyc")]([SubResource("Resource_3881i")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

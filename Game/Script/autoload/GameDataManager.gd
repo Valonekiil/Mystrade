@@ -38,13 +38,13 @@ func _ready():
 func setup_timers():
 	# Timer untuk time_played (setiap detik)
 	play_timer = Timer.new()
-	play_timer.wait_time = 1.0
+	play_timer.wait_time = 60
 	play_timer.timeout.connect(_on_play_timer_timeout)
 	add_child(play_timer)
 	
 	# Timer untuk auto-save (setiap 30 detik)
 	auto_save_timer = Timer.new()
-	auto_save_timer.wait_time = 30.0
+	auto_save_timer.wait_time = 120
 	auto_save_timer.timeout.connect(_on_auto_save_timeout)
 	add_child(auto_save_timer)
 
@@ -176,6 +176,26 @@ func get_item_by_id(item_id: int) -> Item_Base:
 			return item
 	return null
 
+func update_last_state(last_cus_id: int, last_item_id: int):
+	if current_player.player_id != -1:
+		current_player.last_customer = last_cus_id
+		current_player.last_item = last_item_id
+		save_local_player_data()
+		
+		# Kirim ke server
+		HTTPManager.update_last_state(current_player.player_id, last_cus_id, last_item_id)
+	sync_to_server()
+
+func reset_last_state():
+	if current_player.player_id != -1:
+		current_player.last_customer = 0
+		current_player.last_item = 0
+		save_local_player_data()
+		
+		# Kirim ke server
+		HTTPManager.reset_last_state(current_player.player_id)
+	sync_to_server()
+
 # ==================== SAVE/LOAD SYSTEM ====================
 func save_local_player_data():
 	if current_player:
@@ -183,9 +203,14 @@ func save_local_player_data():
 
 func load_local_player_data():
 	if FileAccess.file_exists("user://player_data.tres"):
-		current_player = load("user://player_data.tres")
-		# Sync unlocked_items dengan player data
-		sync_unlocked_items_with_player_data()
+		var loaded_player = load("user://player_data.tres")
+		if loaded_player.player_id == -1:
+			print("⚠️ Ghost player detected, creating new instance")
+			current_player = PlayerData.new()
+			current_player.player_id = -1
+		else:
+			current_player = loaded_player
+			print("📂 Loaded player: ", current_player.username)
 	else:
 		current_player = PlayerData.new()
 		current_player.player_id = -1
@@ -201,14 +226,22 @@ func sync_unlocked_items_with_player_data():
 
 func sync_to_server():
 	if current_player.player_id != -1:
+		var int_item_collection: Array[int] = []
+		for item in current_player.item_collection:
+			int_item_collection.append(int(item))
 		var update_data = {
+			"id": current_player.player_id,
 			"username": current_player.username,
 			"password": current_player.password,
 			"coins": current_player.coins,
 			"timePlayed": current_player.time_played,
-			"itemCollection": current_player.item_collection
+			"itemCollection": int_item_collection,
+			"lastCus": current_player.last_customer,      # ⬅️ TAMBAH
+			"lastItem": current_player.last_item
 		}
+		print("📤 Data yang dikirim: ", JSON.stringify(update_data))  # ⬅️ CETAK JSON
 		HTTPManager.update_player(current_player.player_id, update_data)
+		print("habis synct")
 
 func _on_update_completed(updated_player, error_message):
 	if error_message:
@@ -216,6 +249,7 @@ func _on_update_completed(updated_player, error_message):
 	else:
 		print("Sync berhasil!")
 		sync_completed.emit()
+	
 
 # ==================== SYSTEM EVENT HANDLERS ====================
 func _on_window_close_requested():
@@ -228,3 +262,31 @@ func _notification(what):
 			stop_playing()
 		NOTIFICATION_CRASH:
 			stop_playing()
+
+func logout():
+	print("🚪 Logging out player...")
+	
+	# Stop semua timer
+	stop_playing()
+	
+	# Reset current player
+	current_player = null
+	
+	# Hapus local save file
+	delete_local_save()
+	
+	current_player = PlayerData.new()
+	current_player.player_id = -1
+	
+	# Reset state variables
+	is_playing = false
+	is_online = false
+	
+	print("✅ Logout successful!")
+
+func delete_local_save():
+	var save_path = "user://player_data.tres"
+	if FileAccess.file_exists(save_path):
+		var dir = DirAccess.open("user://")
+		dir.remove("player_data.tres")
+		print("🗑️ Local save file deleted")

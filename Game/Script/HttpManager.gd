@@ -9,45 +9,67 @@ signal get_player_completed(player_data, error_message)
 signal get_all_players_completed(players_data, error_message)  
 signal update_player_completed(updated_player, error_message)
 signal update_items_completed(updated_player, error_message)
+signal register_completed(player_data, error_message)
+signal leaderboard_loaded(leaderboard_data, error_message)
 
 func register_player(username: String, password: String) -> void:
 	var url = BASE_URL + "/Players"
 	
+	# Update JSON data sesuai backend yang baru
 	var json_data = JSON.stringify({
 		"username": username,
-		"password": password,
-		"item": 0  # Default value
+		"password": password
+		# coins, timePlayed, dll otomatis 0 di backend
 	})
 	
-	# Create HTTP request
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(_on_register_completed.bind(http_request))
 	
-	# Headers
 	var headers = ["Content-Type: application/json"]
-	
-	# Send POST request
 	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_data)
+	
 	if error != OK:
-		push_error("An error occurred in the HTTP request.")
+		push_error("Register request failed")
 
 func _on_register_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray, http_request: HTTPRequest):
 	http_request.queue_free()
 	
 	if result == HTTPRequest.RESULT_SUCCESS:
-		if response_code == 201: 
+		if response_code == 201:  # Created
 			var response = JSON.parse_string(body.get_string_from_utf8())
-			request_completed.emit(response, "")
-			print("Player registered successfully: ", response)
+			register_completed.emit(response, "")
+			print("✅ Player registered successfully: ", response)
+		elif response_code == 409:  # Conflict - username already exists
+			register_completed.emit(null, "Username sudah terdaftar!")
 		else:
 			var error_message = "Registration failed. Status code: " + str(response_code)
-			request_completed.emit(null, error_message)
-			print(error_message)
+			register_completed.emit(null, error_message)
 	else:
 		var error_message = "HTTP request failed: " + str(result)
-		request_completed.emit(null, error_message)
-		print(error_message)
+		register_completed.emit(null, error_message)
+
+func get_leaderboard() -> void:
+	var url = BASE_URL + "/Players/leaderboard"
+	
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_leaderboard_completed.bind(http_request))
+	
+	var error = http_request.request(url, [], HTTPClient.METHOD_GET)
+	if error != OK:
+		push_error("Leaderboard request failed")
+
+func _on_leaderboard_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray, http_request: HTTPRequest):
+	http_request.queue_free()
+	
+	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
+		var response = JSON.parse_string(body.get_string_from_utf8())
+		leaderboard_loaded.emit(response, "")
+		print("✅ Leaderboard loaded successfully!")
+	else:
+		var error_message = "Gagal load leaderboard: " + str(response_code)
+		leaderboard_loaded.emit([], error_message)
 
 func get_player_by_id(player_id: int) -> void:
 	var url = BASE_URL + "/players/" + str(player_id)

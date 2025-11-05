@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_uq0s7"]
 [ext_resource type="Texture2D" uid="uid://bu7v7xl1n30hp" path="res://Asset/Wrench_Mysterious.png" id="3_1a03a"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_1joqb"]
-[ext_resource type="Texture2D" uid="uid://cd248qw05ll1" path="res://Asset/Wrench.png" id="5_8wwvx"]
 
 [sub_resource type="Resource" id="Resource_48h75"]
 script = ExtResource("2_uq0s7")
@@ -17,12 +16,15 @@ convo = SubResource("Resource_48h75")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbtok"]
+load_path = "res://.godot/imported/Tak berjudul108_20251104125224.png-a584caedb918a465a13cbf61a9ba0672.ctex"
+
 [resource]
 script = ExtResource("4_1joqb")
 id = 14
 name = ""
 scaling = 0
-sprite = ExtResource("5_8wwvx")
+sprite = SubResource("CompressedTexture2D_dbtok")
 mysprite = ExtResource("3_1a03a")
 worth = 175
 desc = "kunci untuk bongkar pasang mesin, bukan kunci untuk membuka pintu

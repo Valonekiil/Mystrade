@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_hl6kk"]
 [ext_resource type="Texture2D" uid="uid://g6q8emce4kwe" path="res://Asset/Bolt_Mysterious.png" id="3_jo4ix"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_5bh2o"]
-[ext_resource type="Texture2D" uid="uid://dg4tdbpj4tfj1" path="res://Asset/Bolt.png" id="5_hfi01"]
 
 [sub_resource type="Resource" id="Resource_cmpet"]
 script = ExtResource("2_hl6kk")
@@ -17,12 +16,15 @@ convo = SubResource("Resource_cmpet")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j5xq8"]
+load_path = "res://.godot/imported/Tak berjudul105_20251104125251.png-33ddb19a9a6b09c84a0192040be2eaa9.ctex"
+
 [resource]
 script = ExtResource("4_5bh2o")
 id = 11
 name = ""
 scaling = 0
-sprite = ExtResource("5_hfi01")
+sprite = SubResource("CompressedTexture2D_j5xq8")
 mysprite = ExtResource("3_jo4ix")
 worth = 90
 desc = "Mur dari robot milik"

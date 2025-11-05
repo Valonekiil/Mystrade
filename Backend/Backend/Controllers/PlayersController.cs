@@ -68,11 +68,14 @@ namespace Backend.Controllers
             {
                 username = request.Username,
                 password = request.Password,
-                coins = 0, 
+                coins = 1000,
                 TimePlayed = 0,
                 LastPlayed = DateTime.UtcNow,
-                ItemCollection = new List<int>()
+                ItemCollection = new List<int>(),
+                last_cus = 0,
+                last_item = 0
             };
+
 
             _context.Players.Add(player);
             await _context.SaveChangesAsync();
@@ -94,6 +97,11 @@ namespace Backend.Controllers
             {
                 player.username = request.Username ?? player.username;
                 player.password = request.Password ?? player.password;
+                player.coins = request.Coins;                  
+                player.TimePlayed = request.TimePlayed;       
+                player.last_cus = request.lastCus;               
+                player.last_item = request.lastItem;             
+                player.ItemCollection = request.ItemCollection;  
             }
 
             await _context.SaveChangesAsync();
@@ -316,6 +324,11 @@ namespace Backend.Controllers
         {
             public string? Username { get; set; }
             public string? Password { get; set; }
+            public int Coins { get; set; }                   
+            public int TimePlayed { get; set; }                      
+            public int lastCus { get; set; }                  
+            public int lastItem { get; set; }                 
+            public List<int> ItemCollection { get; set; } = new List<int>();
         }
 
         public class LoginRequest

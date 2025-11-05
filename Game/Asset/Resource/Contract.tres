@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_uco0f"]
 [ext_resource type="Texture2D" uid="uid://t8lfauh5e8ns" path="res://Asset/Contract_Mysterious.png" id="3_3hif6"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_3j4j8"]
-[ext_resource type="Texture2D" uid="uid://c74gvs0fxj3b6" path="res://Asset/Contract.png" id="5_6nve6"]
 
 [sub_resource type="Resource" id="Resource_b7a8r"]
 script = ExtResource("2_uco0f")
@@ -17,12 +16,15 @@ convo = SubResource("Resource_b7a8r")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_apm1n"]
+load_path = "res://.godot/imported/Tak berjudul110_20251104125207.png-04f11c39446368c7fb7489ca535227d4.ctex"
+
 [resource]
 script = ExtResource("4_3j4j8")
 id = 17
 name = ""
 scaling = 0
-sprite = ExtResource("5_6nve6")
+sprite = SubResource("CompressedTexture2D_apm1n")
 mysprite = ExtResource("3_3hif6")
 worth = 500
 desc = "Kontrak terlarang...mungkin saja ini kontrak dengan iblis"

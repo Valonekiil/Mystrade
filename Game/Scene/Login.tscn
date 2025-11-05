@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwkdbdxqoqk11"]
+[gd_scene load_steps=5 format=3 uid="uid://cwkdbdxqoqk11"]
 
 [ext_resource type="Script" uid="uid://dfwx2tagjxf4q" path="res://Script/Login.gd" id="1_vhlv8"]
+[ext_resource type="Texture2D" uid="uid://bgl4w0gfqq6yp" path="res://Asset/Tak berjudul117_20251105145834.png" id="2_ndctc"]
+[ext_resource type="Texture2D" uid="uid://deq5an4jn6wp5" path="res://Asset/Tak berjudul118_20251105145740.png" id="3_j2cga"]
+[ext_resource type="Script" uid="uid://veh27oq6stnk" path="res://Script/leaderboard.gd" id="4_j2cga"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,6 +15,12 @@ offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vhlv8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 720.0
+texture = ExtResource("2_ndctc")
 
 [node name="PlayerIDInput" type="LineEdit" parent="."]
 visible = false
@@ -30,10 +39,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 394.0
-offset_top = 230.5
-offset_right = 434.0
-offset_bottom = 253.5
+offset_left = 674.5
+offset_top = 303.5
+offset_right = 759.5
+offset_bottom = 326.5
 text = "Username:"
 
 [node name="UsernameInput" type="LineEdit" parent="."]
@@ -43,19 +52,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -102.5
-offset_right = 146.0
-offset_bottom = -71.5
+offset_left = 134.5
+offset_top = -29.5
+offset_right = 426.5
+offset_bottom = 1.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 394.0
-offset_top = 293.5
-offset_right = 479.0
-offset_bottom = 316.5
+offset_left = 674.5
+offset_top = 366.5
+offset_right = 759.5
+offset_bottom = 389.5
 text = "Password:"
 
 [node name="PasswordInput" type="LineEdit" parent="."]
@@ -65,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -41.5
-offset_right = 146.0
-offset_bottom = -10.5
+offset_left = 134.5
+offset_top = 31.5
+offset_right = 426.5
+offset_bottom = 62.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -92,10 +101,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -182.5
-offset_top = 56.0
-offset_right = 182.5
-offset_bottom = 98.0
+offset_left = 98.0
+offset_top = 129.0
+offset_right = 463.0
+offset_bottom = 171.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
@@ -107,10 +116,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.5
-offset_top = -210.5
-offset_right = 78.5
-offset_bottom = -141.5
+offset_left = 202.0
+offset_top = -137.5
+offset_right = 359.0
+offset_bottom = -68.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -124,10 +133,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = 26.5
-offset_right = -62.0
-offset_bottom = 69.5
+offset_left = 118.5
+offset_top = 99.5
+offset_right = 218.5
+offset_bottom = 142.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
@@ -141,14 +150,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
-offset_top = 26.5
-offset_right = 164.0
-offset_bottom = 69.5
+offset_left = 346.5
+offset_top = 99.5
+offset_right = 452.5
+offset_bottom = 142.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-text = "Start"
+text = "Register"
 
 [node name="Button3" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 0)
@@ -158,15 +167,114 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 26.5
-offset_right = 52.0
-offset_bottom = 69.5
+offset_left = 232.5
+offset_top = 99.5
+offset_right = 332.5
+offset_bottom = 142.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Logout"
 
+[node name="Button4" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 165.0
+offset_top = 182.0
+offset_right = 406.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
+[node name="Button5" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 165.0
+offset_top = 249.0
+offset_right = 406.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Leaderboard"
+
+[node name="TakBerjudul11820251105145740" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 90.9999
+offset_top = 400.0
+offset_right = 1171.0
+offset_bottom = 1120.0
+rotation = -0.276985
+scale = Vector2(0.398107, 0.29677)
+texture = ExtResource("3_j2cga")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1066.0
+offset_top = -329.0
+offset_right = -612.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("4_j2cga")
+
+[node name="MainPanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Control/MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.5
+offset_top = 17.0
+offset_right = 180.5
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "🏆 LEADERBOARD 🏆"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -66.0
+offset_right = 178.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeaderboardContainer" type="VBoxContainer" parent="Control/MainPanel/ScrollContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="Button1" to="." method="_login_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_play_offline_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_register_button_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_logout_button_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_play_offline_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_play_offline_pressed"]

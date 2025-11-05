@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dexhfjkyfs76y"]
+[gd_scene load_steps=20 format=3 uid="uid://dexhfjkyfs76y"]
 
 [ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
@@ -10,9 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://0dgphx1gv253" path="res://Asset/Batang_Bloody.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bp18kvyh4jprn" path="res://Asset/Marah.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://b1p6w51f0ojqg" path="res://Asset/Happy.png" id="6_w48qg"]
+[ext_resource type="Texture2D" uid="uid://bpq6okkjul7sr" path="res://Asset/Tak berjudul120_20251105153439.png" id="7_cegan"]
 [ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Bargain_Box.gd" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dm1n3nbatgry2" path="res://Asset/Tak berjudul120_20251105153457.png" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://c36kxmin266fh" path="res://Asset/Tak berjudul114_20251104125104.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cfoiyjulgdjf2" path="res://Asset/Tak berjudul119_20251105152701.png" id="9_getpj"]
 [ext_resource type="Texture2D" uid="uid://6heh0wvjhqae" path="res://Asset/Tak berjudul114_20251104125111.png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://b4g0jv1nh86b7" path="res://Asset/Tak berjudul119_20251105152738.png" id="10_ryguw"]
+[ext_resource type="Texture2D" uid="uid://b8c10lvef7h3d" path="res://Asset/Tak berjudul121_20251105160854.png" id="13_d13ii"]
+[ext_resource type="Texture2D" uid="uid://c11cp3ykkwtv2" path="res://Asset/Tak berjudul121_20251105160921.png" id="14_1u8w0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
@@ -52,17 +58,23 @@ offset_right = 103.0
 offset_bottom = 322.0
 theme_override_constants/separation = 40
 
-[node name="Pause" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Pause" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "I I"
+texture_normal = ExtResource("7_cegan")
+texture_hover = ExtResource("8_82xsv")
+texture_focused = ExtResource("8_82xsv")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Book" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Book" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "V"
+texture_normal = ExtResource("9_getpj")
+texture_hover = ExtResource("10_ryguw")
+texture_focused = ExtResource("10_ryguw")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 7
@@ -193,15 +205,18 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.505882)
 script = ExtResource("3_lquwl")
 
-[node name="Cancel" type="Button" parent="CanvasLayer/Item_Index"]
+[node name="Cancel" type="TextureButton" parent="CanvasLayer/Item_Index"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 14.0
 offset_top = 10.0
 offset_right = 64.0
 offset_bottom = 67.0
-theme_override_font_sizes/font_size = 35
-text = "X"
+texture_normal = ExtResource("13_d13ii")
+texture_hover = ExtResource("14_1u8w0")
+texture_focused = ExtResource("14_1u8w0")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Item_Index"]
 layout_mode = 1

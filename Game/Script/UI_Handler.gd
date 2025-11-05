@@ -37,6 +37,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_key_pressed(KEY_TAB):
 		Kamus.visible = !Kamus.visible
+	if Input.is_key_pressed(KEY_T): 
+		print("🔍 DEBUG TIME_PLAYED:")
+		print("   is_playing: ", GameDataManager.is_playing)
+		print("   time_played: ", GameDataManager.current_player.time_played)
+		print("   play_timer active: ", GameDataManager.play_timer.time_left > 0)
 
 func show_kamus()-> void:
 	Kamus.visible = true
@@ -126,4 +131,5 @@ func _resume()-> void:
 
 func _quit()-> void:
 	get_tree().paused = false
+	GameDataManager.stop_playing()
 	get_tree().change_scene_to_file("res://Scene/Login.tscn")

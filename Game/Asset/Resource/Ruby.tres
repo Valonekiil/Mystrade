@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_jm0cq"]
 [ext_resource type="Texture2D" uid="uid://dg1s4w2bn7bln" path="res://Asset/Ruby_Mysterious.png" id="3_au251"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_ur60u"]
-[ext_resource type="Texture2D" uid="uid://cqeuk2xo2tx21" path="res://Asset/Ruby.png" id="5_rry5e"]
 
 [sub_resource type="Resource" id="Resource_ucvhv"]
 script = ExtResource("2_jm0cq")
@@ -17,12 +16,15 @@ convo = SubResource("Resource_ucvhv")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hgt7m"]
+load_path = "res://.godot/imported/Tak berjudul112_20251104125149.png-d558eb36852aa4e6a65e32c62b7d7baf.ctex"
+
 [resource]
 script = ExtResource("4_ur60u")
 id = 16
 name = ""
 scaling = 0
-sprite = ExtResource("5_rry5e")
+sprite = SubResource("CompressedTexture2D_hgt7m")
 mysprite = ExtResource("3_au251")
 worth = 300
 desc = "Batu permata misterius yang mungkin saja berbahaya"

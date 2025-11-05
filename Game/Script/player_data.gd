@@ -7,6 +7,8 @@ class_name PlayerData
 @export var coins: int = 0
 @export var time_played: int = 0  # dalam detik
 @export var item_collection: Array # ID dari Item_Base yang unlocked
+@export var last_customer: int = 0    # ⬅️ TAMBAH INI
+@export var last_item: int = 0        # ⬅️ TAMBAH INI
 
 func update_from_api(api_data: Dictionary):
 	# PAKE .get() DENGAN DEFAULT VALUE
@@ -16,6 +18,8 @@ func update_from_api(api_data: Dictionary):
 	coins = api_data.get("coins", coins)
 	time_played = api_data.get("timePlayed", time_played)
 	item_collection = api_data.get("itemCollection", item_collection)
+	last_customer = api_data.get("lastCus", last_customer)      # ⬅️ TAMBAH
+	last_item = api_data.get("lastItem", last_item)
 
 func to_api_dict() -> Dictionary:
 	return {
@@ -24,7 +28,9 @@ func to_api_dict() -> Dictionary:
 		"password": password,
 		"coins": coins,
 		"timePlayed": time_played,
-		"itemCollection": item_collection
+		"itemCollection": item_collection,
+		"lastCus": last_customer,      # ⬅️ TAMBAH
+		"lastItem": last_item 
 	}
 
 # Helper functions untuk item collection

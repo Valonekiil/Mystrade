@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_72q13"]
 [ext_resource type="Texture2D" uid="uid://dhtjndbcse820" path="res://Asset/Gear_Mysterious.png" id="3_u2xnj"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_3upyx"]
-[ext_resource type="Texture2D" uid="uid://bcimjwnu0fnqv" path="res://Asset/Gear.png" id="5_drv4s"]
 
 [sub_resource type="Resource" id="Resource_qeqqb"]
 script = ExtResource("2_72q13")
@@ -17,12 +16,15 @@ convo = SubResource("Resource_qeqqb")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hp7bs"]
+load_path = "res://.godot/imported/Tak berjudul104_20251104125259.png-56fda2faf4bdbabfd2a9aeb0771ed695.ctex"
+
 [resource]
 script = ExtResource("4_3upyx")
 id = 9
 name = ""
 scaling = 0
-sprite = ExtResource("5_drv4s")
+sprite = SubResource("CompressedTexture2D_hp7bs")
 mysprite = ExtResource("3_u2xnj")
 worth = 110
 desc = "Gerigi bukan buat tawuran, tapi buat mesin"

@@ -25,6 +25,7 @@ func on_stand_point():
 	#tween.tween_property(self, "self_modulate", Color.WHITE, 1)
 	#tween.set_loops()
 	on_stand.emit()
+	GameDataManager.update_last_state(res.id,item.id)
 	var bubble = TextureRect.new()
 	bubble.texture = load("res://Asset/Ellipse 10.png") 
 	if res.id == 3:
@@ -70,6 +71,7 @@ func get_the_hell_out():
 	twin.set_trans(Tween.TRANS_BACK)
 	await  twin.finished
 	finished.emit()
+	GameDataManager.reset_last_state()
 	queue_free()
 	get_tree().current_scene.cur_cus = null
 	if get_tree().current_scene.cur_cus:

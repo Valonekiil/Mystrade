@@ -862,6 +862,30 @@
           "password": {
             "type": "string",
             "nullable": true
+          },
+          "coins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timePlayed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastCus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastItem": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itemCollection": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

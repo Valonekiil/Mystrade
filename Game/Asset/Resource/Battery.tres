@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_0y51l"]
 [ext_resource type="Texture2D" uid="uid://cqrry4wk4nyhy" path="res://Asset/Battery_Mysterious.png" id="3_c6to0"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_eq546"]
-[ext_resource type="Texture2D" uid="uid://bl3w632ymlrbr" path="res://Asset/Battery.png" id="5_6lomn"]
 
 [sub_resource type="Resource" id="Resource_ivmwb"]
 script = ExtResource("2_0y51l")
@@ -17,12 +16,15 @@ convo = SubResource("Resource_ivmwb")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1fjk"]
+load_path = "res://.godot/imported/Tak berjudul107_20251104125236.png-ad197c59ab7da33f00d51a57ec6b5005.ctex"
+
 [resource]
 script = ExtResource("4_eq546")
 id = 13
 name = ""
 scaling = 0
-sprite = ExtResource("5_6lomn")
+sprite = SubResource("CompressedTexture2D_u1fjk")
 mysprite = ExtResource("3_c6to0")
 worth = 140
 desc = "Bukan baterai alkaline"
