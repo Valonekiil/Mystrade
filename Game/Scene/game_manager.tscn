@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dohvcperos6dq"]
+[gd_scene load_steps=29 format=3 uid="uid://dohvcperos6dq"]
 
 [ext_resource type="Script" uid="uid://c61gbhjje7ujv" path="res://Script/autoload/GameDataManager.gd" id="1_5n28g"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_0612n"]
@@ -9,40 +9,29 @@
 [ext_resource type="Resource" uid="uid://1vfgtdo87r2g" path="res://Asset/Ranting_Pohon_Dunia.tres" id="6_kd2dw"]
 [ext_resource type="Texture2D" uid="uid://b2tptvhap14dc" path="res://Asset/Tak berjudul91_20251029182341.png" id="6_llyhm"]
 [ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="7_1g63r"]
-[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="7_fp4eu"]
-[ext_resource type="Texture2D" uid="uid://dhbgj8l223qwt" path="res://Asset/Arrow_Mysterious.png" id="8_1g63r"]
-[ext_resource type="Texture2D" uid="uid://cjv1cg3wxdkke" path="res://Asset/Arrow.png" id="8_llyhm"]
-[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="8_m51ev"]
+[ext_resource type="Resource" uid="uid://d0bdkxlajoyg7" path="res://Asset/Resource/Arrow.tres" id="7_llyhm"]
+[ext_resource type="Resource" uid="uid://cioep8jo358oe" path="res://Asset/Resource/Dust.tres" id="8_1g63r"]
 [ext_resource type="Texture2D" uid="uid://bl2y2oecbvgtl" path="res://Asset/Tak berjudul93_20251029182320.png" id="8_vp4th"]
-
-[sub_resource type="Resource" id="Resource_u67xi"]
-script = ExtResource("8_m51ev")
-lines = ["Brooo!", "Aku punya panah sisa nih, panahnya udah gak cocok sama busur lama ku", "Beliin dong harganya 150 aja"]
-metadata/_custom_type_script = "uid://dvc827phsimkt"
-
-[sub_resource type="Resource" id="Resource_3881i"]
-script = ExtResource("7_fp4eu")
-convo = SubResource("Resource_u67xi")
-onetime = false
-metadata/_custom_type_script = "uid://brssmk53kkvjl"
-
-[sub_resource type="Resource" id="Resource_1g63r"]
-script = ExtResource("2_0612n")
-id = 2
-name = "Arrow"
-scaling = 0
-sprite = ExtResource("8_llyhm")
-mysprite = ExtResource("8_1g63r")
-worth = 150
-desc = "Panah basic"
-dialogue = Array[ExtResource("7_fp4eu")]([SubResource("Resource_3881i")])
-metadata/_custom_type_script = "uid://3rtp0wmg68su"
+[ext_resource type="Resource" uid="uid://dsqffurgeidxb" path="res://Asset/Resource/Feather.tres" id="9_m51ev"]
+[ext_resource type="Resource" uid="uid://cp0fljdosto75" path="res://Asset/Resource/Fang.tres" id="10_25b5f"]
+[ext_resource type="Resource" uid="uid://dl8b31vjok8kc" path="res://Asset/Resource/Acorn.tres" id="11_25b5f"]
+[ext_resource type="Resource" uid="uid://8nls0okxulbu" path="res://Asset/Resource/Gear.tres" id="12_77xop"]
+[ext_resource type="Resource" uid="uid://cfgjibqdfhcc5" path="res://Asset/Resource/Bolt.tres" id="13_3881i"]
+[ext_resource type="Resource" uid="uid://bivh7tcqd5ds3" path="res://Asset/Resource/Core.tres" id="14_2poob"]
+[ext_resource type="Resource" uid="uid://djfk0mhrb1sv7" path="res://Asset/Resource/Battery.tres" id="15_2poob"]
+[ext_resource type="Resource" uid="uid://c5k0b828lg6nb" path="res://Asset/Resource/Wrench.tres" id="16_x6b7m"]
+[ext_resource type="Resource" uid="uid://dhjv1o8jdq1yw" path="res://Asset/Resource/Vial.tres" id="17_hrwww"]
+[ext_resource type="Resource" uid="uid://dml7ie75ffnqf" path="res://Asset/Resource/Ruby.tres" id="18_bc00l"]
+[ext_resource type="Resource" uid="uid://degwyvrhxh1gb" path="res://Asset/Resource/Contract.tres" id="19_l64p7"]
+[ext_resource type="Resource" uid="uid://nr0emo1ifgnn" path="res://Asset/Resource/Ring.tres" id="20_c20a2"]
+[ext_resource type="Resource" uid="uid://cjxyawixgkt0" path="res://Asset/Resource/Watch.tres" id="21_pxf3n"]
 
 [sub_resource type="Resource" id="Resource_m51ev"]
 script = ExtResource("5_fp4eu")
 id = 1
 name = "Cutie"
 sprite = ExtResource("6_llyhm")
+item_pool = Array[ExtResource("2_0612n")]([ExtResource("13_3881i"), ExtResource("15_2poob"), ExtResource("12_77xop"), ExtResource("16_x6b7m"), ExtResource("14_2poob")])
 metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [sub_resource type="Resource" id="Resource_25b5f"]
@@ -50,6 +39,7 @@ script = ExtResource("5_fp4eu")
 id = 2
 name = "Hunter"
 sprite = ExtResource("7_1g63r")
+item_pool = Array[ExtResource("2_0612n")]([ExtResource("11_25b5f"), ExtResource("7_llyhm"), ExtResource("8_1g63r"), ExtResource("9_m51ev"), ExtResource("10_25b5f")])
 metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [sub_resource type="Resource" id="Resource_77xop"]
@@ -57,9 +47,10 @@ script = ExtResource("5_fp4eu")
 id = 3
 name = "Trader"
 sprite = ExtResource("8_vp4th")
+item_pool = Array[ExtResource("2_0612n")]([ExtResource("17_hrwww"), ExtResource("21_pxf3n"), ExtResource("20_c20a2"), ExtResource("18_bc00l"), ExtResource("19_l64p7")])
 metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [node name="GameDataManager" type="Node"]
 script = ExtResource("1_5n28g")
-all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw"), ExtResource("5_l0m7i"), ExtResource("6_kd2dw"), SubResource("Resource_1g63r")])
+all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw"), ExtResource("5_l0m7i"), ExtResource("6_kd2dw"), ExtResource("7_llyhm"), ExtResource("8_1g63r"), ExtResource("9_m51ev"), ExtResource("10_25b5f"), ExtResource("11_25b5f"), ExtResource("12_77xop"), ExtResource("13_3881i"), ExtResource("14_2poob"), ExtResource("15_2poob"), ExtResource("16_x6b7m"), ExtResource("17_hrwww"), ExtResource("18_bc00l"), ExtResource("19_l64p7"), ExtResource("20_c20a2"), ExtResource("21_pxf3n")])
 all_customers = Array[ExtResource("5_fp4eu")]([SubResource("Resource_m51ev"), SubResource("Resource_25b5f"), SubResource("Resource_77xop")])

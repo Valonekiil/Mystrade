@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://c5k0b828lg6nb"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_r12t4"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_uq0s7"]
+[ext_resource type="Texture2D" uid="uid://bu7v7xl1n30hp" path="res://Asset/Wrench_Mysterious.png" id="3_1a03a"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_1joqb"]
+[ext_resource type="Texture2D" uid="uid://cd248qw05ll1" path="res://Asset/Wrench.png" id="5_8wwvx"]
+
+[sub_resource type="Resource" id="Resource_48h75"]
+script = ExtResource("2_uq0s7")
+lines = ["Permisi", "Anu...aku lagi butuh uang", "Apakah kamu mau membeli barang ini?. Aku jual dengan harga 175"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_bdf88"]
+script = ExtResource("1_r12t4")
+convo = SubResource("Resource_48h75")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("4_1joqb")
+id = 14
+name = ""
+scaling = 0
+sprite = ExtResource("5_8wwvx")
+mysprite = ExtResource("3_1a03a")
+worth = 175
+desc = "kunci untuk bongkar pasang mesin, bukan kunci untuk membuka pintu
+"
+dialogue = Array[ExtResource("1_r12t4")]([SubResource("Resource_bdf88")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://cp0fljdosto75"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_slmas"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_ywng0"]
+[ext_resource type="Texture2D" uid="uid://c6bgf0rxfjne" path="res://Asset/Fang_Mysterious.png" id="3_iw421"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_ocvmf"]
+[ext_resource type="Texture2D" uid="uid://bouijxwuslyo0" path="res://Asset/Fang.png" id="5_u2wpw"]
+
+[sub_resource type="Resource" id="Resource_vx6a3"]
+script = ExtResource("2_ywng0")
+lines = ["Broo", "Aku tadi habis berburu makhluk buas", "Ini hasil buruannya, maukah kamu membeli dengan harga 220"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_gfodn"]
+script = ExtResource("1_slmas")
+convo = SubResource("Resource_vx6a3")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("4_ocvmf")
+id = 7
+name = ""
+scaling = 0
+sprite = ExtResource("5_u2wpw")
+mysprite = ExtResource("3_iw421")
+worth = 220
+desc = "Taring werewolf dari hutan terlarang"
+dialogue = Array[ExtResource("1_slmas")]([SubResource("Resource_gfodn")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

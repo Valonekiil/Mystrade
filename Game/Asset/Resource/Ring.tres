@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://nr0emo1ifgnn"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_et3qo"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_juvbq"]
+[ext_resource type="Texture2D" uid="uid://cv583v4mm1cg7" path="res://Asset/Ring_Mysterious.png" id="3_ak446"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_1tw4c"]
+[ext_resource type="Texture2D" uid="uid://bhpbgq3ix68y6" path="res://Asset/Ring.png" id="5_i6uc8"]
+
+[sub_resource type="Resource" id="Resource_04n5v"]
+script = ExtResource("2_juvbq")
+lines = ["Bonjour Mister", "Aku ingin menjual barang karena aku mulai bokek", "Aku jual dengan harga 250"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_prlp8"]
+script = ExtResource("1_et3qo")
+convo = SubResource("Resource_04n5v")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("4_1tw4c")
+id = 18
+name = ""
+scaling = 0
+sprite = ExtResource("5_i6uc8")
+mysprite = ExtResource("3_ak446")
+worth = 250
+desc = "Cincin emas yang berasal dari bangsawan ras vampir"
+dialogue = Array[ExtResource("1_et3qo")]([SubResource("Resource_prlp8")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

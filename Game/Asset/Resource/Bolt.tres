@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://cfgjibqdfhcc5"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_h5l8r"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_hl6kk"]
+[ext_resource type="Texture2D" uid="uid://g6q8emce4kwe" path="res://Asset/Bolt_Mysterious.png" id="3_jo4ix"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_5bh2o"]
+[ext_resource type="Texture2D" uid="uid://dg4tdbpj4tfj1" path="res://Asset/Bolt.png" id="5_hfi01"]
+
+[sub_resource type="Resource" id="Resource_cmpet"]
+script = ExtResource("2_hl6kk")
+lines = ["Permisi", "Ini aku diberikan sesuatu dari ilmuwan yang aku kenal", "Maukah kamu membelinya dengan harga 90"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_qpced"]
+script = ExtResource("1_h5l8r")
+convo = SubResource("Resource_cmpet")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("4_5bh2o")
+id = 11
+name = ""
+scaling = 0
+sprite = ExtResource("5_hfi01")
+mysprite = ExtResource("3_jo4ix")
+worth = 90
+desc = "Mur dari robot milik"
+dialogue = Array[ExtResource("1_h5l8r")]([SubResource("Resource_qpced")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"

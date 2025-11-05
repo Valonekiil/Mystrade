@@ -195,6 +195,7 @@ script = ExtResource("3_lquwl")
 
 [node name="Cancel" type="Button" parent="CanvasLayer/Item_Index"]
 custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
 offset_left = 14.0
 offset_top = 10.0
 offset_right = 64.0

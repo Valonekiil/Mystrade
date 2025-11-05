@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://cjxyawixgkt0"]
+
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_hyu2d"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_5htec"]
+[ext_resource type="Texture2D" uid="uid://b8y1i1ioiav28" path="res://Asset/Watch_Mysterious.png" id="3_rpcq4"]
+[ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_snl5u"]
+[ext_resource type="Texture2D" uid="uid://mgalajdtm5wj" path="res://Asset/Watch.png" id="5_wnnxf"]
+
+[sub_resource type="Resource" id="Resource_nabqr"]
+script = ExtResource("2_5htec")
+lines = ["Bonjour Mister", "Aku ingin menjual barang milik pelayan yang katanya pelayan bedebah", "Aku menjualnya dengan harga 230"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_xt02n"]
+script = ExtResource("1_hyu2d")
+convo = SubResource("Resource_nabqr")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[resource]
+script = ExtResource("4_snl5u")
+id = 19
+name = ""
+scaling = 0
+sprite = ExtResource("5_wnnxf")
+mysprite = ExtResource("3_rpcq4")
+worth = 230
+desc = "Jam emas dari pelayan milik bangsawan ras vampir"
+dialogue = Array[ExtResource("1_hyu2d")]([SubResource("Resource_xt02n")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"
