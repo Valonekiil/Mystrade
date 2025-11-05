@@ -260,6 +260,51 @@ namespace Backend.Controllers
             });
         }
 
+        // === 1️⃣ Update Last Customer & Item ===
+        [HttpPatch("{id}/laststate/update")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateLastState(int id, [FromBody] UpdateLastStateRequest request)
+        {
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound("Player tidak ditemukan.");
+
+            player.last_cus = request.LastCustomerId;
+            player.last_item = request.LastItemId;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                message = "Last state berhasil diperbarui.",
+                last_cus = player.last_cus,
+                last_item = player.last_item
+            });
+        }
+
+        // === 2️⃣ Reset / Hapus Last State ===
+        [HttpPatch("{id}/laststate/reset")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> ResetLastState(int id)
+        {
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
+                return NotFound("Player tidak ditemukan.");
+
+            player.last_cus = 0;
+            player.last_item = 0;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                message = "Last state berhasil direset.",
+                last_cus = player.last_cus,
+                last_item = player.last_item
+            });
+        }
         // Model request tambahan
         public class RegisterRequest
         {
@@ -287,6 +332,11 @@ namespace Backend.Controllers
         public class AddItemRequest
         {
             public int NewItem { get; set; }
+        }
+        public class UpdateLastStateRequest
+        {
+            public int LastCustomerId { get; set; }
+            public int LastItemId { get; set; }
         }
     }
 }

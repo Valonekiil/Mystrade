@@ -14,7 +14,6 @@ namespace Backend.Models
         public int TimePlayed { get; set; } = 0;
         public DateTime? LastPlayed { get; set; }
 
-        // pastikan default bukan null
         public string ItemCollectionData { get; set; } = "[]";
 
         [NotMapped]
@@ -31,6 +30,9 @@ namespace Backend.Models
                 ItemCollectionData = JsonSerializer.Serialize(value ?? new List<int>());
             }
         }
+
+        public int last_cus { get; set; } = 0;
+        public int last_item { get; set; } = 0;
 
         [NotMapped]
         public string FormattedTime =>

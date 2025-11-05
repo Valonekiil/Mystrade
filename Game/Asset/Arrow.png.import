@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjv1cg3wxdkke"
-path="res://.godot/imported/Tak berjudul99_20251104125413.png-0c5f23c9cb0e81f0c8dbde12f34f8ab0.ctex"
+path="res://.godot/imported/Arrow.png-58ec09bbb7ae3a263f86454b022308a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Tak berjudul99_20251104125413.png"
-dest_files=["res://.godot/imported/Tak berjudul99_20251104125413.png-0c5f23c9cb0e81f0c8dbde12f34f8ab0.ctex"]
+source_file="res://Asset/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-58ec09bbb7ae3a263f86454b022308a4.ctex"]
 
 [params]
 

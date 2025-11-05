@@ -8,6 +8,7 @@ var item:Item_Base
 var spawn:Marker2D
 var stand:Marker2D
 var bubub:TextureRect
+var sprite_bub:TextureRect
 var price_node:Label
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 	twin.finished.connect(on_stand_point)
 
 func on_stand_point():
+	
 	#var tween = create_tween()
 	#tween.tween_property(self, "self_modulate", Color(1.5, 1.5, 1.0), 0.2)
 	#tween.tween_property(self, "self_modulate", Color.WHITE, 1)
@@ -25,13 +27,18 @@ func on_stand_point():
 	on_stand.emit()
 	var bubble = TextureRect.new()
 	bubble.texture = load("res://Asset/Ellipse 10.png") 
-	bubble.position = Vector2(171.25,-202.5)
+	if res.id == 3:
+		bubble.position = Vector2(171.25,-202.5)
+	else:
+		bubble.position = Vector2(171.25,-350.5)
 	self.add_child(bubble)
 	var item_node = TextureRect.new()
 	if item.unlocked:
 		item_node.texture = item.sprite
 	else:
 		item_node.texture = item.mysprite
+	item_node.custom_minimum_size = Vector2(250,250)
+	sprite_bub = item_node
 	var CC = CenterContainer.new()
 	CC.anchor_right = 1
 	CC.anchor_bottom = 1
@@ -42,9 +49,10 @@ func on_stand_point():
 	var font = price.get_theme_font("font")
 	var font_size = 40
 	price.add_theme_font_size_override("font_size", font_size)
-	price.position = Vector2(178.75, 5.0)
+	price.position = Vector2(262.5, -50.0)
 	price.size = Vector2(158.0, 55.0) 
 	price.rotation_degrees = 40.0
+	price.horizontal_alignment =HORIZONTAL_ALIGNMENT_CENTER
 	bubble.add_child(price)
 	price_node = price
 	get_tree().current_scene.cur_cus = self
@@ -55,7 +63,7 @@ func set_price(v:int):
 	
 
 func get_the_hell_out():
-	bubub.visible = false
+	price_node.visible = false
 	var twin:Tween = create_tween()
 	twin.tween_property(self,"global_position", spawn.global_position, 1)
 	twin.set_ease(Tween.EASE_OUT)

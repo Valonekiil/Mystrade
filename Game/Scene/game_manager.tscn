@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dohvcperos6dq"]
+[gd_scene load_steps=21 format=3 uid="uid://dohvcperos6dq"]
 
 [ext_resource type="Script" uid="uid://c61gbhjje7ujv" path="res://Script/autoload/GameDataManager.gd" id="1_5n28g"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_0612n"]
@@ -9,7 +9,34 @@
 [ext_resource type="Resource" uid="uid://1vfgtdo87r2g" path="res://Asset/Ranting_Pohon_Dunia.tres" id="6_kd2dw"]
 [ext_resource type="Texture2D" uid="uid://b2tptvhap14dc" path="res://Asset/Tak berjudul91_20251029182341.png" id="6_llyhm"]
 [ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="7_1g63r"]
+[ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="7_fp4eu"]
+[ext_resource type="Texture2D" uid="uid://dhbgj8l223qwt" path="res://Asset/Arrow_Mysterious.png" id="8_1g63r"]
+[ext_resource type="Texture2D" uid="uid://cjv1cg3wxdkke" path="res://Asset/Arrow.png" id="8_llyhm"]
+[ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="8_m51ev"]
 [ext_resource type="Texture2D" uid="uid://bl2y2oecbvgtl" path="res://Asset/Tak berjudul93_20251029182320.png" id="8_vp4th"]
+
+[sub_resource type="Resource" id="Resource_u67xi"]
+script = ExtResource("8_m51ev")
+lines = ["Brooo!", "Aku punya panah sisa nih, panahnya udah gak cocok sama busur lama ku", "Beliin dong harganya 150 aja"]
+metadata/_custom_type_script = "uid://dvc827phsimkt"
+
+[sub_resource type="Resource" id="Resource_3881i"]
+script = ExtResource("7_fp4eu")
+convo = SubResource("Resource_u67xi")
+onetime = false
+metadata/_custom_type_script = "uid://brssmk53kkvjl"
+
+[sub_resource type="Resource" id="Resource_1g63r"]
+script = ExtResource("2_0612n")
+id = 2
+name = "Arrow"
+scaling = 0
+sprite = ExtResource("8_llyhm")
+mysprite = ExtResource("8_1g63r")
+worth = 150
+desc = "Panah basic"
+dialogue = Array[ExtResource("7_fp4eu")]([SubResource("Resource_3881i")])
+metadata/_custom_type_script = "uid://3rtp0wmg68su"
 
 [sub_resource type="Resource" id="Resource_m51ev"]
 script = ExtResource("5_fp4eu")
@@ -34,5 +61,5 @@ metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [node name="GameDataManager" type="Node"]
 script = ExtResource("1_5n28g")
-all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw"), ExtResource("5_l0m7i"), ExtResource("6_kd2dw")])
+all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw"), ExtResource("5_l0m7i"), ExtResource("6_kd2dw"), SubResource("Resource_1g63r")])
 all_customers = Array[ExtResource("5_fp4eu")]([SubResource("Resource_m51ev"), SubResource("Resource_25b5f"), SubResource("Resource_77xop")])

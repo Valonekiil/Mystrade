@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dexhfjkyfs76y"]
+[gd_scene load_steps=14 format=3 uid="uid://dexhfjkyfs76y"]
 
 [ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dlosljfafkvg1" path="res://Asset/Tak berjudul92_20251029182301.jpg" id="2_7mycd"]
 [ext_resource type="Script" uid="uid://cek0kkvm0ujnd" path="res://Script/UI_Handler.gd" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://hnda8stdsubp" path="res://Asset/meja.png" id="3_efxa6"]
 [ext_resource type="Script" uid="uid://u4nudam2bbsq" path="res://Script/item_index_menu.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://d007fr00smds7" path="res://icon.svg" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://0dgphx1gv253" path="res://Asset/Batang_Bloody.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bp18kvyh4jprn" path="res://Asset/Marah.png" id="5_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://b1p6w51f0ojqg" path="res://Asset/Happy.png" id="6_w48qg"]
 [ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Bargain_Box.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://c36kxmin266fh" path="res://Asset/Tak berjudul114_20251104125104.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://6heh0wvjhqae" path="res://Asset/Tak berjudul114_20251104125111.png" id="10_efxa6"]
@@ -18,8 +21,142 @@ script = ExtResource("1_1bvp3")
 position = Vector2(540, 358)
 texture = ExtResource("2_7mycd")
 
+[node name="Meja" type="Sprite2D" parent="."]
+visibility_layer = 4
+z_index = 1
+position = Vector2(538, 360)
+texture = ExtResource("3_efxa6")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_272bh")
+Mad = ExtResource("5_ycdy4")
+Happy = ExtResource("6_w48qg")
+
+[node name="Gold_PH" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -198.0
+offset_top = 16.0
+offset_right = -14.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "Gold: 12345678"
+clip_text = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 128.0
+offset_right = 103.0
+offset_bottom = 322.0
+theme_override_constants/separation = 40
+
+[node name="Pause" type="Button" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "I I"
+
+[node name="Book" type="Button" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "V"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = -254.0
+offset_right = 519.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Accept"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Decline"
+
+[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Bargain"
+
+[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Ask"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+offset_right = 1080.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.54902)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -209.5
+offset_right = 77.0
+offset_bottom = -154.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Resume"
+
+[node name="Button2" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit"
 
 [node name="Dialogue_Manager" type="Node" parent="CanvasLayer"]
 process_mode = 3
@@ -30,7 +167,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 19.0
+offset_left = 25.0
 offset_top = -263.0
 offset_right = -234.0
 offset_bottom = -4.0
@@ -48,14 +185,22 @@ theme_override_font_sizes/font_size = 30
 autowrap_mode = 3
 
 [node name="Item_Index" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.490196)
+color = Color(1, 1, 1, 0.505882)
 script = ExtResource("3_lquwl")
+
+[node name="Cancel" type="Button" parent="CanvasLayer/Item_Index"]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 35
+text = "X"
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Item_Index"]
 layout_mode = 1
@@ -81,6 +226,8 @@ offset_top = 2.0
 offset_right = 140.5
 offset_bottom = 71.0
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 50
 text = "INDEX ITEM"
 
@@ -326,58 +473,6 @@ layout_mode = 2
 texture = ExtResource("5_272bh")
 expand_mode = 3
 
-[node name="Gold_PH" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -198.0
-offset_top = 16.0
-offset_right = -14.0
-offset_bottom = 51.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 25
-text = "Gold: 12345678"
-clip_text = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 319.0
-offset_top = -254.0
-offset_right = 519.0
-offset_bottom = -18.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 12
-
-[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Accept"
-
-[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Decline"
-
-[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Bargain"
-
-[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-disabled = true
-text = "Ask"
-
 [node name="QTE" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 6
@@ -429,9 +524,14 @@ position = Vector2(450, 350)
 wait_time = 3.0
 one_shot = true
 
-[connection signal="draw" from="CanvasLayer/Item_Index" to="CanvasLayer/Item_Index" method="_on_draw"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Pause" to="CanvasLayer" method="_paused"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Book" to="CanvasLayer" method="show_kamus"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="_on_bought"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button2" to="CanvasLayer" method="_on_decline"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button3" to="CanvasLayer" method="_on_bargain"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button4" to="CanvasLayer" method="_on_ask"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Button" to="CanvasLayer" method="_resume"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Button2" to="CanvasLayer" method="_quit"]
+[connection signal="draw" from="CanvasLayer/Item_Index" to="CanvasLayer/Item_Index" method="_on_draw"]
+[connection signal="pressed" from="CanvasLayer/Item_Index/Cancel" to="CanvasLayer" method="hide_kamus"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

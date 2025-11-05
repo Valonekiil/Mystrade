@@ -277,3 +277,48 @@ func _on_update_coins_completed(result: int, response_code: int, headers: Packed
 	http_request.queue_free()
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
 		print("Coins updated successfully")
+
+func update_last_state(player_id: int, last_cus: int, last_item: int) -> void:
+	var url = BASE_URL + "/players/" + str(player_id) + "/laststate/update"
+	
+	var json_data = JSON.stringify({
+		"LastCustomerId": last_cus,
+		"LastItemId": last_item
+	})
+	
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_update_last_state_completed.bind(http_request))
+	
+	var headers = ["Content-Type: application/json"]
+	var error = http_request.request(url, headers, HTTPClient.METHOD_PATCH, json_data)
+	
+	if error != OK:
+		push_error("Update last state request failed")
+
+func _on_update_last_state_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray, http_request: HTTPRequest):
+	http_request.queue_free()
+	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
+		print("✅ Last state berhasil diperbarui!")
+	else:
+		print("❌ Gagal memperbarui last state:", response_code)
+
+func reset_last_state(player_id: int) -> void:
+	var url = BASE_URL + "/players/" + str(player_id) + "/laststate/reset"
+	
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_reset_last_state_completed.bind(http_request))
+	
+	var headers = ["Content-Type: application/json"]
+	var error = http_request.request(url, headers, HTTPClient.METHOD_PATCH)
+	
+	if error != OK:
+		push_error("Reset last state request failed")
+
+func _on_reset_last_state_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray, http_request: HTTPRequest):
+	http_request.queue_free()
+	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
+		print("♻️ Last state berhasil direset!")
+	else:
+		print("❌ Gagal reset last state:", response_code)

@@ -11,5 +11,6 @@ namespace Backend.Data
         }
 
         public DbSet<Player> Players { get; set; }
+
     }
 }

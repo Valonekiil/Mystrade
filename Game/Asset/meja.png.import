@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbgj8l223qwt"
-path="res://.godot/imported/texture_resized_with_modulate.png-71f98f6eb5985901cff85f101dafdbe8.ctex"
+uid="uid://hnda8stdsubp"
+path="res://.godot/imported/meja.png-18dc24dc6b2360ed4e9d5066b3f6dad3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture_resized_with_modulate.png"
-dest_files=["res://.godot/imported/texture_resized_with_modulate.png-71f98f6eb5985901cff85f101dafdbe8.ctex"]
+source_file="res://Asset/meja.png"
+dest_files=["res://.godot/imported/meja.png-18dc24dc6b2360ed4e9d5066b3f6dad3.ctex"]
 
 [params]
 

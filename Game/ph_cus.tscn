@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu31aua4ps84k"]
+[gd_scene load_steps=5 format=3 uid="uid://cu31aua4ps84k"]
 
-[ext_resource type="Texture2D" uid="uid://bl2y2oecbvgtl" path="res://Asset/Tak berjudul93_20251029182320.png" id="1_vgopu"]
+[ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="1_vgopu"]
 [ext_resource type="Texture2D" uid="uid://hi81whihbbop" path="res://Asset/Ellipse 10.png" id="2_s04f6"]
 [ext_resource type="Texture2D" uid="uid://olir7yhcn2ko" path="res://Asset/Batu_Atlantis.png" id="3_do2wq"]
+[ext_resource type="Texture2D" uid="uid://bp18kvyh4jprn" path="res://Asset/Marah.png" id="3_s04f6"]
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(405, 289)
@@ -16,9 +17,9 @@ texture = ExtResource("2_s04f6")
 
 [node name="Ellipse11" type="TextureRect" parent="."]
 offset_left = 171.25
-offset_top = -202.5
-offset_right = 471.25
-offset_bottom = 47.5
+offset_top = -362.5
+offset_right = 521.25
+offset_bottom = -70.5
 texture = ExtResource("2_s04f6")
 
 [node name="CenterContainer" type="CenterContainer" parent="Ellipse11"]
@@ -30,15 +31,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Ellipse11/CenterContainer"]
+custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-texture = ExtResource("3_do2wq")
+texture = ExtResource("3_s04f6")
 
 [node name="Label" type="Label" parent="Ellipse11"]
 layout_mode = 1
-offset_left = 178.75
-offset_top = 5.0
-offset_right = 336.75
-offset_bottom = 60.0
+offset_left = 262.5
+offset_top = -50.0
+offset_right = 420.5
+offset_bottom = 4.99999
 rotation = 0.698132
 theme_override_font_sizes/font_size = 40
 text = "200000"

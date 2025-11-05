@@ -23,6 +23,9 @@ var cur_conv:int = 0
 var twin:Tween
 var current_item:Item_Base
 
+func _ready() -> void:
+	DialogueBox.visible = false
+
 func load_dialogue(index:Dialog_Convo ):
 	if ftime:
 		print("first time = " + index.resource_name)

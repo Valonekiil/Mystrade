@@ -16,7 +16,7 @@ func show_unlocked_item():
 	for v in Slot_Con.get_children():
 		v.queue_free()
 	
-	var items = GameDataManager.get_unlocked_items()
+	var items = GameDataManager.get_player_unlocked_items()
 	for item in items:
 		var display:Item_Slot = Slot.instantiate()
 		display.item = item
