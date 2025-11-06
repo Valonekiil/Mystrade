@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Item_Base" load_steps=7 format=3 uid="uid://1vfgtdo87r2g"]
+[gd_resource type="Resource" script_class="Item_Base" load_steps=8 format=3 uid="uid://1vfgtdo87r2g"]
 
 [ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_i2j64"]
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_nrcew"]
+[ext_resource type="Texture2D" uid="uid://cq65yjs1os38u" path="res://Asset/Batang_Misterius.png" id="3_nrcew"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="3_p8rua"]
 [ext_resource type="Texture2D" uid="uid://cudg5v8sjvbcv" path="res://Asset/Batang_Hijau.png" id="4_gfm8a"]
 
@@ -22,6 +23,7 @@ id = 5
 name = "Ranting pohon dunia"
 scaling = 5
 sprite = ExtResource("4_gfm8a")
+mysprite = ExtResource("3_nrcew")
 worth = 500
 desc = "Sebuah ranting yang jatuh dari pohon dunia, yang penuh dengan energi alam"
 dialogue = Array[ExtResource("1_i2j64")]([SubResource("Resource_sbjcs")])

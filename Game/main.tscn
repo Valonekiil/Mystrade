@@ -197,6 +197,7 @@ theme_override_font_sizes/font_size = 30
 autowrap_mode = 3
 
 [node name="Item_Index" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

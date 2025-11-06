@@ -47,7 +47,7 @@ func show_kamus()-> void:
 	Kamus.visible = true
 
 func hide_kamus() -> void:
-	Kamus.visible = true
+	Kamus.visible = false
 
 func _on_ask() -> void:
 	Dialog.conversations = main.cur_cus.item.dialogue

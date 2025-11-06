@@ -1,4 +1,3 @@
-# LeaderboardUI.gd
 extends Control
 
 @onready var main_panel = $MainPanel
@@ -8,10 +7,7 @@ extends Control
 
 func _ready():
 	HTTPManager.leaderboard_loaded.connect(_on_leaderboard_loaded)
-	#refresh_btn.pressed.connect(load_leaderboard)
 	
-	# Load leaderboard saat scene dimulai
-	load_leaderboard()
 
 func load_leaderboard():
 	print("🔄 Loading leaderboard...")

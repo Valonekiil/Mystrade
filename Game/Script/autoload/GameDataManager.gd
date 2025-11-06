@@ -1,24 +1,20 @@
-# GameDataManager.gd (Autoload)
 extends Node
 
-# Signals
 signal player_data_loaded()
 signal player_data_updated()
 signal sync_completed()
 signal auto_save_triggered()
 signal show_item(item: Item_Base)
 
-# Player Data
 var current_player: PlayerData
 var is_online: bool = false
 var is_playing: bool = false
 
-# Game Content Data
-@export var all_items: Array[Item_Base] = []          # Semua item yang ada di game
-@export var all_customers: Array[Cus_Res] = []        # Semua customer resource
-var unlocked_items: Array[Item_Base] = []             # Item yang sudah di-unlock player
 
-# Timers
+@export var all_items: Array[Item_Base] = []         
+@export var all_customers: Array[Cus_Res] = []       
+var unlocked_items: Array[Item_Base] = []          
+
 var play_timer: Timer
 var auto_save_timer: Timer
 
@@ -27,31 +23,25 @@ func _ready():
 	setup_timers()
 	load_game_content()
 	
-	# Connect HTTPManager signals
 	HTTPManager.login_success.connect(_on_login_success)
 	HTTPManager.login_failed.connect(_on_login_failed)
 	HTTPManager.update_player_completed.connect(_on_update_completed)
 	
-	# Handle game closure
 	get_tree().root.get_window().close_requested.connect(_on_window_close_requested)
 
 func setup_timers():
-	# Timer untuk time_played (setiap detik)
 	play_timer = Timer.new()
 	play_timer.wait_time = 60
 	play_timer.timeout.connect(_on_play_timer_timeout)
 	add_child(play_timer)
 	
-	# Timer untuk auto-save (setiap 30 detik)
 	auto_save_timer = Timer.new()
 	auto_save_timer.wait_time = 120
 	auto_save_timer.timeout.connect(_on_auto_save_timeout)
 	add_child(auto_save_timer)
 
-# ==================== GAME CONTENT MANAGEMENT ====================
 func load_game_content():
-	# Load semua items dan customers yang sudah di-export di inspector
-	# Atau bisa juga load dari folder resources
+	
 	pass
 
 func register_item(item: Item_Base):
@@ -91,7 +81,6 @@ func get_random_item() -> Item_Base:
 		return all_items.pick_random()
 	return null
 
-# ==================== PLAYER SESSION MANAGEMENT ====================
 func _on_play_timer_timeout():
 	if is_playing and current_player:
 		current_player.time_played += 1
@@ -111,7 +100,6 @@ func _on_login_success(api_data: Dictionary):
 		print("Error: API data kosong!")
 		return
 	
-	# PAKE .get() DENGAN DEFAULT VALUE
 	current_player.update_from_api(api_data)
 	start_playing()
 	player_data_loaded.emit()
@@ -136,7 +124,6 @@ func stop_playing():
 		save_local_player_data()
 		HTTPManager.end_game_session(current_player.player_id)
 
-# ==================== PLAYER DATA MANAGEMENT ====================
 func add_coins(amount: int):
 	if current_player:
 		current_player.coins += amount
@@ -182,7 +169,7 @@ func update_last_state(last_cus_id: int, last_item_id: int):
 		current_player.last_item = last_item_id
 		save_local_player_data()
 		
-		# Kirim ke server
+		
 		HTTPManager.update_last_state(current_player.player_id, last_cus_id, last_item_id)
 	sync_to_server()
 
@@ -192,11 +179,10 @@ func reset_last_state():
 		current_player.last_item = 0
 		save_local_player_data()
 		
-		# Kirim ke server
+		
 		HTTPManager.reset_last_state(current_player.player_id)
 	sync_to_server()
 
-# ==================== SAVE/LOAD SYSTEM ====================
 func save_local_player_data():
 	if current_player:
 		ResourceSaver.save(current_player, "user://player_data.tres")
@@ -236,10 +222,10 @@ func sync_to_server():
 			"coins": current_player.coins,
 			"timePlayed": current_player.time_played,
 			"itemCollection": int_item_collection,
-			"lastCus": current_player.last_customer,      # ⬅️ TAMBAH
+			"lastCus": current_player.last_customer,     
 			"lastItem": current_player.last_item
 		}
-		print("📤 Data yang dikirim: ", JSON.stringify(update_data))  # ⬅️ CETAK JSON
+		print("📤 Data yang dikirim: ", JSON.stringify(update_data))  
 		HTTPManager.update_player(current_player.player_id, update_data)
 		print("habis synct")
 
@@ -251,7 +237,6 @@ func _on_update_completed(updated_player, error_message):
 		sync_completed.emit()
 	
 
-# ==================== SYSTEM EVENT HANDLERS ====================
 func _on_window_close_requested():
 	stop_playing()
 	get_tree().quit()
@@ -266,19 +251,16 @@ func _notification(what):
 func logout():
 	print("🚪 Logging out player...")
 	
-	# Stop semua timer
+	
 	stop_playing()
 	
-	# Reset current player
 	current_player = null
 	
-	# Hapus local save file
 	delete_local_save()
 	
 	current_player = PlayerData.new()
 	current_player.player_id = -1
 	
-	# Reset state variables
 	is_playing = false
 	is_online = false
 	

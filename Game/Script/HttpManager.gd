@@ -1,6 +1,6 @@
 extends Node
 
-const BASE_URL = "https://localhost:7025"  # Ganti dengan URL API Anda
+const BASE_URL = "https://localhost:7025" 
 
 signal request_completed(result, error)
 signal login_success(player_data)
@@ -239,7 +239,6 @@ func _on_start_game_completed(result: int, response_code: int, headers: PackedSt
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
 		print("Game session started successfully")
 
-# End game session (POST /players/{id}/end-game)  
 func end_game_session(player_id: int) -> void:
 	var url = BASE_URL + "/players/" + str(player_id) + "/end-game"
 	
@@ -258,7 +257,6 @@ func _on_end_game_completed(result: int, response_code: int, headers: PackedStri
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
 		print("Game session ended successfully")
 
-# Add item to collection (PATCH /players/{id}/items/add)
 func add_item_to_collection(player_id: int, item_id: int) -> void:
 	var url = BASE_URL + "/players/" + str(player_id) + "/items/add"
 	var json_data = JSON.stringify({"newItem": item_id})
@@ -277,7 +275,6 @@ func _on_add_item_completed(result: int, response_code: int, headers: PackedStri
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
 		print("Item added to collection successfully")
 
-# Update coins (PATCH /players/{id}/coins)
 func update_player_coins(player_id: int, coins: int) -> void:
 	var url = BASE_URL + "/players/" + str(player_id) + "/coins"
 	

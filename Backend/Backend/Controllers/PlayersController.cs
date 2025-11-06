@@ -139,11 +139,11 @@ namespace Backend.Controllers
             if (player == null)
                 return NotFound();
 
-            var items = player.ItemCollection;          // baca (deserialize) aman
+            var items = player.ItemCollection;         
             if (!items.Contains(request.NewItem))
             {
                 items.Add(request.NewItem);
-                player.ItemCollection = items;          // assign kembali biar setter serializes
+                player.ItemCollection = items;          
                 await _context.SaveChangesAsync();
             }
 
@@ -199,7 +199,7 @@ namespace Backend.Controllers
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<object>> Login([FromBody] LoginRequest request)  // ← GANTI KE object
+        public async Task<ActionResult<object>> Login([FromBody] LoginRequest request)  
         {
             if (request == null)
                 return BadRequest("Body tidak boleh kosong.");
@@ -213,7 +213,6 @@ namespace Backend.Controllers
             if (player == null)
                 return Unauthorized("Username atau password salah.");
 
-            // ⬇️ CONVERT KE ANONYMOUS OBJECT EXPLICIT ⬇️
             return Ok(new
             {
                 id = player.Id,
@@ -234,7 +233,7 @@ namespace Backend.Controllers
                 .ToListAsync();
 
             var leaderboard = players
-                .OrderByDescending(p => p.ItemCollection.Count) // urut berdasarkan jumlah item
+                .OrderByDescending(p => p.ItemCollection.Count) 
                 .ThenByDescending(p => p.coins)
                 .Select((p, index) => new
                 {

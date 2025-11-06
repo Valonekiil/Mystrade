@@ -1,9 +1,467 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwkdbdxqoqk11"]
+[gd_scene load_steps=11 format=3 uid="uid://cwkdbdxqoqk11"]
 
 [ext_resource type="Script" uid="uid://dfwx2tagjxf4q" path="res://Script/Login.gd" id="1_vhlv8"]
 [ext_resource type="Texture2D" uid="uid://bgl4w0gfqq6yp" path="res://Asset/Tak berjudul117_20251105145834.png" id="2_ndctc"]
 [ext_resource type="Texture2D" uid="uid://deq5an4jn6wp5" path="res://Asset/Tak berjudul118_20251105145740.png" id="3_j2cga"]
 [ext_resource type="Script" uid="uid://veh27oq6stnk" path="res://Script/leaderboard.gd" id="4_j2cga"]
+
+[sub_resource type="Animation" id="Animation_kcdqq"]
+resource_name = "Hide_LB"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../LeaderBoard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(626, 209), Vector2(626, 759)]
+}
+
+[sub_resource type="Animation" id="Animation_5gdb2"]
+resource_name = "Hide_Login"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, 336.5), Vector2(674.5, 900.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../UsernameInput:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, 363.5), Vector2(674.5, 927.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, 399.5), Vector2(674.5, 963.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PasswordInput:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, 424.5), Vector2(674.5, 988.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MessageLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(638, 162), Vector2(638, 726)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(742, 255.5), Vector2(742, 819.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Button1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(658.5, 492.5), Vector2(658.5, 1056.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Button2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(886.5, 492.5), Vector2(886.5, 1056.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Button3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(772.5, 492.5), Vector2(772.5, 1056.5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Button4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(705, 575), Vector2(705, 1139)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Button5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(705, 642), Vector2(705, 1206)]
+}
+
+[sub_resource type="Animation" id="Animation_8a5fm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(674.5, 303.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../UsernameInput:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(674.5, 330.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(674.5, 366.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PasswordInput:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(674.5, 391.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MessageLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(638, 129)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(742, 222.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Button1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(658.5, 459.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Button2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(886.5, 459.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Button3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(772.5, 459.5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Button4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(705, 542)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Button5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(705, 609)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../LeaderBoard:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(626, 209)]
+}
+
+[sub_resource type="Animation" id="Animation_oyqc5"]
+resource_name = "Show_LB"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../LeaderBoard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(626, -480), Vector2(626, 209)]
+}
+
+[sub_resource type="Animation" id="Animation_j2cga"]
+resource_name = "Show_Login"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, -361.5), Vector2(674.5, 303.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../UsernameInput:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, -334.5), Vector2(674.5, 330.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, -298.5), Vector2(674.5, 366.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PasswordInput:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674.5, -273.5), Vector2(674.5, 391.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MessageLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(638, -536), Vector2(638, 129)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(742, -442.5), Vector2(742, 222.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Button1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(658.5, -205.5), Vector2(658.5, 459.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Button2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(886.5, -205.5), Vector2(886.5, 459.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Button3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(772.5, -205.5), Vector2(772.5, 459.5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Button4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(705, -123), Vector2(705, 542)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Button5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(705, -56), Vector2(705, 609)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a5fm"]
+_data = {
+&"Hide_LB": SubResource("Animation_kcdqq"),
+&"Hide_Login": SubResource("Animation_5gdb2"),
+&"RESET": SubResource("Animation_8a5fm"),
+&"Show_LB": SubResource("Animation_oyqc5"),
+&"Show_Login": SubResource("Animation_j2cga")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,26 +474,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vhlv8")
 
+[node name="Anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ph")
+libraries = {
+&"": SubResource("AnimationLibrary_8a5fm")
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 720.0
 texture = ExtResource("2_ndctc")
-
-[node name="PlayerIDInput" type="LineEdit" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -132.5
-offset_right = 146.0
-offset_bottom = -101.5
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -43,6 +492,8 @@ offset_left = 674.5
 offset_top = 303.5
 offset_right = 759.5
 offset_bottom = 326.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 text = "Username:"
 
 [node name="UsernameInput" type="LineEdit" parent="."]
@@ -65,6 +516,8 @@ offset_left = 674.5
 offset_top = 366.5
 offset_right = 759.5
 offset_bottom = 389.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 text = "Password:"
 
 [node name="PasswordInput" type="LineEdit" parent="."]
@@ -78,21 +531,6 @@ offset_left = 134.5
 offset_top = 31.5
 offset_right = 426.5
 offset_bottom = 62.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ItemsInput" type="LineEdit" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = 1.5
-offset_right = 146.0
-offset_bottom = 32.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -122,6 +560,8 @@ offset_right = 359.0
 offset_bottom = -68.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 50
 text = "LOGIN"
 
@@ -220,22 +660,22 @@ rotation = -0.276985
 scale = Vector2(0.398107, 0.29677)
 texture = ExtResource("3_j2cga")
 
-[node name="Control" type="Control" parent="."]
+[node name="LeaderBoard" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -1066.0
-offset_top = -329.0
-offset_right = -612.0
-offset_bottom = -45.0
+offset_left = -454.0
+offset_top = -151.0
+offset_right = -65.0
+offset_bottom = 309.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("4_j2cga")
 
-[node name="MainPanel" type="Panel" parent="Control"]
+[node name="MainPanel" type="Panel" parent="LeaderBoard"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,7 +683,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleLabel" type="Label" parent="Control/MainPanel"]
+[node name="TitleLabel" type="Label" parent="LeaderBoard/MainPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -253,28 +693,37 @@ offset_top = 17.0
 offset_right = 180.5
 offset_bottom = 66.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = "🏆 LEADERBOARD 🏆"
+horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MainPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="LeaderBoard/MainPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -172.0
-offset_top = -66.0
-offset_right = 178.0
-offset_bottom = 130.0
+offset_left = -171.5
+offset_top = -157.0
+offset_right = 178.5
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LeaderboardContainer" type="VBoxContainer" parent="Control/MainPanel/ScrollContainer"]
+[node name="LeaderboardContainer" type="VBoxContainer" parent="LeaderBoard/MainPanel/ScrollContainer"]
 layout_mode = 2
+
+[node name="Close" type="Button" parent="LeaderBoard"]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 31.0
+text = "X"
 
 [connection signal="pressed" from="Button1" to="." method="_login_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_register_button_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_logout_button_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_play_offline_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_play_offline_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_load_leaderboard"]
+[connection signal="pressed" from="LeaderBoard/Close" to="." method="_on_close_leaderboard"]
