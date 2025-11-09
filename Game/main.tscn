@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bp18kvyh4jprn" path="res://Asset/Marah.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://b1p6w51f0ojqg" path="res://Asset/Happy.png" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://bpq6okkjul7sr" path="res://Asset/Tak berjudul120_20251105153439.png" id="7_cegan"]
-[ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Bargain_Box.gd" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Script/Bargain_Box.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dm1n3nbatgry2" path="res://Asset/Tak berjudul120_20251105153457.png" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://c36kxmin266fh" path="res://Asset/Tak berjudul114_20251104125104.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://cfoiyjulgdjf2" path="res://Asset/Tak berjudul119_20251105152701.png" id="9_getpj"]

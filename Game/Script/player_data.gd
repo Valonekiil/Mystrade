@@ -43,3 +43,13 @@ func remove_from_collection(item_id: int):
 
 func has_item(item_id: int) -> bool:
 	return item_collection.has(item_id)
+
+func initialize_offline(player_name: String):
+	player_id = -1
+	username = player_name
+	password = "offline"
+	coins = 1000
+	time_played = 0
+	item_collection = []
+	last_customer = 0
+	last_item = 0

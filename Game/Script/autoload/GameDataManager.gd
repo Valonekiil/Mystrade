@@ -10,11 +10,10 @@ var current_player: PlayerData
 var is_online: bool = false
 var is_playing: bool = false
 
-
 @export var all_items: Array[Item_Base] = []         
 @export var all_customers: Array[Cus_Res] = []       
 var unlocked_items: Array[Item_Base] = []          
-
+var current_slot_number: int = 1
 var play_timer: Timer
 var auto_save_timer: Timer
 
@@ -31,12 +30,12 @@ func _ready():
 
 func setup_timers():
 	play_timer = Timer.new()
-	play_timer.wait_time = 60
+	play_timer.wait_time = 1
 	play_timer.timeout.connect(_on_play_timer_timeout)
 	add_child(play_timer)
 	
 	auto_save_timer = Timer.new()
-	auto_save_timer.wait_time = 120
+	auto_save_timer.wait_time = 10
 	auto_save_timer.timeout.connect(_on_auto_save_timeout)
 	add_child(auto_save_timer)
 
@@ -88,7 +87,8 @@ func _on_play_timer_timeout():
 
 func _on_auto_save_timeout():
 	if is_playing and current_player:
-		save_local_player_data()
+		save_current_player_data()
+		#save_local_player_data()
 		sync_to_server()
 		auto_save_triggered.emit()
 
@@ -235,7 +235,6 @@ func _on_update_completed(updated_player, error_message):
 	else:
 		print("Sync berhasil!")
 		sync_completed.emit()
-	
 
 func _on_window_close_requested():
 	stop_playing()
@@ -272,3 +271,28 @@ func delete_local_save():
 		var dir = DirAccess.open("user://")
 		dir.remove("player_data.tres")
 		print("🗑️ Local save file deleted")
+
+func load_slot_player_data(slot_number: int):
+	current_slot_number = slot_number
+	var save_path = "user://player_data_slot_%d.tres" % slot_number
+	
+	if FileAccess.file_exists(save_path):
+		var loaded_player = load(save_path)
+		if loaded_player:
+			current_player = loaded_player
+			print("🎮 Loaded slot %d: %s" % [slot_number, current_player.username])
+			return true
+	
+	return false
+
+func save_current_player_data():
+	if current_player:
+		var save_path = "user://player_data_slot_%d.tres" % current_slot_number
+		ResourceSaver.save(current_player, save_path)
+
+func create_new_player(slot_number: int, player_name: String):
+	current_slot_number = slot_number
+	current_player = PlayerData.new()
+	current_player.initialize_offline(player_name)
+	save_current_player_data()
+	return current_player

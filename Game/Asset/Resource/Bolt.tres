@@ -17,7 +17,6 @@ onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j5xq8"]
-load_path = "res://.godot/imported/Tak berjudul105_20251104125251.png-33ddb19a9a6b09c84a0192040be2eaa9.ctex"
 
 [resource]
 script = ExtResource("4_5bh2o")

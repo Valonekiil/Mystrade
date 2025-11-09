@@ -1,19 +1,14 @@
 extends Control
 
-@onready var player_id_input = $PlayerIDInput
-@onready var username_input = $UsernameInput
-@onready var password_input = $PasswordInput  
-@onready var items_input = $ItemsInput
-@onready var message_label = $MessageLabel
-@onready var LoginBTn = $Button1
-@onready var LogoutBTn = $Button3
-@onready var StartBTn = $Button2
-@onready var leader_board: Control = $LeaderBoard
-@onready var anim: AnimationPlayer = $Anim
+signal hide_login
+@onready var username_input: LineEdit = $UsernameInput
+@onready var password_input: LineEdit = $PasswordInput
+@onready var message_label: Label = $MessageLabel
+@onready var LoginBTn: Button = $Button1
+@onready var StartBTn: Button = $Button2
+@onready var LogoutBTn: Button = $Button3
 
-var current_player_id: int = -1
-
-func _ready():
+func _ready() -> void:
 	HTTPManager.login_failed.connect(on_login_failed)
 	HTTPManager.login_success.connect(on_login_succes)
 	HTTPManager.register_completed.connect(_on_register_completed)
@@ -24,10 +19,6 @@ func _ready():
 		LoginBTn.disabled = true
 	else:
 		LogoutBTn.disabled = true
-	leader_board.visible = false
-	anim.play("Hide_LB", -1 , 100)
-	await anim.animation_finished
-	anim.play("Show_Login", -1 , 0.5)
 
 func _login_button_pressed():
 	var username = username_input.text.strip_edges()
@@ -85,24 +76,9 @@ func _on_register_success(player_data):
 func _on_register_failed(error_message):
 	show_message("Register gagal: " + error_message, Color.RED)
 
-func _on_play_offline_pressed():
-	# Main dengan data lokal saja
-	get_tree().change_scene_to_file("res://main.tscn")
-
-func _on_load_leaderboard():
-	anim.play("Hide_Login", -1, 0.5)
-	await anim.animation_finished
-	anim.play("Show_LB")
-	leader_board.visible = true
-	await anim.animation_finished
-	leader_board.load_leaderboard()
-
-func _on_close_leaderboard():
-	leader_board.clear_leaderboard()
-	anim.play("Hide_LB")
-	await anim.animation_finished
-	anim.play("Show_Login", -1, 0.5)
-
 func show_message(text: String, color: Color):
 	message_label.text = text
 	message_label.modulate = color
+
+func _on_back_button_pressed()-> void:
+	hide_login.emit()
