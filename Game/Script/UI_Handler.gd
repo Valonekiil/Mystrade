@@ -51,23 +51,26 @@ func hide_kamus() -> void:
 
 func _on_ask() -> void:
 	Dialog.conversations = main.cur_cus.item.dialogue
+	Dialog.current_item = main.cur_cus.item
 	print(Dialog.conversations)
 	Dialog.talking()
 	Ask_Btn.disabled = true
+	Price = main.cur_cus.item.get_scaled_price()
 	print($Dialogue_Manager/Panel.visible)
 
 func _finish_ask()-> void:
-	Price = main.cur_cus.item.worth
 	main.cur_cus.set_price(Price)
 	Acc_Btn.disabled = false
 	Egx_Btn.disabled = false
 	Dsc_Btn.disabled = false
 	Acc_Btn.grab_focus()
+	GameDataManager.save_current_player_data()
 
 func _on_cus_leave():
 	Acc_Btn.disabled = true
 	Egx_Btn.disabled = true
 	Dsc_Btn.disabled = true
+	GameDataManager.save_current_player_data()
 
 func _on_bought()-> void:
 	if GameDataManager.current_player.coins <= Price:
@@ -132,4 +135,5 @@ func _resume()-> void:
 func _quit()-> void:
 	get_tree().paused = false
 	GameDataManager.stop_playing()
-	get_tree().change_scene_to_file("res://Scene/Login.tscn")
+	GameDataManager.save_current_player_data()
+	SceneTransition.transition_to_scene("res://Scene/Login.tscn")

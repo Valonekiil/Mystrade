@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d007fr00smds7" path="res://icon.svg" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://0dgphx1gv253" path="res://Asset/Batang_Bloody.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bp18kvyh4jprn" path="res://Asset/Marah.png" id="5_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://b1p6w51f0ojqg" path="res://Asset/Happy.png" id="6_w48qg"]
+[ext_resource type="Texture2D" uid="uid://cvr21psr51um6" path="res://Asset/Tak berjudul116_20251105131055.png" id="6_cegan"]
 [ext_resource type="Texture2D" uid="uid://bpq6okkjul7sr" path="res://Asset/Tak berjudul120_20251105153439.png" id="7_cegan"]
 [ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Script/Bargain_Box.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dm1n3nbatgry2" path="res://Asset/Tak berjudul120_20251105153457.png" id="8_82xsv"]
@@ -36,7 +36,7 @@ texture = ExtResource("3_efxa6")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_272bh")
 Mad = ExtResource("5_ycdy4")
-Happy = ExtResource("6_w48qg")
+Happy = ExtResource("6_cegan")
 
 [node name="Gold_PH" type="Label" parent="CanvasLayer"]
 anchors_preset = 1

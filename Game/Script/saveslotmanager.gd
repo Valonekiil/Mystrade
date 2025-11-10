@@ -49,9 +49,12 @@ func _on_slot_selected(slot_number: int, player_data: PlayerData):
 		new_game_requested.emit(slot_number)
 		print("🎮 New game requested for slot %d" % slot_number)
 	else:
+		GameDataManager.load_slot_player_data(slot_number)
+		var msg = "Selamat datang " + player_data.username
+		get_tree().current_scene.show_message(msg,Color.GREEN)
 		# Load existing game
-		slot_loaded.emit(slot_number, player_data)
-		print("🎮 Loading slot %d: %s" % [slot_number, player_data.username])
+		#slot_loaded.emit(slot_number, player_data)
+		#print("🎮 Loading slot %d: %s" % [slot_number, player_data.username])
 
 func create_new_game(slot_number: int, player_name: String):
 	var player_data = PlayerData.new()

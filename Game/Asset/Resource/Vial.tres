@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_h5x38"]
 [ext_resource type="Texture2D" uid="uid://bibumkqpag17d" path="res://Asset/Vial_Mysterious.png" id="3_cj2p2"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_27akb"]
+[ext_resource type="Texture2D" uid="uid://dmbmnimixdn1f" path="res://Asset/BloodVial.png" id="5_swgde"]
 
 [sub_resource type="Resource" id="Resource_ibeb1"]
 script = ExtResource("2_h5x38")
-lines = ["Bonjour Mister", "Aku punya barang menarik yang mungkin kamu mau", "Mister bisa membeli dengan harga 200"]
+lines = ["Bonjour Mister", "Aku punya barang menarik yang mungkin kamu mau", "Mister bisa membeli dengan harga %v"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_ynhx1"]
@@ -16,14 +17,12 @@ convo = SubResource("Resource_ibeb1")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wfi0x"]
-
 [resource]
 script = ExtResource("4_27akb")
 id = 15
-name = ""
-scaling = 0
-sprite = SubResource("CompressedTexture2D_wfi0x")
+name = "Vial"
+scaling = 2
+sprite = ExtResource("5_swgde")
 mysprite = ExtResource("3_cj2p2")
 worth = 200
 desc = "Tabung berisi darah dari ras vampir"

@@ -18,7 +18,7 @@ func _ready() -> void:
 	else:
 		spawn_costumer(null,null)
 		print("gacha customer")
-	if GameDataManager.current_player.player_id != -1:
+	if GameDataManager.current_player:
 		GameDataManager.start_playing()
 
 func _on_timer_timeout() -> void:
@@ -49,7 +49,7 @@ func spawn_costumer(id_Cus:Variant, item_id:Variant):
 	if item_id:
 		var temp
 		for res in GameDataManager.all_items:
-			if res.id == id_Cus:
+			if res.id == item_id:
 				temp = res
 		customer.item = temp
 	else:

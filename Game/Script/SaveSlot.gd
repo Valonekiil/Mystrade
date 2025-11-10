@@ -34,7 +34,7 @@ func clear_slot():
 func update_save(data: PlayerData):
 	Data = data
 	Username.text = data.username
-	
+	print("update data ", data.username, " dengan ", data.time_played )
 	# Format waktu yang cantik
 	Playtime.text = format_play_time(data.time_played)
 	

@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_1yeup"]
 script = ExtResource("2_khxoa")
-lines = ["Halo, sepertinya aku menemukan batu yang keren, apakah kamu mau membelinya?", "Harganya 50 gold, tetapi mungkin uangmu kurang sedikit aku bisa menerimya."]
+lines = ["Halo, sepertinya aku menemukan batu yang keren, apakah kamu mau membelinya?", "Harganya %v gold, tetapi mungkin uangmu kurang sedikit aku bisa menerimya."]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_3xrix"]
@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 script = ExtResource("3_b0ix0")
 id = 10
 name = "Batu"
-scaling = null
+scaling = 0
 sprite = ExtResource("4_0jwgq")
 mysprite = ExtResource("3_khxoa")
 worth = 100

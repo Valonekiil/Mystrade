@@ -10,6 +10,7 @@ extends Control
 @onready var play_btn: Button = $Play_Btn
 @onready var bg: TextureRect = $TakBerjudul11820251105145740
 
+var not_skip:bool
 var state:int = 0
 var current_player_id: int = -1
 
@@ -28,6 +29,17 @@ func _ready():
 	await SceneTransition.finished
 	anim.play("Start")
 	state = 0
+	print(GameDataManager.current_player)
+	if !GameDataManager.current_player.username:
+		GameDataManager.current_player = null
+		print("player di hapus")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_SPACE) and anim.is_playing() and !not_skip and anim.current_animation == "Start":
+		not_skip = true
+		anim.seek(anim.current_animation_length, true)
+		await  anim.animation_finished
+		not_skip = false
 
 func _on_local_pressed():
 	if anim.is_playing():
@@ -66,7 +78,7 @@ func _on_cloud_pressed():
 		state = 2
 
 func _on_play_offline_pressed():
-	if GameDataManager.current_player and GameDataManager.current_player.player_id != -1:
+	if GameDataManager.current_player:
 		get_tree().change_scene_to_file("res://main.tscn")
 	else:
 		show_message("Silahkan buat save dulu!", Color.RED)
@@ -88,3 +100,6 @@ func _on_close_leaderboard():
 func show_message(text: String, color: Color):
 	message_label.text = text
 	message_label.modulate = color
+	message_label.visible = true
+	await get_tree().create_timer(3).timeout
+	message_label.visible = false

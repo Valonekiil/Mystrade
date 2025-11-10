@@ -677,7 +677,6 @@ theme_override_font_sizes/font_size = 14
 text = "Cancel"
 
 [node name="MessageLabel" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

@@ -37,7 +37,7 @@ func load_dialogue(index:Dialog_Convo ):
 	DialogueBox.visible = true
 	Dialogue.visible = true
 	if dialogue_index < dialogue_conv.size():
-		is_talking = true
+		is_talking = true 
 		print("dialog ke " + str(dialogue_index))
 		var raw_text = dialogue_conv[dialogue_index]
 		var final_text = replace_placeholders(raw_text, current_item)
@@ -69,10 +69,11 @@ func load_dialogue(index:Dialog_Convo ):
 
 func replace_placeholders(text: String, item: Item_Base) -> String:
 	if item == null:
+		print("gak ada item")
 		return text
-	
+	print("timpa posting")
 	var result = text
-	result = result.replace("%v", str(item.get_scaled_price()))  # Harga setelah scaling
+	result = result.replace("%v", str(get_parent().Price))  # Harga setelah scaling
 	result = result.replace("%n", item.name)                    # Nama item
 	result = result.replace("%s", str(item.scaling))           # Scaling value
 	result = result.replace("%w", str(item.worth))             # Harga dasar
@@ -87,10 +88,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			twin.finished.emit()
 			twin.kill()
 			Dialogue.visible_ratio = 1
-		elif get_tree().current_scene.cur_cus != null and !is_talking:
-			current_item = get_tree().current_scene.cur_cus.item
-			conversations = current_item.dialogue
-			talking()
+			print("skip")
 
 func on_tween_finished():
 	dialogue_finished = true

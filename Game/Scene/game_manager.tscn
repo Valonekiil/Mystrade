@@ -1,12 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dohvcperos6dq"]
+[gd_scene load_steps=25 format=3 uid="uid://dohvcperos6dq"]
 
 [ext_resource type="Script" uid="uid://c61gbhjje7ujv" path="res://Script/autoload/GameDataManager.gd" id="1_5n28g"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="2_0612n"]
-[ext_resource type="Resource" uid="uid://c51cyq0567fk2" path="res://Asset/Batang_Stick_99.tres" id="3_l0m7i"]
-[ext_resource type="Resource" uid="uid://pv8m0wh33cwu" path="res://Asset/Batu.tres" id="4_kd2dw"]
 [ext_resource type="Script" uid="uid://cf8k8pqr3eh1v" path="res://Script/customer_resource.gd" id="5_fp4eu"]
-[ext_resource type="Resource" uid="uid://c2ad3odph5pa2" path="res://Asset/Buah_Kuldi.tres" id="5_l0m7i"]
-[ext_resource type="Resource" uid="uid://1vfgtdo87r2g" path="res://Asset/Ranting_Pohon_Dunia.tres" id="6_kd2dw"]
 [ext_resource type="Texture2D" uid="uid://b2tptvhap14dc" path="res://Asset/Tak berjudul91_20251029182341.png" id="6_llyhm"]
 [ext_resource type="Texture2D" uid="uid://cno1l4npuv162" path="res://Asset/Tak berjudul90_20251029182348.png" id="7_1g63r"]
 [ext_resource type="Resource" uid="uid://d0bdkxlajoyg7" path="res://Asset/Resource/Arrow.tres" id="7_llyhm"]
@@ -52,5 +48,5 @@ metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [node name="GameDataManager" type="Node"]
 script = ExtResource("1_5n28g")
-all_items = Array[ExtResource("2_0612n")]([ExtResource("3_l0m7i"), ExtResource("4_kd2dw"), ExtResource("5_l0m7i"), ExtResource("6_kd2dw"), ExtResource("7_llyhm"), ExtResource("8_1g63r"), ExtResource("9_m51ev"), ExtResource("10_25b5f"), ExtResource("11_25b5f"), ExtResource("12_77xop"), ExtResource("13_3881i"), ExtResource("14_2poob"), ExtResource("15_2poob"), ExtResource("16_x6b7m"), ExtResource("17_hrwww"), ExtResource("18_bc00l"), ExtResource("19_l64p7"), ExtResource("20_c20a2"), ExtResource("21_pxf3n")])
+all_items = Array[ExtResource("2_0612n")]([ExtResource("7_llyhm"), ExtResource("8_1g63r"), ExtResource("9_m51ev"), ExtResource("10_25b5f"), ExtResource("11_25b5f"), ExtResource("12_77xop"), ExtResource("13_3881i"), ExtResource("14_2poob"), ExtResource("15_2poob"), ExtResource("16_x6b7m"), ExtResource("17_hrwww"), ExtResource("18_bc00l"), ExtResource("19_l64p7"), ExtResource("20_c20a2"), ExtResource("21_pxf3n")])
 all_customers = Array[ExtResource("5_fp4eu")]([SubResource("Resource_m51ev"), SubResource("Resource_25b5f"), SubResource("Resource_77xop")])

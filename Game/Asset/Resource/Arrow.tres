@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_u67xi"]
 script = ExtResource("2_ta0sc")
-lines = ["Broo", "Aku punya panah sisa nih, panahnya udah gak cocok sama busur lama ku", "Beliin dong harganya 150 aja"]
+lines = ["Broo", "Aku punya panah sisa nih, panahnya udah gak cocok sama busur lama ku", "Beliin dong harganya %v aja"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_3881i"]
@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 script = ExtResource("4_0i0b7")
 id = 2
 name = "Arrow"
-scaling = 0
+scaling = 1
 sprite = ExtResource("5_qoh1x")
 mysprite = ExtResource("3_k4iy7")
 worth = 150

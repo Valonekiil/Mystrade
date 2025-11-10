@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_nabqr"]
 script = ExtResource("2_5htec")
-lines = ["Bonjour Mister", "Aku ingin menjual barang milik pelayan yang katanya pelayan bedebah", "Aku menjualnya dengan harga 230"]
+lines = ["Bonjour Mister", "Aku ingin menjual barang milik pelayan yang katanya pelayan bedebah", "Aku menjualnya dengan harga %v"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_xt02n"]
@@ -20,8 +20,8 @@ metadata/_custom_type_script = "uid://brssmk53kkvjl"
 [resource]
 script = ExtResource("4_snl5u")
 id = 19
-name = ""
-scaling = 0
+name = "Watch"
+scaling = 1
 sprite = ExtResource("5_hyu2d")
 mysprite = ExtResource("3_rpcq4")
 worth = 230

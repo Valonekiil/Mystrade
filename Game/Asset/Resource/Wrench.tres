@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://brssmk53kkvjl" path="res://Script/resource/convo.gd" id="1_r12t4"]
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_uq0s7"]
-[ext_resource type="Texture2D" uid="uid://bu7v7xl1n30hp" path="res://Asset/Wrench_Mysterious.png" id="3_1a03a"]
+[ext_resource type="Texture2D" uid="uid://cd248qw05ll1" path="res://Asset/Wrench.png" id="3_dbtok"]
+[ext_resource type="Texture2D" uid="uid://bu7v7xl1n30hp" path="res://Asset/Wrench_Mysterious.png" id="3_r12t4"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_1joqb"]
 
 [sub_resource type="Resource" id="Resource_48h75"]
 script = ExtResource("2_uq0s7")
-lines = ["Permisi", "Anu...aku lagi butuh uang", "Apakah kamu mau membeli barang ini?. Aku jual dengan harga 175"]
+lines = ["Permisi", "Anu...aku lagi butuh uang", "Apakah kamu mau membeli barang ini?. Aku jual dengan harga %v"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_bdf88"]
@@ -16,15 +17,13 @@ convo = SubResource("Resource_48h75")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbtok"]
-
 [resource]
 script = ExtResource("4_1joqb")
 id = 14
-name = ""
-scaling = 0
-sprite = SubResource("CompressedTexture2D_dbtok")
-mysprite = ExtResource("3_1a03a")
+name = "Wrench"
+scaling = 1
+sprite = ExtResource("3_dbtok")
+mysprite = ExtResource("3_r12t4")
 worth = 175
 desc = "kunci untuk bongkar pasang mesin, bukan kunci untuk membuka pintu
 "

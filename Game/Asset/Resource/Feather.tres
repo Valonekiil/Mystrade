@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_c3mea"]
 [ext_resource type="Texture2D" uid="uid://oobf4wa5pnx8" path="res://Asset/Feather_Mysterious.png" id="3_vyxcw"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_rk8h0"]
+[ext_resource type="Texture2D" uid="uid://dd0kp6mdawpxv" path="res://Asset/PhoenixFeather.png" id="5_w5gjn"]
 
 [sub_resource type="Resource" id="Resource_tkbo4"]
 script = ExtResource("2_c3mea")
-lines = ["Broo", "Aku menemukan barang aneh ini", "Apakah kamu mau membelinya dengan harga 200"]
+lines = ["Broo", "Aku menemukan barang aneh ini", "Apakah kamu mau membelinya dengan harga %v"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_ukkki"]
@@ -16,14 +17,12 @@ convo = SubResource("Resource_tkbo4")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvjfy"]
-
 [resource]
 script = ExtResource("4_rk8h0")
 id = 6
-name = ""
-scaling = 0
-sprite = SubResource("CompressedTexture2D_bvjfy")
+name = "Feather"
+scaling = 3
+sprite = ExtResource("5_w5gjn")
 mysprite = ExtResource("3_vyxcw")
 worth = 200
 desc = "Bulu burung phoenix asli"

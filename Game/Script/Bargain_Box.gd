@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_V):
 		if pointer.position.y >= succes_start.position.y and pointer.position.y <= succes_end.position.y:
 			print("Critical")
-			var v = randi_range(25, 50)
+			var v = randi_range(25, 40)
 			emit_signal("discount", v)
 			End_Qte()
 			return

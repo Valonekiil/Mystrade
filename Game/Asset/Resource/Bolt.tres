@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://dvc827phsimkt" path="res://Script/resource/dialogue.gd" id="2_hl6kk"]
 [ext_resource type="Texture2D" uid="uid://g6q8emce4kwe" path="res://Asset/Bolt_Mysterious.png" id="3_jo4ix"]
 [ext_resource type="Script" uid="uid://3rtp0wmg68su" path="res://Script/resource/Item_Source.gd" id="4_5bh2o"]
+[ext_resource type="Texture2D" uid="uid://dg4tdbpj4tfj1" path="res://Asset/Bolt.png" id="5_h5l8r"]
 
 [sub_resource type="Resource" id="Resource_cmpet"]
 script = ExtResource("2_hl6kk")
-lines = ["Permisi", "Ini aku diberikan sesuatu dari ilmuwan yang aku kenal", "Maukah kamu membelinya dengan harga 90"]
+lines = ["Permisi", "Ini aku diberikan sesuatu dari ilmuwan yang aku kenal", "Maukah kamu membelinya dengan harga %v"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_qpced"]
@@ -16,14 +17,12 @@ convo = SubResource("Resource_cmpet")
 onetime = false
 metadata/_custom_type_script = "uid://brssmk53kkvjl"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j5xq8"]
-
 [resource]
 script = ExtResource("4_5bh2o")
 id = 11
-name = ""
-scaling = 0
-sprite = SubResource("CompressedTexture2D_j5xq8")
+name = "Bolt"
+scaling = 1
+sprite = ExtResource("5_h5l8r")
 mysprite = ExtResource("3_jo4ix")
 worth = 90
 desc = "Mur dari robot milik"

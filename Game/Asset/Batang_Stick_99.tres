@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_qrh3l"]
 script = ExtResource("2_ddjeg")
-lines = ["Haloo aku dengar kamu adalah orang yang menghargai barang - barang penting yang berharga dan penuh dengan kisah", "Barang ku mungkin terlihat remeh karena ini terlihat seperti tongkat kayu biasa, tetapi ini dulunya adalah tongkat kayu terkuat dalam semesta ini", "Sampai para dewa murka dan tidak mau menerima eksistensi benda ini lalu mereka akhirnya membuat pengorbanan dan menyegel beberapa kekuatannya", "menurutku barang in sekarang berharga 500 gold, tetapi jika kau bisa membuka segelnya maka nilainya akan naik secara eksponensial. bagaimana menurutmu?"]
+lines = ["Haloo aku dengar kamu adalah orang yang menghargai barang - barang penting yang berharga dan penuh dengan kisah", "Barang ku mungkin terlihat remeh karena ini terlihat seperti tongkat kayu biasa, tetapi ini dulunya adalah tongkat kayu terkuat dalam semesta ini", "Sampai para dewa murka dan tidak mau menerima eksistensi benda ini lalu mereka akhirnya membuat pengorbanan dan menyegel beberapa kekuatannya", "menurutku barang in sekarang berharga %v gold, tetapi jika kau bisa membuka segelnya maka nilainya akan naik secara eksponensial. bagaimana menurutmu?"]
 metadata/_custom_type_script = "uid://dvc827phsimkt"
 
 [sub_resource type="Resource" id="Resource_eboce"]

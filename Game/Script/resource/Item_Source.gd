@@ -3,7 +3,7 @@ class_name Item_Base
 
 @export var id:int
 @export var name:String
-@export_range(1, 10, 1) var scaling:int
+@export_range(0, 10, 1) var scaling:int
 @export var sprite:CompressedTexture2D
 @export var mysprite:CompressedTexture2D
 @export var worth:int
@@ -12,4 +12,13 @@ class_name Item_Base
 var unlocked:bool
 
 func get_scaled_price() -> int:
-	return worth + (100 * scaling)
+	if scaling <= 0:
+		return worth  # tidak ada kenaikan
+
+	# Hitung persentase acak antara 1 dan scaling * 10
+	var percent_increase = randf_range(0.10, scaling * 0.20)
+	
+	# Hitung harga baru
+	var new_price = worth + (worth * percent_increase)
+	
+	return int(round(new_price))

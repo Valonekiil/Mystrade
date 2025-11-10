@@ -24,6 +24,7 @@ func _on_save_slot_manager_slot_loaded(slot_number: int, player_data: PlayerData
 func _on_create_player_dialog_confirmed(slot_number: int, player_name: String):
 	# Create new player
 	var player_data = GameDataManager.create_new_player(slot_number, player_name)
+	SSM.initialize_slots()
 	#GameDataManager.start_playing()
 	#get_tree().change_scene_to_file("res://game_scene.tscn")
 

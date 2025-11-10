@@ -9,12 +9,8 @@ signal finished_texturing
 var target_scene: String = ""
 
 func _ready():
-	SceneTransition
-	circle_sprite.modulate = Color.BLACK
-	circle_sprite.visible = true
 	create_circle_texture()
-	circle_sprite.scale = Vector2(0.01, 0.01)
-	animation_player.play("circle_grow")
+	circle_sprite.visible = false
 
 func create_circle_texture():
 	# Buat texture circle hitam
