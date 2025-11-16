@@ -13,6 +13,7 @@ script = ExtResource("9_3xrix")
 id = 1
 name = "Cutie"
 sprite = ExtResource("10_um6rr")
+item_pool = Array[ExtResource("2_x8kip")]([])
 metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [sub_resource type="Resource" id="Resource_rrkp4"]
@@ -20,6 +21,7 @@ script = ExtResource("9_3xrix")
 id = 2
 name = "Hunter"
 sprite = ExtResource("11_sbjcs")
+item_pool = Array[ExtResource("2_x8kip")]([])
 metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [sub_resource type="Resource" id="Resource_ojy58"]
@@ -27,6 +29,7 @@ script = ExtResource("9_3xrix")
 id = 3
 name = "Saudagar Renta"
 sprite = ExtResource("12_pdkr1")
+item_pool = Array[ExtResource("2_x8kip")]([])
 metadata/_custom_type_script = "uid://cf8k8pqr3eh1v"
 
 [node name="state_manager" type="Node"]

@@ -7,8 +7,8 @@ class_name PlayerData
 @export var coins: int = 0
 @export var time_played: int = 0  # dalam detik
 @export var item_collection: Array # ID dari Item_Base yang unlocked
-@export var last_customer: int = 0    # ⬅️ TAMBAH INI
-@export var last_item: int = 0        # ⬅️ TAMBAH INI
+@export var last_customer: int = 0  
+@export var last_item: int = 0      
 
 func update_from_api(api_data: Dictionary):
 	# PAKE .get() DENGAN DEFAULT VALUE

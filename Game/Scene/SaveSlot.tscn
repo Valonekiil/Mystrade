@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhug4lhict2lx"]
+[gd_scene load_steps=3 format=3 uid="uid://bhug4lhict2lx"]
 
 [ext_resource type="Script" uid="uid://ch304gpu52c2" path="res://Script/SaveSlot.gd" id="1_nbbhj"]
+
+[sub_resource type="Theme" id="Theme_nbbhj"]
+Button/colors/font_focus_color = Color(1, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 0, 0, 1)
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(301, 52)
@@ -70,3 +74,10 @@ clip_text = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Item:"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme = SubResource("Theme_nbbhj")
+theme_override_font_sizes/font_size = 30
+text = "X"

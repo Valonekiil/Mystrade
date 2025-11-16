@@ -2,6 +2,7 @@ extends Panel
 class_name SaveSlot
 
 signal slot_selected(slot_number: int, player_data: PlayerData)
+signal slot_deleted(slot_number: int, player_data: PlayerData)
 
 var Data: PlayerData
 var slot_number: int
@@ -11,15 +12,16 @@ var slot_number: int
 @onready var Playtime: Label = $HBoxContainer/VBoxContainer/Label2
 @onready var Coin: Label = $HBoxContainer/VBoxContainer2/Label
 @onready var Items: Label = $HBoxContainer/VBoxContainer2/Label2
-@onready var Status: Label = $HBoxContainer/VBoxContainer/StatusLabel  # Tambah ini buat status online/offline
+@onready var Status: Label = $HBoxContainer/VBoxContainer/StatusLabel
+@onready var Btn: Button = $HBoxContainer/Button
 
 func _ready():
-	# Connect click signal
+	Btn.pressed.connect(_slot_deleted)
 	gui_input.connect(_on_slot_gui_input)
 
 func init(no: int):
 	slot_number = no
-	Number.text = "Slot " + str(no)
+	Number.text = str(no)
 	clear_slot()
 
 func clear_slot():
@@ -28,6 +30,7 @@ func clear_slot():
 	Playtime.text = "No Data"
 	Coin.text = "Coin: 0"
 	Items.text = "Items: 0"
+	Btn.visible = false
 	if Status:
 		Status.text = ""
 
@@ -40,7 +43,7 @@ func update_save(data: PlayerData):
 	
 	Coin.text = "Coin: " + str(data.coins)
 	Items.text = "Items: " + str(data.item_collection.size())
-	
+	Btn.visible = true
 	if Status:
 		if data.player_id == -1:
 			Status.text = "🔴 Offline"
@@ -82,3 +85,8 @@ func _on_slot_gui_input(event):
 		modulate = Color.GRAY
 		await get_tree().create_timer(0.1).timeout
 		modulate = Color.WHITE
+
+func _slot_deleted():
+	if !Data:
+		return
+	slot_deleted.emit(slot_number, Data)

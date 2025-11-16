@@ -290,11 +290,3 @@ func save_current_player_data():
 		var save_path = "user://player_data_slot_%d.tres" % current_slot_number
 		ResourceSaver.save(current_player, save_path)
 		print("save data ", current_player.username, " dengan ", current_player.time_played )
-
-
-func create_new_player(slot_number: int, player_name: String):
-	current_slot_number = slot_number
-	current_player = PlayerData.new()
-	current_player.initialize_offline(player_name)
-	save_current_player_data()
-	return current_player

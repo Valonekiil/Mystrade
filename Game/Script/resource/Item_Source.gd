@@ -13,12 +13,7 @@ var unlocked:bool
 
 func get_scaled_price() -> int:
 	if scaling <= 0:
-		return worth  # tidak ada kenaikan
-
-	# Hitung persentase acak antara 1 dan scaling * 10
+		return worth  
 	var percent_increase = randf_range(0.10, scaling * 0.20)
-	
-	# Hitung harga baru
 	var new_price = worth + (worth * percent_increase)
-	
 	return int(round(new_price))

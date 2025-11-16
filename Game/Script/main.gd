@@ -3,7 +3,7 @@ extends Node2D
 @onready var Spawn = $Spawn
 @onready var Stand = $Stand
 @onready var Spawner = $Timer
-@onready var Gold_Lbl = $CanvasLayer/Gold_PH
+@onready var Gold_Lbl = $CanvasLayer/GoldCount/Gold
 @onready var UI = $CanvasLayer
 var cur_cus:Customer
 
@@ -11,12 +11,16 @@ func _ready() -> void:
 	if GameDataManager.current_player:
 		print("Halo pemain " + GameDataManager.current_player.username)
 		update_ui()
+		var items = GameDataManager.get_player_unlocked_items()
+		for item in items:
+			print("item ", item.name, " sudah di buka")
+			item.unlocked = true
 	GameDataManager.player_data_updated.connect(update_ui)
 	if GameDataManager.current_player.last_customer and GameDataManager.current_player.last_item:
 		spawn_costumer(GameDataManager.current_player.last_customer,GameDataManager.current_player.last_item)
 		print("Load customer terakhir")
 	else:
-		spawn_costumer(null,null)
+		spawn_costumer(1,12)
 		print("gacha customer")
 	if GameDataManager.current_player:
 		GameDataManager.start_playing()

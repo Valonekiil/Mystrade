@@ -17,6 +17,14 @@ func show_unlocked_item():
 		v.queue_free()
 	
 	var items = GameDataManager.get_player_unlocked_items()
+	if items.size() == 0:
+		Item_Name.visible = false
+		Item_Desc.visible = false
+		$Panel/HBoxContainer/TextureRect.visible = false
+	else:
+		Item_Name.visible = true
+		Item_Desc.visible = true
+		$Panel/HBoxContainer/TextureRect.visible = true
 	for item in items:
 		var display:Item_Slot = Slot.instantiate()
 		display.item = item

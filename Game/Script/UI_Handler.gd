@@ -100,6 +100,7 @@ func _on_bargain()-> void:
 	Egx_Btn.disabled = true
 	Dsc_Btn.disabled = true
 	qte.Start_Qte()
+	Dsc_Btn.release_focus()
 
 func after_bargain(v:int):
 	print("Harga lama: ", Price)
@@ -110,6 +111,7 @@ func after_bargain(v:int):
 	Acc_Btn.disabled = false
 	Egx_Btn.disabled = false
 	main.cur_cus.set_price(Price)
+	Dsc_Btn.grab_focus()
 
 func pop_up_push(item:Item_Base, msg:String):
 	Notif_Msg.text = msg
@@ -133,6 +135,7 @@ func _resume()-> void:
 	Acc_Btn.grab_focus()
 
 func _quit()-> void:
+	Pause_Menu.visible = false
 	get_tree().paused = false
 	GameDataManager.stop_playing()
 	GameDataManager.save_current_player_data()

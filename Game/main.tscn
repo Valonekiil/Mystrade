@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dexhfjkyfs76y"]
+[gd_scene load_steps=23 format=3 uid="uid://dexhfjkyfs76y"]
 
 [ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://0dgphx1gv253" path="res://Asset/Batang_Bloody.png" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bp18kvyh4jprn" path="res://Asset/Marah.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cvr21psr51um6" path="res://Asset/Tak berjudul116_20251105131055.png" id="6_cegan"]
+[ext_resource type="Texture2D" uid="uid://1p6fkr3rw47c" path="res://Asset/Coin.png" id="7_82xsv"]
 [ext_resource type="Texture2D" uid="uid://bpq6okkjul7sr" path="res://Asset/Tak berjudul120_20251105153439.png" id="7_cegan"]
 [ext_resource type="Script" uid="uid://ctif5246x5qke" path="res://Script/Bargain_Box.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dm1n3nbatgry2" path="res://Asset/Tak berjudul120_20251105153457.png" id="8_82xsv"]
@@ -19,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://b4g0jv1nh86b7" path="res://Asset/Tak berjudul119_20251105152738.png" id="10_ryguw"]
 [ext_resource type="Texture2D" uid="uid://b8c10lvef7h3d" path="res://Asset/Tak berjudul121_20251105160854.png" id="13_d13ii"]
 [ext_resource type="Texture2D" uid="uid://c11cp3ykkwtv2" path="res://Asset/Tak berjudul121_20251105160921.png" id="14_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://cwyqtu43htepa" path="res://Asset/HelpBtn.png" id="21_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cbbpgoq6tr0lw" path="res://Asset/HelpHvrpng.png" id="22_d13ii"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
@@ -38,7 +41,7 @@ script = ExtResource("3_272bh")
 Mad = ExtResource("5_ycdy4")
 Happy = ExtResource("6_cegan")
 
-[node name="Gold_PH" type="Label" parent="CanvasLayer"]
+[node name="GoldCount" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -47,9 +50,21 @@ offset_top = 16.0
 offset_right = -14.0
 offset_bottom = 51.0
 grow_horizontal = 0
+
+[node name="Gold" type="Label" parent="CanvasLayer/GoldCount"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 25
-text = "Gold: 12345678"
+text = "12345678"
+horizontal_alignment = 2
 clip_text = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GoldCount"]
+layout_mode = 2
+texture = ExtResource("7_82xsv")
+expand_mode = 3
 
 [node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 28.0
@@ -61,6 +76,8 @@ theme_override_constants/separation = 40
 [node name="Pause" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../VBoxContainer/Button4")
+focus_neighbor_bottom = NodePath("../Book")
 texture_normal = ExtResource("7_cegan")
 texture_hover = ExtResource("8_82xsv")
 texture_focused = ExtResource("8_82xsv")
@@ -70,6 +87,8 @@ stretch_mode = 5
 [node name="Book" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+focus_neighbor_top = NodePath("../Pause")
+focus_neighbor_bottom = NodePath("../../VBoxContainer/Button")
 texture_normal = ExtResource("9_getpj")
 texture_hover = ExtResource("10_ryguw")
 texture_focused = ExtResource("10_ryguw")
@@ -93,6 +112,7 @@ theme_override_constants/separation = 12
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/Book")
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Accept"
@@ -114,6 +134,7 @@ text = "Bargain"
 [node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../../HBoxContainer/Pause")
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Ask"
@@ -321,7 +342,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Item_Index/Panel/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_272bh")
+texture = ExtResource("7_82xsv")
 expand_mode = 3
 
 [node name="Pop_up" type="Panel" parent="CanvasLayer"]
@@ -487,7 +508,7 @@ horizontal_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popup/Pop_up/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_272bh")
+texture = ExtResource("7_82xsv")
 expand_mode = 3
 
 [node name="QTE" type="Control" parent="CanvasLayer"]
@@ -530,6 +551,95 @@ position = Vector2(0, 72.5)
 
 [node name="EndPoint" type="Marker2D" parent="CanvasLayer/QTE"]
 position = Vector2(0, 109)
+
+[node name="Help" type="TextureButton" parent="CanvasLayer"]
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 79.0
+offset_bottom = 80.0
+texture_normal = ExtResource("21_ryguw")
+texture_hover = ExtResource("22_d13ii")
+texture_focused = ExtResource("22_d13ii")
+
+[node name="Tutorial" type="TabContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -433.0
+offset_top = -259.0
+offset_right = 433.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Tutorial"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control3" type="Control" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Cara menghadapi Pembeli"
 
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(-100, 350)

@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	
 	pointer.position.y += direction * speed * delta
 	
-	if Input.is_key_pressed(KEY_V):
+	if Input.is_key_pressed(KEY_SPACE):
 		if pointer.position.y >= succes_start.position.y and pointer.position.y <= succes_end.position.y:
 			print("Critical")
 			var v = randi_range(25, 40)
@@ -46,6 +46,8 @@ func _physics_process(delta: float) -> void:
 
 func Start_Qte():
 	self.visible = true
+	var new_speed = randi_range(350,650)
+	speed = new_speed
 	self.set_physics_process(true)
 	
 
