@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cakqghc8af5fv"
-path="res://.godot/imported/Capture.JPG-ae4c655f04d8e38ac909c55dd3a0d511.ctex"
+uid="uid://cy5cg1s8fvto3"
+path="res://.godot/imported/bar.JPG-ccb6b850dda375bac3f748049806fb2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/tutor/Capture.JPG"
-dest_files=["res://.godot/imported/Capture.JPG-ae4c655f04d8e38ac909c55dd3a0d511.ctex"]
+source_file="res://Asset/tutor/bar.JPG"
+dest_files=["res://.godot/imported/bar.JPG-ccb6b850dda375bac3f748049806fb2b.ctex"]
 
 [params]
 
@@ -24,11 +24,11 @@ compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
-roughness/src_normal=""
+roughness/src_normal="0"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=250
+process/size_limit=125
 detect_3d/compress_to=1

@@ -13,6 +13,7 @@ extends CanvasLayer
 @onready var Kamus = $Item_Index
 @onready var qte = $QTE
 @onready var Pause_Menu = $ColorRect
+@onready var Tutorial:TabContainer = $Tutorial
 @export var Mad:CompressedTexture2D
 @export var Happy:CompressedTexture2D
 var Price:int
@@ -28,6 +29,7 @@ func _ready() -> void:
 	Dialog.finished.connect(_finish_ask)
 	qte.discount.connect(after_bargain)
 	Pause_Menu.visible = false
+	Tutorial.visible = false
 
 func _customer_appear():
 	Ask_Btn.disabled = false
@@ -36,7 +38,10 @@ func _customer_appear():
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_key_pressed(KEY_TAB):
-		Kamus.visible = !Kamus.visible
+		if Kamus.visible:
+			hide_kamus()
+		elif !Kamus.visible:
+			show_kamus()
 	if Input.is_key_pressed(KEY_T): 
 		print("🔍 DEBUG TIME_PLAYED:")
 		print("   is_playing: ", GameDataManager.is_playing)
@@ -48,6 +53,7 @@ func show_kamus()-> void:
 
 func hide_kamus() -> void:
 	Kamus.visible = false
+	$HBoxContainer/Book.grab_focus()
 
 func _on_ask() -> void:
 	Dialog.conversations = main.cur_cus.item.dialogue
@@ -140,3 +146,31 @@ func _quit()-> void:
 	GameDataManager.stop_playing()
 	GameDataManager.save_current_player_data()
 	SceneTransition.transition_to_scene("res://Scene/Login.tscn")
+
+func show_tutorial()-> void:
+	Tutorial.visible = true
+	Tutorial.current_tab = 0
+	var ck = Tutorial.get_child(0).get_children().size()
+	Tutorial.get_child(0).get_child(ck-1).get_child(2).grab_focus()
+
+func hide_tutorial()-> void:
+	Tutorial.visible = false
+	Acc_Btn.grab_focus()
+
+func next_page()-> void:
+	Tutorial.current_tab += 1
+	if Tutorial.current_tab == 4:
+		var ck = Tutorial.get_child(4).get_children().size()
+		Tutorial.get_child(4).get_child(ck-1).get_child(1).grab_focus()
+	else:
+		var ck = Tutorial.get_child(Tutorial.current_tab).get_children().size()
+		Tutorial.get_child(Tutorial.current_tab).get_child(ck-1).get_child(3).grab_focus()
+
+func back_page()-> void:
+	Tutorial.current_tab -= 1
+	if Tutorial.current_tab == 0:
+		var ck = Tutorial.get_child(0).get_children().size()
+		Tutorial.get_child(0).get_child(ck-1).get_child(2).grab_focus()
+	else:
+		var ck = Tutorial.get_child(Tutorial.current_tab).get_children().size()
+		Tutorial.get_child(Tutorial.current_tab).get_child(ck-1).get_child(1).grab_focus()

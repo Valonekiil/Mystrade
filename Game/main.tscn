@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dexhfjkyfs76y"]
+[gd_scene load_steps=33 format=3 uid="uid://dexhfjkyfs76y"]
 
 [ext_resource type="Script" uid="uid://0ks2bdb1svah" path="res://Script/main.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b3fpq4cnimxik" path="res://Script/dialogue_handler.gd" id="1_ig7tw"]
@@ -22,6 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://c11cp3ykkwtv2" path="res://Asset/Tak berjudul121_20251105160921.png" id="14_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://cwyqtu43htepa" path="res://Asset/HelpBtn.png" id="21_ryguw"]
 [ext_resource type="Texture2D" uid="uid://cbbpgoq6tr0lw" path="res://Asset/HelpHvrpng.png" id="22_d13ii"]
+[ext_resource type="Texture2D" uid="uid://de3fscykvw7eg" path="res://Asset/tutor/exam.JPG" id="23_d13ii"]
+[ext_resource type="Texture2D" uid="uid://cakqghc8af5fv" path="res://Asset/tutor/Capture.JPG" id="24_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://dtb41teda4noa" path="res://Asset/tutor/Index.JPG" id="25_0odxb"]
+[ext_resource type="Texture2D" uid="uid://dkyw8prpyc8cp" path="res://Asset/tutor/askbtn.JPG" id="26_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://cr0yjmamec3mt" path="res://Asset/tutor/harga.JPG" id="26_lswn8"]
+[ext_resource type="Texture2D" uid="uid://bc6l1itvrojg1" path="res://Asset/tutor/acc.JPG" id="28_kq58d"]
+[ext_resource type="Texture2D" uid="uid://cwbp6g6pp60kd" path="res://Asset/tutor/dec.JPG" id="29_seu75"]
+[ext_resource type="Texture2D" uid="uid://c4cc5ycqpifgd" path="res://Asset/tutor/disc.JPG" id="30_htxhm"]
+[ext_resource type="Texture2D" uid="uid://cy5cg1s8fvto3" path="res://Asset/tutor/bar.JPG" id="31_seu75"]
+[ext_resource type="Texture2D" uid="uid://ce5psxhjuor28" path="res://Asset/tutor/Core.JPG" id="32_htxhm"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
@@ -40,6 +50,18 @@ texture = ExtResource("3_efxa6")
 script = ExtResource("3_272bh")
 Mad = ExtResource("5_ycdy4")
 Happy = ExtResource("6_cegan")
+
+[node name="Help" type="TextureButton" parent="CanvasLayer"]
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 79.0
+offset_bottom = 77.0
+focus_neighbor_top = NodePath("../VBoxContainer/Button4")
+focus_neighbor_bottom = NodePath("../HBoxContainer/Pause")
+texture_normal = ExtResource("21_ryguw")
+texture_hover = ExtResource("22_d13ii")
+texture_focused = ExtResource("22_d13ii")
+stretch_mode = 0
 
 [node name="GoldCount" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
@@ -76,7 +98,7 @@ theme_override_constants/separation = 40
 [node name="Pause" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-focus_neighbor_top = NodePath("../../VBoxContainer/Button4")
+focus_neighbor_top = NodePath("../../Help")
 focus_neighbor_bottom = NodePath("../Book")
 texture_normal = ExtResource("7_cegan")
 texture_hover = ExtResource("8_82xsv")
@@ -134,7 +156,7 @@ text = "Bargain"
 [node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../../HBoxContainer/Pause")
+focus_neighbor_bottom = NodePath("../../Help")
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Ask"
@@ -230,10 +252,10 @@ script = ExtResource("3_lquwl")
 [node name="Cancel" type="TextureButton" parent="CanvasLayer/Item_Index"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 14.0
+offset_left = 12.0
 offset_top = 10.0
-offset_right = 64.0
-offset_bottom = 67.0
+offset_right = 83.0
+offset_bottom = 83.0
 texture_normal = ExtResource("13_d13ii")
 texture_hover = ExtResource("14_1u8w0")
 texture_focused = ExtResource("14_1u8w0")
@@ -246,13 +268,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 19.0
-offset_top = 73.0
+offset_top = 108.0
 offset_right = -458.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
-columns = 6
+columns = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/Item_Index"]
 layout_mode = 1
@@ -267,7 +289,7 @@ grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 50
-text = "INDEX ITEM"
+text = "KATALOG BARANG"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Item_Index"]
 layout_mode = 1
@@ -529,7 +551,6 @@ script = ExtResource("8_5vw27")
 texture = ExtResource("9_4c57u")
 
 [node name="CRSR" type="Sprite2D" parent="CanvasLayer/QTE"]
-position = Vector2(0, 1.21593e-05)
 texture = ExtResource("10_efxa6")
 vframes = 6
 frame = 5
@@ -552,17 +573,17 @@ position = Vector2(0, 72.5)
 [node name="EndPoint" type="Marker2D" parent="CanvasLayer/QTE"]
 position = Vector2(0, 109)
 
-[node name="Help" type="TextureButton" parent="CanvasLayer"]
-offset_left = 17.0
-offset_top = 18.0
-offset_right = 79.0
-offset_bottom = 80.0
-texture_normal = ExtResource("21_ryguw")
-texture_hover = ExtResource("22_d13ii")
-texture_focused = ExtResource("22_d13ii")
+[node name="FB" type="Label" parent="CanvasLayer/QTE"]
+layout_mode = 0
+offset_left = -101.0
+offset_top = -11.0
+offset_right = -17.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "Well Played"
+horizontal_alignment = 2
 
 [node name="Tutorial" type="TabContainer" parent="CanvasLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -574,61 +595,15 @@ offset_right = 433.0
 offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 2
 tabs_visible = false
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Tutorial"]
+[node name="Panel1" type="Panel" parent="CanvasLayer/Tutorial"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel"]
-custom_minimum_size = Vector2(42, 0)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -42.0
-offset_bottom = 42.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-text = "X"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -60.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Control3" type="Control" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="Back" type="Button" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(90, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Back"
-
-[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Next" type="Button" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(90, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Next"
-
-[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel1"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -639,7 +614,694 @@ offset_right = 55.0
 offset_bottom = 56.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 26
-text = "Cara menghadapi Pembeli"
+text = "Siapa orang yang baru datang ini?"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Tutorial/Panel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel1/MarginContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(786, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Dalam game ini orang akan selalu datang, dengan membawa barang barang unik yang akan mereka jual kepada kita"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("23_d13ii")
+stretch_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "Jika kamu pertama kali melihat barangnya maka
+barang akan muncul sebagai bayangan"
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("24_1u8w0")
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="CanvasLayer/Tutorial/Panel1/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "Jika barang sudah pernah kamu beli maka nanti gambar barang akan muncul seutuhnya"
+autowrap_mode = 3
+
+[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel1"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+focus_neighbor_bottom = NodePath("../HBoxContainer/Next")
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control3" type="Control" parent="CanvasLayer/Tutorial/Panel1/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="CanvasLayer/Tutorial/Panel1/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Close")
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel1/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Tutorial"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 670.0
+offset_top = 115.0
+offset_right = -179.0
+offset_bottom = -386.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_getpj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Membuat Katalog Barang"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Tutorial/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(786, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Untuk setiap barang yang pernah kamu beli, barang tersebut akan terdaftar kedalam buku katalog barang yang ada di kiri layar (  ) "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Tutorial/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel2/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("25_0odxb")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Tutorial/Panel2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(786, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 19
+text = "Kamu bisa mengakses menu katalog dengan menekan icon buku atau tombol TAB pada keyboard, dan untuk keluar tekan tombol silang atau TAB pada keyboard"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel2"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../HBoxContainer/Back")
+focus_neighbor_bottom = NodePath("../HBoxContainer/Next")
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel2"]
+layout_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control4" type="Control" parent="CanvasLayer/Tutorial/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CanvasLayer/Tutorial/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Next")
+focus_neighbor_top = NodePath("../../Close")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="CanvasLayer/Tutorial/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Close")
+focus_neighbor_right = NodePath("../Back")
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/Tutorial"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Cara menghadapi penjual"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Tutorial/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Pertama kamu harus tanyai dulu tentang barang yang dia bawa dan berapa harga yang dia berikan"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("26_a6jrf")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(500, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Setelah dialog, kamu bisa mengetahui harga barang berdasarkan dialog dan angka di sebelah gambar"
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("26_lswn8")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(785, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Setelah diberi tawaran oleh penjual, kamu punya 3 opsi yang bisa di lakukan"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 147)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Membeli barang
+dengan harga
+yang di berikan"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("28_kq58d")
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Menolak barang
+yang di tawarkan"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 10
+texture = ExtResource("29_seu75")
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Mengambil resiko
+dengan menawar
+harga barang"
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Tutorial/Panel3/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 10
+texture = ExtResource("30_htxhm")
+
+[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel3"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../../Panel4/HBoxContainer/Back")
+focus_neighbor_bottom = NodePath("../../Panel4/HBoxContainer/Next")
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control3" type="Control" parent="CanvasLayer/Tutorial/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CanvasLayer/Tutorial/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Close")
+focus_neighbor_right = NodePath("../Next")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="CanvasLayer/Tutorial/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Back")
+focus_neighbor_top = NodePath("../../Close")
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel3/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="CanvasLayer/Tutorial"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Cara melakukan negosisasi"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Tutorial/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel4/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Jika kamu menekan bargain maka nanti akan muncul Bar Negosiasi seperti di sebelah pada kanan layar"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("31_seu75")
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(500, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Lalu kursor pada Bar akan bergerak dengan cepat, dan kamu harus menekan spasi untuk menghentikan kursor, hasil negosiasi akan berpaku pada warna ketika kursor berhenti"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Warna Hijau artinya negosiasi Berhasil, dan kamu dapat keuntunngan maksimal"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Warna Kuning artinya negosiasi berjalan dengan baik tetapi Kurang Memuaskan"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="CanvasLayer/Tutorial/Panel4/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Warna Merah artinya negosiasi Gagal dan kamu membuat penjual marah"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel4"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../HBoxContainer/Back")
+focus_neighbor_bottom = NodePath("../HBoxContainer/Next")
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel4"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control3" type="Control" parent="CanvasLayer/Tutorial/Panel4/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CanvasLayer/Tutorial/Panel4/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Close")
+focus_neighbor_right = NodePath("../Next")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="CanvasLayer/Tutorial/Panel4/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Back")
+focus_neighbor_top = NodePath("../../Close")
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel4/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Panel5" type="Panel" parent="CanvasLayer/Tutorial"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Tutorial/Panel5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "Akhir Transaksi"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Tutorial/Panel5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Tutorial/Panel5/MarginContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel5/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(785, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Setiap Barang yang kamu beli akan langsung di teliti dan dijual lagi sesuai harga pasar dan data barang langsung masuk ke katalog"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel5/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Tutorial/Panel5/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 35)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Lalu Jika kamu memilih membeli barang tersebut, maka akan muncul notifikasi pop up nama barang, gambar  barang dan harga pasar dari barang tersebut"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/Panel5/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("32_htxhm")
+stretch_mode = 5
+
+[node name="Close" type="Button" parent="CanvasLayer/Tutorial/Panel5"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 42.0
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../HBoxContainer/Back")
+focus_neighbor_bottom = NodePath("../HBoxContainer/Back")
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Tutorial/Panel5"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control3" type="Control" parent="CanvasLayer/Tutorial/Panel5/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CanvasLayer/Tutorial/Panel5/HBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Close")
+focus_neighbor_right = NodePath("../../Close")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Control" type="Control" parent="CanvasLayer/Tutorial/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="CanvasLayer/Tutorial/Panel5/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
 
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(-100, 350)
@@ -651,6 +1313,7 @@ position = Vector2(450, 350)
 wait_time = 3.0
 one_shot = true
 
+[connection signal="pressed" from="CanvasLayer/Help" to="CanvasLayer" method="show_tutorial"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Pause" to="CanvasLayer" method="_paused"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Book" to="CanvasLayer" method="show_kamus"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer" method="_on_bought"]
@@ -661,4 +1324,17 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Button2" to="CanvasLayer" method="_quit"]
 [connection signal="draw" from="CanvasLayer/Item_Index" to="CanvasLayer/Item_Index" method="_on_draw"]
 [connection signal="pressed" from="CanvasLayer/Item_Index/Cancel" to="CanvasLayer" method="hide_kamus"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel1/Close" to="CanvasLayer" method="hide_tutorial"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel1/HBoxContainer/Next" to="CanvasLayer" method="next_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel2/Close" to="CanvasLayer" method="hide_tutorial"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel2/HBoxContainer/Back" to="CanvasLayer" method="back_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel2/HBoxContainer/Next" to="CanvasLayer" method="next_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel3/Close" to="CanvasLayer" method="hide_tutorial"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel3/HBoxContainer/Back" to="CanvasLayer" method="back_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel3/HBoxContainer/Next" to="CanvasLayer" method="next_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel4/Close" to="CanvasLayer" method="hide_tutorial"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel4/HBoxContainer/Back" to="CanvasLayer" method="back_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel4/HBoxContainer/Next" to="CanvasLayer" method="next_page"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel5/Close" to="CanvasLayer" method="hide_tutorial"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Panel5/HBoxContainer/Back" to="CanvasLayer" method="back_page"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Mystrade"
+run/main_scene="uid://cwkdbdxqoqk11"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://kso2k2pbvac2"
 
 [autoload]
 
@@ -24,6 +25,8 @@ SceneTransition="*res://Scene/Scene_Transition.tscn"
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
